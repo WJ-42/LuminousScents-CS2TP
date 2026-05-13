@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luminous Scents - Account</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/main.js" defer></script>
 </head>
-<body data-page="home">
+<body data-page="account">
     <div class="parallax-stars">
         <canvas id="starfield"></canvas>
         <canvas id="trailCanvas"></canvas>
@@ -26,45 +27,213 @@
             <a href="index.html">Home</a>
             <a href="products.html">Fragrances</a>
             <a href="basket.html">Basket</a>
-            <a href="account.html">Account</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="account.html" class="active">Account</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+            </button>
         </nav>
     </header>
 
     <main>
-        <section class="page-header">
-            <h2>Your account</h2>
-            <p>Use this form to sign up as a new customer or log in as a returning customer for this MVP demo.</p>
-        </section>
+        <!-- Login/Signup View -->
+        <div id="loginView">
+            <section class="page-header">
+                <h2>Your account</h2>
+                <p>Use this form to sign up as a new customer or log in as a returning customer for this MVP demo.</p>
+            </section>
 
-        <section class="auth-section">
-            <h3>Create an account or log in</h3>
-            <p class="small-text">
-                For the MVP this form only validates input on the front end. There is no real backend yet.
-            </p>
+            <section class="auth-section">
+                <h3>Create an account or log in</h3>
+                <p class="small-text">
+                    For the MVP this form only validates input on the front end. There is no real backend yet.
+                </p>
 
-            <form id="authForm" class="auth-form" novalidate>
-                <div class="form-row">
-                    <label for="authEmail">Email address</label>
-                    <input type="email" id="authEmail" name="authEmail">
+                <div class="auth-grid">
+                    <form id="authForm" class="auth-form" novalidate>
+                    <div class="form-row">
+                        <label for="authEmail">Email address</label>
+                        <input type="email" id="authEmail" name="authEmail" placeholder="you@example.com">
+                        <span class="field-error" id="emailError"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="authPassword">Password</label>
+                        <input type="password" id="authPassword" name="authPassword" placeholder="Enter your password">
+                        <span class="field-error" id="passwordError"></span>
+                        <div class="password-requirements" id="passwordRequirements">
+                            <span class="req" id="reqLength">✗ At least 8 characters</span>
+                            <span class="req" id="reqUpper">✗ One uppercase letter</span>
+                            <span class="req" id="reqLower">✗ One lowercase letter</span>
+                            <span class="req" id="reqNumber">✗ One number</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <input type="checkbox" id="isNewUser">
+                            I am a new customer
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Continue</button>
+
+                    <p id="authMessage" class="form-message"></p>
+                </form>
+
+                <!-- Success Toast -->
+                <div id="successToast" class="success-toast">
+                    <span class="toast-icon"></span>
+                    <span class="toast-message" id="toastMessage"></span>
                 </div>
-
-                <div class="form-row">
-                    <label for="authPassword">Password</label>
-                    <input type="password" id="authPassword" name="authPassword">
+                
+                    <!-- Admin login panel -->
+                    <div class="admin-login-card">
+                        <h4>Admin Login</h4>
+                        <p class="small-text">Restricted access — admin credentials required to view admin pages.</p>
+                        <form id="adminAuthForm" class="admin-form" novalidate>
+                            <div class="form-row">
+                                <label for="adminEmail">Admin Email</label>
+                                <input type="email" id="adminEmail" name="adminEmail" placeholder="admin@luminous.com">
+                            </div>
+                            <div class="form-row">
+                                <label for="adminPassword">Password</label>
+                                <input type="password" id="adminPassword" name="adminPassword" placeholder="Enter admin password">
+                            </div>
+                            <div class="form-row">
+                                <button type="submit" class="btn-primary">Admin Login</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+            </section>
+        </div>
 
-                <div class="form-row">
-                    <label>
-                        <input type="checkbox" id="isNewUser">
-                        I am a new customer
-                    </label>
+        <!-- User Profile View -->
+        <div id="profileView" style="display: none;">
+            <section class="page-header">
+                <h2>User Profile</h2>
+                <p>Welcome back! Manage your account and view your order history.</p>
+            </section>
+
+            <section class="profile-section">
+                <div class="profile-card">
+                    <div class="profile-avatar-wrapper">
+                        <img id="profileAvatar" class="profile-avatar" src="" alt="Profile picture">
+                        <svg id="profileAvatarPlaceholder" class="profile-avatar-placeholder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c0-4 4-7 8-7s8 3 8 7"/>
+                        </svg>
+                    </div>
+                    <h3 id="profileUsername" class="profile-username"></h3>
+                    <h3 class="profile-info-heading">Profile Information</h3>
+                    <div class="profile-info">
+                        <div class="profile-field">
+                            <span class="profile-label">Email:</span>
+                            <span class="profile-value" id="profileEmail"></span>
+                        </div>
+                        <div class="profile-field">
+                            <span class="profile-label">Member since:</span>
+                            <span class="profile-value" id="profileMemberSince"></span>
+                        </div>
+                    </div>
+                    <div class="profile-btn-group">
+                        <button id="editProfileBtn" class="btn-secondary">Edit Profile</button>
+                        <button id="logoutBtn" class="btn-secondary">Logout</button>
+                    </div>
                 </div>
+            </section>
 
-                <button type="submit" class="btn-primary">Continue</button>
+            <section class="orders-section">
+                <h3>Order History</h3>
+                <div id="ordersContainer" class="orders-container">
+                    <!-- Orders will be rendered here -->
+                </div>
+            </section>
 
-                <p id="authMessage" class="form-message"></p>
-            </form>
-        </section>
+            <section class="messages-section">
+                <h3>Messages Sent</h3>
+                <div id="messagesContainer" class="messages-container">
+                    <!-- Messages will be rendered here -->
+                </div>
+            </section>
+
+            <section class="wishlist-section">
+                <h3>My Wishlist</h3>
+                <div id="wishlistContainer" class="wishlist-container">
+                    <!-- Wishlist items will be rendered here -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Edit Profile Modal -->
+        <div id="editProfileModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Edit Profile</h2>
+                    <button class="modal-close" id="closeEditProfileModal">&times;</button>
+                </div>
+                <form id="editProfileForm" class="product-form" novalidate>
+                    <div class="form-grid">
+                        <div class="form-row full-width edit-profile-avatar-row">
+                            <label>Profile Picture</label>
+                            <div class="edit-profile-avatar-area">
+                                <img id="editProfileAvatarPreview" class="edit-profile-avatar-preview" src="" alt="Preview">
+                                <svg id="editProfileAvatarPlaceholder" class="edit-profile-avatar-preview-placeholder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="8" r="4"/>
+                                    <path d="M4 20c0-4 4-7 8-7s8 3 8 7"/>
+                                </svg>
+                                <div class="edit-profile-avatar-controls">
+                                    <div class="file-input-wrapper">
+                                        <input type="file" id="editProfilePicture" accept="image/*">
+                                        <span id="editProfileFileName">No file chosen</span>
+                                    </div>
+                                    <button type="button" class="btn-small" id="removeProfilePicture">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row full-width">
+                            <label for="editProfileUsername">Username</label>
+                            <input type="text" id="editProfileUsername" placeholder="Enter a display name">
+                        </div>
+
+                        <div class="form-row full-width">
+                            <label for="editProfileEmail">Email Address</label>
+                            <input type="email" id="editProfileEmail" placeholder="you@example.com">
+                            <span class="field-error" id="editEmailError"></span>
+                        </div>
+
+                        <div class="form-row full-width">
+                            <label for="editProfilePassword">New Password <span class="optional-label">(leave blank to keep current)</span></label>
+                            <input type="password" id="editProfilePassword" placeholder="Enter new password">
+                            <span class="field-error" id="editPasswordError"></span>
+                            <div class="password-requirements" id="editPasswordRequirements">
+                                <span class="req" id="editReqLength">&#10007; At least 8 characters</span>
+                                <span class="req" id="editReqUpper">&#10007; One uppercase letter</span>
+                                <span class="req" id="editReqLower">&#10007; One lowercase letter</span>
+                                <span class="req" id="editReqNumber">&#10007; One number</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row full-width">
+                            <label for="editProfilePasswordConfirm">Confirm New Password</label>
+                            <input type="password" id="editProfilePasswordConfirm" placeholder="Re-enter new password">
+                            <span class="field-error" id="editPasswordConfirmError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Save Changes</button>
+                        <button type="button" class="btn-secondary" id="cancelEditProfile">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
 
     <footer class="site-footer">

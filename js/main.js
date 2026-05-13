@@ -1,12 +1,58 @@
-// Simple product data for the MVP
+// Complete product data organized by category
 const products = [
+    // custom admin examples (also used in static admin tables)
+    {
+        id: 11,
+        name: "Lavender Dream",
+        brand: "Luminous Scents",
+        price: 54.99,
+        notes: "Lavender, vanilla, honey",
+        description: "Soothing lavender with a sweet, dreamy finish.",
+        image: "lavender-dream.png",
+        category: "perfume"
+    },
+    {
+        id: 12,
+        name: "Midnight Rose",
+        brand: "Luminous Scents",
+        price: 82.99,
+        notes: "Rose, patchouli, blackcurrant",
+        description: "Dark and romantic rose for evening allure.",
+        image: "midnight-rose.png",
+        category: "perfume"
+    },
+    {
+        id: 13,
+        name: "Ocean Whisper",
+        brand: "Luminous Scents",
+        price: 64.99,
+        notes: "Marine accord, driftwood, white tea",
+        description: "Captures the serenity of waves on shore.",
+        image: "ocean-whisper.png",
+        category: "perfume"
+    },
+    {
+        id: 104,
+        name: "Velvet Nights",
+        brand: "Luminous Scents",
+        price: 65.00,
+        notes: "Rich and luxurious",
+        description: "A luxurious fragrance for special occasions.",
+        image: "velvet-nights.png",
+        category: "perfume",
+        stock: 32
+    },
+    // === SIGNATURE PERFUMES ===
     {
         id: 1,
         name: "Aurora Oud",
         brand: "Luminous Scents",
         price: 89.99,
         notes: "Oud, amber, vanilla",
-        description: "Warm and deep evening scent with a rich oud base."
+        description: "Warm and deep evening scent with a rich oud base.",
+        image: "aurora-oud.png",
+        category: "perfume",
+        stock: 0
     },
     {
         id: 2,
@@ -14,7 +60,10 @@ const products = [
         brand: "Luminous Scents",
         price: 59.99,
         notes: "Bergamot, lemon, neroli",
-        description: "Fresh daytime fragrance that is bright and uplifting."
+        description: "Fresh daytime fragrance that is bright and uplifting.",
+        image: "citrus-dawn.png",
+        category: "perfume",
+        stock: 0
     },
     {
         id: 3,
@@ -22,9 +71,742 @@ const products = [
         brand: "Luminous Scents",
         price: 74.50,
         notes: "Iris, violet, sandalwood",
-        description: "Soft floral scent with a creamy sandalwood base."
+        description: "Soft floral scent with a creamy sandalwood base.",
+        image: "velvet-iris.png",
+        category: "perfume"
+    },
+    {
+        id: 6,
+        name: "Amber Eclipse",
+        brand: "Luminous Scents",
+        price: 84.99,
+        notes: "Amber, benzoin, tonka bean",
+        description: "A mysterious blend of warm amber and sweet tonka.",
+        image: "amber-eclipse.png",
+        category: "perfume"
+    },
+    {
+        id: 7,
+        name: "Citrus Bloom",
+        brand: "Luminous Scents",
+        price: 62.99,
+        notes: "Orange blossom, grapefruit, jasmine",
+        description: "Sparkling citrus meets delicate florals.",
+        image: "citrus-bloom.png",
+        category: "perfume"
+    },
+    {
+        id: 8,
+        name: "Fresh Horizon",
+        brand: "Luminous Scents",
+        price: 58.99,
+        notes: "Sea salt, cucumber, mint",
+        description: "Crisp and clean like an ocean breeze at dawn.",
+        image: "fresh-horizon.png",
+        category: "perfume"
+    },
+    {
+        id: 9,
+        name: "Golden Sandalwood",
+        brand: "Luminous Scents",
+        price: 92.99,
+        notes: "Sandalwood, saffron, cardamom",
+        description: "Luxurious sandalwood with warm spice notes.",
+        image: "golden-sandalwood.png",
+        category: "perfume"
+    },
+    {
+        id: 10,
+        name: "Jasmine Veil",
+        brand: "Luminous Scents",
+        price: 78.99,
+        notes: "Jasmine, ylang-ylang, musk",
+        description: "Intoxicating jasmine wrapped in soft musk.",
+        image: "jasmine-veil.png",
+        category: "perfume"
+    },
+    {
+        id: 101,
+        name: "Midnight Elegance",
+        brand: "Luminous Scents",
+        price: 45.00,
+        notes: "Mystic evening blend",
+        description: "Our signature evening fragrance.",
+        image: "midnight-elegance.png",
+        category: "perfume",
+        stock: 18
+    },
+    {
+        id: 102,
+        name: "Golden Hour",
+        brand: "Luminous Scents",
+        price: 52.00,
+        notes: "Warm day aroma",
+        description: "Bright and uplifting day scent.",
+        image: "golden-hour.png",
+        category: "perfume",
+        stock: 5
+    },
+    {
+        id: 103,
+        name: "Twilight Bloom",
+        brand: "Luminous Scents",
+        price: 48.00,
+        notes: "Soft floral",
+        description: "A floral scent perfect for evenings.",
+        image: "twilight-bloom.png",
+        category: "perfume",
+        stock: 0
+    },
+    {
+        id: 14,
+        name: "Spiced Cedar",
+        brand: "Luminous Scents",
+        price: 76.99,
+        notes: "Cedarwood, black pepper, nutmeg",
+        description: "Bold and woody with a spicy kick.",
+        image: "spiced-cedar.png",
+        category: "perfume"
+    },
+    {
+        id: 15,
+        name: "Velvet Oud",
+        brand: "Luminous Scents",
+        price: 98.99,
+        notes: "Oud, velvet rose, smoky incense",
+        description: "Our most luxurious oud, rich and velvety.",
+        image: "velvet-oud.png",
+        category: "perfume"
+    },
+    
+    // === SOLARIS DUO ===
+    {
+        id: 4,
+        name: "Solaris Femme",
+        brand: "Luminous Scents",
+        price: 79.99,
+        notes: "Jasmine, rose, musk",
+        description: "Elegant floral scent for her.",
+        image: "solaris-femme.png",
+        category: "solaris"
+    },
+    {
+        id: 5,
+        name: "Solaris Homme",
+        brand: "Luminous Scents",
+        price: 69.99,
+        notes: "Cedar, vetiver, citrus",
+        description: "Sophisticated woody scent for him.",
+        image: "solaris-homme.png",
+        category: "solaris"
+    },
+    
+    // === HOME FRAGRANCES ===
+    {
+        id: 20,
+        name: "Rosewood Candle",
+        brand: "Luminous Scents",
+        price: 38.99,
+        notes: "Rosewood, geranium, warm amber",
+        description: "Elegant ambiance for any room. Burns for 50+ hours.",
+        image: "rosewood-candle.png",
+        category: "home"
+    },
+    {
+        id: 21,
+        name: "Citrus Verbena Diffuser",
+        brand: "Luminous Scents",
+        price: 42.99,
+        notes: "Verbena, lemon zest, green tea",
+        description: "Continuous fragrance for up to 3 months.",
+        image: "citrus-verbena-diffuser.png",
+        category: "home"
+    },
+    {
+        id: 22,
+        name: "Midnight Garden Incense",
+        brand: "Luminous Scents",
+        price: 24.99,
+        notes: "Night-blooming jasmine, sandalwood, musk",
+        description: "Set of 30 hand-rolled incense sticks.",
+        image: "midnight-garden-incense.png",
+        category: "home"
+    },
+    {
+        id: 23,
+        name: "Vanilla Musk Wax Melts",
+        brand: "Luminous Scents",
+        price: 18.99,
+        notes: "Vanilla bean, white musk, caramel",
+        description: "Pack of 12 wax melts for electric warmers.",
+        image: "vanilla-musk-wax-melts.png",
+        category: "home"
+    },
+    {
+        id: 24,
+        name: "White Tea Linen Spray",
+        brand: "Luminous Scents",
+        price: 28.99,
+        notes: "White tea, cotton flower, soft woods",
+        description: "Refresh linens, curtains, and upholstery.",
+        image: "white-tea-linen-spray.png",
+        category: "home"
+    },
+    
+    // === WELLNESS ===
+    {
+        id: 30,
+        name: "Calming Lavender Mist",
+        brand: "Luminous Scents",
+        price: 26.99,
+        notes: "French lavender, chamomile, bergamot",
+        description: "Spritz on pillows or in the air for relaxation.",
+        image: "calming-lavender-mist.png",
+        category: "wellness"
+    },
+    {
+        id: 31,
+        name: "Energizing Citrus Oil Blend",
+        brand: "Luminous Scents",
+        price: 32.99,
+        notes: "Sweet orange, lemon, grapefruit, peppermint",
+        description: "Essential oil blend for diffusers. 30ml bottle.",
+        image: "energizing-citrus-oil-blend.png",
+        category: "wellness"
+    },
+    {
+        id: 32,
+        name: "Focus Eucalyptus Roller",
+        brand: "Luminous Scents",
+        price: 22.99,
+        notes: "Eucalyptus, rosemary, spearmint",
+        description: "Roll-on pulse point oil for mental clarity.",
+        image: "focus-eucalyptus-roller.png",
+        category: "wellness"
+    },
+    {
+        id: 33,
+        name: "Relaxing Chamomile Balm",
+        brand: "Luminous Scents",
+        price: 34.99,
+        notes: "Roman chamomile, neroli, sweet almond",
+        description: "Solid balm for temples and wrists. 15g tin.",
+        image: "relaxing-chamomile-balm.png",
+        category: "wellness"
+    },
+    {
+        id: 34,
+        name: "Sleep Serenity Pillow Spray",
+        brand: "Luminous Scents",
+        price: 29.99,
+        notes: "Lavender, vetiver, cedarwood",
+        description: "Promotes restful sleep. 100ml spray bottle.",
+        image: "sleep-serenity-pillow-spray.png",
+        category: "wellness"
+    },
+    
+    // === TRAVEL & GIFT SETS ===
+    {
+        id: 40,
+        name: "Discovery Sample Set",
+        brand: "Luminous Scents",
+        price: 48.99,
+        notes: "8 × 2ml samples of our bestsellers",
+        description: "Perfect introduction to our fragrance collection.",
+        image: "discovery-sample-set.png",
+        category: "gift"
+    },
+    {
+        id: 41,
+        name: "Duo Travel Set",
+        brand: "Luminous Scents",
+        price: 89.99,
+        notes: "2 × 30ml travel sprays in leather case",
+        description: "Choose any two fragrances. TSA-approved size.",
+        image: "duo-travel-set.png",
+        category: "gift"
+    },
+    {
+        id: 42,
+        name: "Mini Candle Trio",
+        brand: "Luminous Scents",
+        price: 44.99,
+        notes: "3 × 70g candles in gift box",
+        description: "Rosewood, Vanilla Musk, and White Tea scents.",
+        image: "mini-candle-trio.png",
+        category: "gift"
+    },
+    {
+        id: 43,
+        name: "Pocket Perfume Roll-Ons",
+        brand: "Luminous Scents",
+        price: 36.99,
+        notes: "4 × 5ml roll-on bottles",
+        description: "Portable favorites: Citrus Dawn, Velvet Iris, Ocean Whisper, Lavender Dream.",
+        image: "pocket-perfume-roll-ons.png",
+        category: "gift"
+    },
+    {
+        id: 44,
+        name: "Refillable Atomizer Kit",
+        brand: "Luminous Scents",
+        price: 28.99,
+        notes: "2 × 10ml refillable atomizers",
+        description: "Sleek metal design. Refill from any full-size bottle.",
+        image: "refillable-atomizer-kit.png",
+        category: "gift"
     }
 ];
+
+// make sure every product object has a stock field so quantity can be tracked
+products.forEach(p => {
+    if (typeof p.stock === 'undefined') {
+        p.stock = 0;
+    }
+});
+
+// Promotions state (persisted)
+let promotions = [];
+
+/**
+ * Return a usable image src from a stored image value.
+ * Supports local image file names (served from /images) and data URLs (uploaded images).
+ */
+function getProductImageSrc(image) {
+    if (!image || typeof image !== 'string') return '';
+    if (image.startsWith('data:') || image.startsWith('http')) {
+        return image;
+    }
+    if (image.startsWith('images/')) {
+        return image;
+    }
+    return `images/${image}`;
+}
+
+// ----- persistence helpers -----
+const STOCK_STORAGE_KEY = "luminousScentsProductStock";
+const PRODUCTS_STORAGE_KEY = "luminousScentsProducts";
+
+function loadStock() {
+    const data = localStorage.getItem(STOCK_STORAGE_KEY);
+    if (data) {
+        try {
+            const map = JSON.parse(data);
+            products.forEach(p => {
+                if (map.hasOwnProperty(p.id)) {
+                    p.stock = map[p.id];
+                }
+            });
+        } catch (e) {
+            console.error('Failed to load stock from storage', e);
+        }
+    }
+}
+
+function saveStock() {
+    const map = {};
+    products.forEach(p => map[p.id] = p.stock);
+    localStorage.setItem(STOCK_STORAGE_KEY, JSON.stringify(map));
+    saveProducts();
+}
+
+function ensureInventoryFields(product) {
+    // Ensure inventory columns have values for display; supplier defaults blank for real vendors.
+    if (typeof product.minStock !== 'number') product.minStock = 10;
+    if (typeof product.reorderQty !== 'number') product.reorderQty = product.minStock || 10;
+    if (typeof product.supplier !== 'string') product.supplier = '';
+}
+
+function loadProducts() {
+    const data = localStorage.getItem(PRODUCTS_STORAGE_KEY);
+    if (!data) return;
+
+    try {
+        const saved = JSON.parse(data);
+        if (!Array.isArray(saved)) return;
+        products.length = 0; // keep same reference
+        saved.forEach(p => {
+            ensureInventoryFields(p);
+            products.push(p);
+        });
+    } catch (e) {
+        console.error('Failed to load products from storage', e);
+    }
+}
+
+function saveProducts() {
+    try {
+        localStorage.setItem(PRODUCTS_STORAGE_KEY, JSON.stringify(products));
+    } catch (e) {
+        console.error('Failed to save products to storage', e);
+    }
+}
+
+const REVIEWS_SEEDED_KEY = "luminousScentsReviewsSeeded_v2";
+
+function seedDummyReviews() {
+    if (localStorage.getItem(REVIEWS_SEEDED_KEY)) return;
+
+    const dummyPool = [
+        { user: 'sarah.j@example.com', displayName: 'Sarah J', date: '2025-02-15', rating: 5, text: 'Absolutely stunning fragrance! Perfect for evening events. Long-lasting and elegant.', published: true },
+        { user: 'michael.p@example.com', displayName: 'Michael P', date: '2025-02-14', rating: 3, text: 'Nice fragrance, but fades too quickly. Expected better longevity for the price.', published: true },
+        { user: 'emma.r@example.com', displayName: 'Emma R', date: '2025-02-13', rating: 5, text: 'Love it! Best purchase I have made. Sophisticated and captivating scent.', published: true },
+        { user: 'alex.t@example.com', displayName: 'Alex T', date: '2025-02-10', rating: 5, text: 'Excellent fragrance! Gets compliments every time I wear it.', published: true },
+        { user: 'jess.k@example.com', displayName: 'Jess K', date: '2025-02-07', rating: 4, text: 'Nice scent, lasts a long time. Would definitely buy again.', published: true },
+        { user: 'sam.w@example.com', displayName: 'Sam W', date: '2025-02-05', rating: 4, text: 'Very good, will buy again. Great value for the quality.', published: true },
+        { user: 'olivia.m@example.com', displayName: 'Olivia M', date: '2025-01-28', rating: 5, text: 'This is my go-to fragrance now. The scent is divine and lasts all day.', published: true },
+        { user: 'daniel.h@example.com', displayName: 'Daniel H', date: '2025-01-25', rating: 4, text: 'Really pleasant scent. Packaging is beautiful too.', published: true },
+        { user: 'lucy.c@example.com', displayName: 'Lucy C', date: '2025-01-20', rating: 3, text: 'Decent fragrance but not quite what I expected from the description.', published: true },
+        { user: 'james.b@example.com', displayName: 'James B', date: '2025-01-15', rating: 5, text: 'Bought this as a gift and they absolutely loved it!', published: true },
+        { user: 'nina.f@example.com', displayName: 'Nina F', date: '2025-01-12', rating: 4, text: 'Beautiful notes, very well blended. Projection could be stronger.', published: true },
+        { user: 'ryan.d@example.com', displayName: 'Ryan D', date: '2025-01-08', rating: 5, text: 'Premium quality. Worth every penny. The bottle design is stunning.', published: true },
+    ];
+
+    const dummyEmails = new Set(dummyPool.map(d => d.user));
+    const dummyMap = {};
+    dummyPool.forEach(d => { dummyMap[d.user] = d.displayName; });
+
+    let poolIdx = 0;
+    products.forEach(p => {
+        if (!Array.isArray(p.reviews) || p.reviews.length === 0) {
+            const count = 2 + (p.id % 3);
+            p.reviews = [];
+            for (let i = 0; i < count; i++) {
+                p.reviews.push({ ...dummyPool[poolIdx % dummyPool.length] });
+                poolIdx++;
+            }
+            p.rating = Math.round(p.reviews.reduce((s, r) => s + r.rating, 0) / p.reviews.length);
+        } else {
+            p.reviews.forEach(r => {
+                if (!r.displayName && dummyEmails.has(r.user)) {
+                    r.displayName = dummyMap[r.user];
+                }
+            });
+        }
+    });
+
+    saveProducts();
+    localStorage.setItem(REVIEWS_SEEDED_KEY, "true");
+}
+
+// ----- inquiry persistence helpers -----
+const INQUIRIES_STORAGE_KEY = "luminousScentsInquiries";
+const ORDERS_STORAGE_KEY = "luminousScentsPendingOrders";
+const REFUNDS_STORAGE_KEY = "luminousScentsRefundRequests";
+const PROMOTIONS_STORAGE_KEY = "luminousScentsPromotions";
+const DEACTIVATED_PROMOS_STORAGE_KEY = "luminousScentsDeactivatedPromotions";
+
+function loadPromotions() {
+    const data = localStorage.getItem(PROMOTIONS_STORAGE_KEY);
+
+    let saved = null;
+    if (data) {
+        try {
+            saved = JSON.parse(data);
+        } catch (e) {
+            console.warn('Invalid promotions data in storage - resetting to defaults.', e);
+        }
+    }
+
+    if (!Array.isArray(saved)) {
+        // default promotions
+        promotions = [
+            {
+                id: 'promo-1',
+                name: 'Winter Sale 2025',
+                type: 'seasonal',
+                discount: '20% off',
+                products: 'All Fragrances',
+                startDate: '2025-02-17',
+                endDate: '2025-03-31'
+            },
+            {
+                id: 'promo-2',
+                name: 'LUXURY25',
+                type: 'coupon',
+                code: 'LUXURY25',
+                discount: '£10 off',
+                minSpend: '50',
+                products: 'All Products'
+            },
+            {
+                id: 'promo-3',
+                name: 'Bundle Offer',
+                type: 'bundle',
+                discount: 'Buy 2, Get 10% Off',
+                products: 'Select items'
+            },
+            {
+                id: 'promo-4',
+                name: 'Flash Sale',
+                type: 'flash',
+                discount: '35% off Selected',
+                products: 'Twilight Bloom'
+            }
+        ];
+        savePromotions();
+        return;
+    }
+
+    promotions = saved;
+}
+
+function savePromotions() {
+    try {
+        localStorage.setItem(PROMOTIONS_STORAGE_KEY, JSON.stringify(promotions));
+    } catch (e) {
+        console.error('Failed to save promotions to storage', e);
+    }
+}
+
+function getSavedDeactivatedPromoIds() {
+    try {
+        const raw = localStorage.getItem(DEACTIVATED_PROMOS_STORAGE_KEY);
+        if (!raw) return [];
+        const data = JSON.parse(raw);
+        return Array.isArray(data) ? data : [];
+    } catch {
+        return [];
+    }
+}
+
+function saveDeactivatedPromoIds(ids) {
+    try {
+        localStorage.setItem(DEACTIVATED_PROMOS_STORAGE_KEY, JSON.stringify(Array.from(new Set(ids))));
+    } catch {
+        // ignore
+    }
+}
+
+function applyPromotionState() {
+    const grid = document.querySelector('.promotions-grid');
+    if (!grid) return;
+
+    const deactivatedIds = new Set(getSavedDeactivatedPromoIds().map(String));
+
+    const items = Array.from(grid.querySelectorAll('.promotion-item'));
+    items.forEach(item => {
+        const promoId = item.dataset.promoId;
+        if (!promoId) return;
+        const isDeactivated = deactivatedIds.has(promoId);
+        const statusBadge = item.querySelector('.status-badge');
+        const button = item.querySelector('.deactivate-promo-btn');
+
+        if (isDeactivated) {
+            item.classList.add('deactivated');
+            if (statusBadge) {
+                statusBadge.textContent = 'Deactivated';
+                statusBadge.classList.remove('active');
+            }
+            if (button) {
+                button.textContent = 'Activate';
+                button.classList.remove('dangerous');
+                button.classList.add('neutral');
+            }
+        } else {
+            item.classList.remove('deactivated');
+            if (statusBadge) {
+                statusBadge.textContent = 'Active';
+                statusBadge.classList.add('active');
+            }
+            if (button) {
+                button.textContent = 'Deactivate';
+                button.classList.remove('neutral');
+                button.classList.add('dangerous');
+            }
+        }
+    });
+
+    // Move deactivated items to the bottom
+    items.sort((a, b) => {
+        const aDeact = a.classList.contains('deactivated');
+        const bDeact = b.classList.contains('deactivated');
+        return (aDeact === bDeact) ? 0 : (aDeact ? 1 : -1);
+    }).forEach(item => grid.appendChild(item));
+}
+
+function renderPromotions() {
+    const grid = document.querySelector('.promotions-grid');
+    if (!grid) return;
+
+    grid.innerHTML = promotions.map(p => {
+        const typeLabel = p.type ? p.type.charAt(0).toUpperCase() + p.type.slice(1) : 'Promotion';
+        const details = [];
+        if (p.discount) details.push(`<p><strong>Discount:</strong> ${p.discount}</p>`);
+        if (p.code) details.push(`<p><strong>Code:</strong> ${p.code}</p>`);
+        if (p.minSpend) details.push(`<p><strong>Min. Spend:</strong> £${p.minSpend}</p>`);
+        if (p.maxUses) details.push(`<p><strong>Max Uses:</strong> ${p.maxUses}</p>`);
+        if (p.startDate || p.endDate) {
+            const start = p.startDate ? p.startDate : 'Now';
+            const end = p.endDate ? p.endDate : 'Ongoing';
+            details.push(`<p><strong>Valid:</strong> ${start} – ${end}</p>`);
+        }
+        if (p.products) details.push(`<p><strong>Products:</strong> ${p.products}</p>`);
+        details.push(`<p><strong>Status:</strong> <span class="status-badge active">Active</span></p>`);
+
+        return `
+            <div class="promotion-item" data-promo-id="${p.id}">
+                <div class="promotion-header">
+                    <h4>${p.name}</h4>
+                    <span class="promo-type ${p.type || ''}">${typeLabel}</span>
+                </div>
+                <div class="promotion-details">
+                    ${details.join('')}
+                </div>
+                <div class="promotion-actions">
+                    <button class="btn-small editPromoBtn" data-promo-id="${p.id}">Edit</button>
+                    <button class="btn-small dangerous deactivate-promo-btn">Deactivate</button>
+                    <button class="btn-small dangerous delete-promo-btn">Delete</button>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    applyPromotionState();
+}
+
+// ----- pending order helpers -----
+function loadOrders(orders) {
+    const data = localStorage.getItem(ORDERS_STORAGE_KEY);
+    if (!data) return;
+
+    try {
+        const saved = JSON.parse(data);
+        if (!Array.isArray(saved)) return;
+        orders.length = 0;
+        saved.forEach(o => orders.push(o));
+    } catch (e) {
+        console.error('Failed to load orders from storage', e);
+    }
+}
+
+function saveOrders(orders) {
+    try {
+        localStorage.setItem(ORDERS_STORAGE_KEY, JSON.stringify(orders));
+    } catch (e) {
+        console.error('Failed to save orders to storage', e);
+    }
+}
+
+function loadRefunds(refunds) {
+    const data = localStorage.getItem(REFUNDS_STORAGE_KEY);
+    if (!data) return;
+    try {
+        const saved = JSON.parse(data);
+        refunds.length = 0;
+        saved.forEach(r => refunds.push(r));
+    } catch (e) {
+        console.error('Failed to load refunds from storage', e);
+    }
+}
+
+function saveRefunds(refunds) {
+    try {
+        localStorage.setItem(REFUNDS_STORAGE_KEY, JSON.stringify(refunds));
+    } catch (e) {
+        console.error('Failed to save refunds to storage', e);
+    }
+}
+
+function loadInquiries(inquiries) {
+    const data = localStorage.getItem(INQUIRIES_STORAGE_KEY);
+    if (!data) return;
+
+    try {
+        const saved = JSON.parse(data);
+        if (!Array.isArray(saved)) return;
+        inquiries.length = 0;
+        saved.forEach(i => inquiries.push(i));
+    } catch (e) {
+        console.error('Failed to load inquiries from storage', e);
+    }
+}
+
+function saveInquiries(inquiries) {
+    try {
+        localStorage.setItem(INQUIRIES_STORAGE_KEY, JSON.stringify(inquiries));
+    } catch (e) {
+        console.error('Failed to save inquiries to storage', e);
+    }
+}
+
+// ----- stock alert rendering -----
+function updateStockAlerts() {
+    // generate list of alerts based on stock/min levels
+    const alerts = [];
+    products.forEach(p => {
+        if (p.stock === 0) {
+            alerts.push({ id: p.id, type: 'critical', product: p.name, stock: 0, min: p.minStock || 0 });
+        } else if (p.minStock && p.stock < p.minStock) {
+            alerts.push({ id: p.id, type: 'warning', product: p.name, stock: p.stock, min: p.minStock });
+        } else if (!p.minStock && p.stock > 0 && p.stock <= 5) {
+            // fallback low-stock threshold
+            alerts.push({ id: p.id, type: 'warning', product: p.name, stock: p.stock, min: '' });
+        }
+    });
+
+    // Update dashboard low-stock counter
+    const lowStockCounter = document.getElementById('lowStockCount');
+    if (lowStockCounter) {
+        lowStockCounter.textContent = alerts.length;
+    }
+
+    // page alerts container
+    const container = document.querySelector('.alerts-container');
+    if (container) {
+        container.innerHTML = alerts.map(a => {
+            const icon = a.type === 'critical' ? '⚠️' : '⚡';
+            const desc = a.type === 'critical'
+                ? `${a.product} - Out of Stock`
+                : `${a.product} - Low Stock (${a.stock} units remaining)`;
+            const meta = a.min ? `<p class="alert-meta">Min. Level: ${a.min}</p>` : '';
+            return `
+                <div class="alert-item ${a.type}">
+                    <span class="alert-icon">${icon}</span>
+                    <div class="alert-content">
+                        <p><strong>${a.product}</strong> - ${a.type === 'critical' ? 'Out of Stock' : `Low Stock (${a.stock} units remaining)`}</p>
+                        ${meta}
+                    </div>
+                </div>`;
+        }).join('');
+    }
+
+    // modal list
+    const modalList = document.querySelector('#alertsModal .alerts-list');
+    if (modalList) {
+        modalList.innerHTML = alerts.map(a => {
+            const title = a.type === 'critical' ? '⚠️ OUT OF STOCK' : '⚡ LOW STOCK';
+            const thresholdInfo = a.min ? `<p><strong>Min. Level:</strong> ${a.min} units</p>` : '';
+            const extra = a.type === 'warning' && a.min ? `<p><strong>Threshold:</strong> ${((a.min - a.stock)/a.min*100).toFixed(0)}% below minimum</p>` : '';
+            return `
+                <div class="alert-detail ${a.type}">
+                    <div class="alert-title">${title}</div>
+                    <p><strong>Product:</strong> ${a.product}</p>
+                    <p><strong>Current Stock:</strong> ${a.stock} units</p>
+                    ${thresholdInfo}
+                    ${extra}
+                    <p><strong>Action:</strong> <button class="btn-small reorder-now-btn" data-id="${a.id}">Reorder Now</button></p>
+                </div>`;
+        }).join('');
+    }
+}
+
+// ----- collapsible boxes -----
+function initCollapsibles() {
+    document.querySelectorAll('section.admin-box[data-collapsible]').forEach(sec => {
+        const header = sec.querySelector('.box-header');
+        if (!header) return;
+        const btn = document.createElement('button');
+        btn.className = 'more-toggle';
+        btn.textContent = 'Show more';
+        header.appendChild(btn);
+        btn.addEventListener('click', () => {
+            sec.classList.toggle('expanded');
+            btn.textContent = sec.classList.contains('expanded') ? 'Show less' : 'Show more';
+        });
+    });
+}
+
 function customAlert(message) {
     const overlay = document.createElement('div');
     overlay.className = 'custom-alert-overlay';
@@ -42,13 +824,82 @@ function customAlert(message) {
     alertBox.classList.remove('scroll-reveal', 'revealed');
     overlay.classList.remove('scroll-reveal', 'revealed');
 
-    const closeAlert = () => {
+    const closeAlert = (e) => {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
         overlay.remove();
         alertBox.remove();
     };
 
-    document.getElementById('customAlertBtn').addEventListener('click', closeAlert);
-    overlay.addEventListener('click', closeAlert);
+    // Get the button and add event listener with stopPropagation
+    const okButton = document.getElementById('customAlertBtn');
+    if (okButton) {
+        okButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            closeAlert(e);
+        });
+    }
+    
+    // Also allow closing by clicking overlay, but prevent closing when clicking the alert box itself
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            closeAlert(e);
+        }
+    });
+    
+    // Prevent clicks on the alert box from closing it
+    alertBox.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+}
+
+const TOAST_STORAGE_KEY = 'luminousScentsToastMessage';
+
+function showToast(message, type = 'success', duration = 4500) {
+    const containerId = 'toastContainer';
+    let container = document.getElementById(containerId);
+    if (!container) {
+        container = document.createElement('div');
+        container.id = containerId;
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.textContent = message;
+    container.appendChild(toast);
+
+    // Trigger animation
+    requestAnimationFrame(() => toast.classList.add('visible'));
+
+    setTimeout(() => {
+        toast.classList.remove('visible');
+        toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+    }, duration);
+}
+
+function setNextPageToast(message) {
+    try {
+        localStorage.setItem(TOAST_STORAGE_KEY, message);
+    } catch {
+        // ignore
+    }
+}
+
+function consumeNextPageToast() {
+    try {
+        const message = localStorage.getItem(TOAST_STORAGE_KEY);
+        if (message) {
+            localStorage.removeItem(TOAST_STORAGE_KEY);
+        }
+        return message;
+    } catch {
+        return null;
+    }
 }
 
 function customConfirm(message, onConfirm) {
@@ -85,7 +936,130 @@ function customConfirm(message, onConfirm) {
     overlay.addEventListener('click', closeDialog);
 }
 
+function customPrompt(message, defaultValue, onSubmit) {
+    const overlay = document.createElement('div');
+    overlay.className = 'custom-alert-overlay';
+
+    const alertBox = document.createElement('div');
+    alertBox.className = 'custom-alert';
+    alertBox.innerHTML = `
+        <p>${message}</p>
+        <input type="text" class="custom-prompt-input" value="${defaultValue !== undefined && defaultValue !== null ? defaultValue : ''}" />
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+            <button id="promptOk" class="btn-primary">OK</button>
+            <button id="promptCancel" class="btn-secondary">Cancel</button>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+    document.body.appendChild(alertBox);
+
+    alertBox.classList.remove('scroll-reveal', 'revealed');
+    overlay.classList.remove('scroll-reveal', 'revealed');
+
+    const input = alertBox.querySelector('.custom-prompt-input');
+    input.focus();
+    input.select();
+
+    const closeDialog = () => {
+        overlay.remove();
+        alertBox.remove();
+    };
+
+    document.getElementById('promptOk').addEventListener('click', () => {
+        const value = input.value;
+        closeDialog();
+        if (onSubmit) onSubmit(value);
+    });
+
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const value = input.value;
+            closeDialog();
+            if (onSubmit) onSubmit(value);
+        }
+    });
+
+    document.getElementById('promptCancel').addEventListener('click', closeDialog);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeDialog();
+    });
+}
+
 const BASKET_STORAGE_KEY = "luminousScentsBasket";
+const USER_SESSION_KEY = "luminousScentsUserEmail";
+const USER_SESSION_DATE_KEY = "luminousScentsUserSessionDate";
+const ADMIN_SESSION_KEY = "luminousScentsAdmin"; // stores admin email when logged in
+const ADMIN_SESSION_DATE_KEY = "luminousScentsAdminSessionDate";
+const USER_PROFILES_KEY = "luminousScentsUserProfiles";
+
+// User profile helpers
+
+function loadUserProfiles() {
+    try {
+        const data = localStorage.getItem(USER_PROFILES_KEY);
+        return data ? JSON.parse(data) : {};
+    } catch { return {}; }
+}
+
+function saveUserProfiles(profiles) {
+    try {
+        localStorage.setItem(USER_PROFILES_KEY, JSON.stringify(profiles));
+    } catch (e) {
+        console.error('Failed to save user profiles', e);
+    }
+}
+
+function getUserProfile(email) {
+    if (!email) return null;
+    const profiles = loadUserProfiles();
+    return profiles[email] || null;
+}
+
+function saveUserProfile(email, profileData) {
+    const profiles = loadUserProfiles();
+    profiles[email] = profileData;
+    saveUserProfiles(profiles);
+}
+
+function deleteUserProfile(email) {
+    const profiles = loadUserProfiles();
+    delete profiles[email];
+    saveUserProfiles(profiles);
+}
+
+function getReviewDisplayName(review) {
+    const profile = getUserProfile(review.user);
+    if (profile && profile.username) return profile.username;
+    if (review.displayName) return review.displayName;
+    return review.user;
+}
+
+function migrateUserData(oldEmail, newEmail) {
+    if (oldEmail === newEmail) return;
+    const keySuffixes = [
+        'luminousScentsOrders_',
+        'luminousScentsMessages_',
+        'luminousScentsWishlist_'
+    ];
+    keySuffixes.forEach(prefix => {
+        const oldKey = prefix + oldEmail;
+        const newKey = prefix + newEmail;
+        const data = localStorage.getItem(oldKey);
+        if (data) {
+            localStorage.setItem(newKey, data);
+            localStorage.removeItem(oldKey);
+        }
+    });
+    const oldProfile = getUserProfile(oldEmail);
+    if (oldProfile) {
+        oldProfile.email = newEmail;
+        deleteUserProfile(oldEmail);
+        saveUserProfile(newEmail, oldProfile);
+    }
+    localStorage.setItem(USER_SESSION_KEY, newEmail);
+}
 
 // Basket helpers
 
@@ -107,6 +1081,15 @@ function saveBasket(basket) {
 }
 
 function addToBasket(productId) {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        if (product.stock > 0) {
+            product.stock -= 1; // decrement inventory
+        } else {
+            customAlert("Sorry, this product is out of stock.");
+            return;
+        }
+    }
     const basket = loadBasket();
     const existing = basket.find(item => item.productId === productId);
     if (existing) {
@@ -116,6 +1099,9 @@ function addToBasket(productId) {
     }
     saveBasket(basket);
     customAlert("Added to basket");
+    saveStock();
+    updateStockAlerts();
+    renderAdminTables();
 }
 
 function updateQuantity(productId, change) {
@@ -124,56 +1110,565 @@ function updateQuantity(productId, change) {
     if (!item) {
         return;
     }
+    // adjust stock based on change
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        product.stock -= change;
+        if (product.stock < 0) product.stock = 0;
+    }
     item.quantity += change;
     if (item.quantity <= 0) {
         const index = basket.indexOf(item);
         basket.splice(index, 1);
     }
     saveBasket(basket);
+    saveStock();
+    updateStockAlerts();
     renderBasketPage();
+    renderAdminTables();
+}
+
+// --- Product Reviews Modal (products page) ---
+
+function openProductReviewsModal(productId) {
+    const modal = document.getElementById('productReviewsModal');
+    const titleEl = document.getElementById('productReviewsTitle');
+    const listEl = document.getElementById('productReviewsList');
+    const formArea = document.getElementById('productReviewFormArea');
+    if (!modal || !listEl) return;
+
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    const loggedInUser = getLoggedInUser();
+    const publishedReviews = (product.reviews || []).filter(r => r.published);
+
+    if (titleEl) {
+        const avgRating = publishedReviews.length
+            ? Math.round(publishedReviews.reduce((sum, r) => sum + r.rating, 0) / publishedReviews.length)
+            : 0;
+        const stars = avgRating > 0
+            ? ` (${'★'.repeat(avgRating)}${'☆'.repeat(5 - avgRating)})`
+            : '';
+        titleEl.textContent = `${product.name}${stars}`;
+    }
+
+    if (publishedReviews.length === 0) {
+        listEl.innerHTML = '<p class="no-reviews-msg">No reviews yet for this product.</p>';
+    } else {
+        listEl.innerHTML = publishedReviews.map((r, idx) => {
+            const isOwn = loggedInUser && r.user === loggedInUser;
+            const name = getReviewDisplayName(r);
+            return `
+            <div class="review-item${isOwn ? ' own-review' : ''}">
+                <div class="review-header">
+                    <h4>${name}${isOwn ? ' <span class="review-you-badge">You</span>' : ''}</h4>
+                    <span class="review-rating">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</span>
+                </div>
+                <div class="review-content">
+                    <p><strong>${r.date}</strong></p>
+                    <p>${r.text}</p>
+                </div>
+                ${isOwn ? `<div class="review-actions"><button class="btn-small dangerous delete-own-review-btn" data-product-id="${productId}" data-review-idx="${idx}">Delete My Review</button></div>` : ''}
+            </div>`;
+        }).join('');
+    }
+
+    if (formArea) {
+        const alreadyReviewed = loggedInUser && publishedReviews.some(r => r.user === loggedInUser);
+
+        if (!loggedInUser) {
+            formArea.innerHTML = '<p class="review-login-prompt">Please <a href="account.html">sign in</a> to leave a review.</p>';
+        } else if (alreadyReviewed) {
+            formArea.innerHTML = '<p class="review-login-prompt">You have already reviewed this product.</p>';
+        } else {
+            formArea.innerHTML = `
+                <form id="reviewForm" class="review-form">
+                    <h4>Leave a Review</h4>
+                    <div class="star-picker" id="starPicker">
+                        <span class="pick-star" data-value="1">☆</span>
+                        <span class="pick-star" data-value="2">☆</span>
+                        <span class="pick-star" data-value="3">☆</span>
+                        <span class="pick-star" data-value="4">☆</span>
+                        <span class="pick-star" data-value="5">☆</span>
+                    </div>
+                    <input type="hidden" id="reviewRatingValue" value="0" />
+                    <textarea id="reviewText" placeholder="Write your review..." rows="3" required></textarea>
+                    <button type="submit" class="btn-primary">Submit Review</button>
+                </form>`;
+            initStarPicker();
+            initReviewForm(productId);
+        }
+    }
+
+    modal.classList.remove('hidden');
+}
+
+function initStarPicker() {
+    const picker = document.getElementById('starPicker');
+    const hiddenInput = document.getElementById('reviewRatingValue');
+    if (!picker || !hiddenInput) return;
+
+    picker.addEventListener('click', (e) => {
+        const star = e.target.closest('.pick-star');
+        if (!star) return;
+        const val = Number(star.dataset.value);
+        hiddenInput.value = val;
+        picker.querySelectorAll('.pick-star').forEach(s => {
+            s.textContent = Number(s.dataset.value) <= val ? '★' : '☆';
+            s.classList.toggle('active', Number(s.dataset.value) <= val);
+        });
+    });
+
+    picker.addEventListener('mouseover', (e) => {
+        const star = e.target.closest('.pick-star');
+        if (!star) return;
+        const val = Number(star.dataset.value);
+        picker.querySelectorAll('.pick-star').forEach(s => {
+            s.textContent = Number(s.dataset.value) <= val ? '★' : '☆';
+        });
+    });
+
+    picker.addEventListener('mouseleave', () => {
+        const current = Number(hiddenInput.value);
+        picker.querySelectorAll('.pick-star').forEach(s => {
+            s.textContent = Number(s.dataset.value) <= current ? '★' : '☆';
+        });
+    });
+}
+
+function initReviewForm(productId) {
+    const form = document.getElementById('reviewForm');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const rating = Number(document.getElementById('reviewRatingValue').value);
+        const text = document.getElementById('reviewText').value.trim();
+        const user = getLoggedInUser();
+
+        if (!user) { customAlert('Please sign in to leave a review.'); return; }
+        if (rating < 1 || rating > 5) { customAlert('Please select a star rating.'); return; }
+        if (!text) { customAlert('Please write your review.'); return; }
+
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
+
+        if (!Array.isArray(product.reviews)) product.reviews = [];
+
+        const profile = getUserProfile(user);
+        product.reviews.push({
+            user: user,
+            displayName: (profile && profile.username) ? profile.username : '',
+            date: new Date().toISOString().split('T')[0],
+            rating: rating,
+            text: text,
+            published: true
+        });
+
+        product.rating = Math.round(
+            product.reviews.filter(r => r.published).reduce((s, r) => s + r.rating, 0) /
+            product.reviews.filter(r => r.published).length
+        );
+
+        saveProducts();
+        customAlert('Your review has been submitted!');
+        openProductReviewsModal(productId);
+    });
+}
+
+function initProductReviewsModal() {
+    const modal = document.getElementById('productReviewsModal');
+    const closeBtn = document.getElementById('closeProductReviewsModal');
+    if (!modal) return;
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    }
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.add('hidden');
+    });
+
+    modal.addEventListener('click', (e) => {
+        const deleteBtn = e.target.closest('.delete-own-review-btn');
+        if (!deleteBtn) return;
+
+        const productId = Number(deleteBtn.dataset.productId);
+        const reviewIdx = Number(deleteBtn.dataset.reviewIdx);
+        const user = getLoggedInUser();
+        if (!user) return;
+
+        const product = products.find(p => p.id === productId);
+        if (!product || !product.reviews) return;
+
+        const publishedReviews = product.reviews.filter(r => r.published);
+        const target = publishedReviews[reviewIdx];
+        if (!target || target.user !== user) return;
+
+        customConfirm('Delete your review?', () => {
+            const realIdx = product.reviews.indexOf(target);
+            if (realIdx !== -1) product.reviews.splice(realIdx, 1);
+
+            const remaining = product.reviews.filter(r => r.published);
+            product.rating = remaining.length
+                ? Math.round(remaining.reduce((s, r) => s + r.rating, 0) / remaining.length)
+                : 0;
+
+            saveProducts();
+            customAlert('Your review has been deleted.');
+            openProductReviewsModal(productId);
+        });
+    });
 }
 
 // Rendering functions
 
 function renderProductsPage() {
-    const container = document.getElementById("productsContainer");
-    if (!container) {
-        return;
-    }
+    // Get all section containers
+    const perfumeContainer = document.getElementById("perfumeContainer");
+    const solarisContainer = document.getElementById("solarisContainer");
+    const homeContainer = document.getElementById("homeContainer");
+    const wellnessContainer = document.getElementById("wellnessContainer");
+    const giftContainer = document.getElementById("giftContainer");
+    
+    if (!perfumeContainer) return;
 
-    container.innerHTML = "";
+    // Filter products by category
+    const perfumeProducts = products.filter(p => p.category === "perfume");
+    const solarisProducts = products.filter(p => p.category === "solaris");
+    const homeProducts = products.filter(p => p.category === "home");
+    const wellnessProducts = products.filter(p => p.category === "wellness");
+    const giftProducts = products.filter(p => p.category === "gift");
 
-    products.forEach(product => {
+    // Helper function to create product card
+    function createProductCard(product) {
         const card = document.createElement("article");
         card.className = "card";
+        card.setAttribute("data-category", product.category);
+
+        const stock = typeof product.stock === 'number' ? product.stock : 0;
+        const isOutOfStock = stock === 0;
+        if (isOutOfStock) card.classList.add('unavailable');
+
+        const loggedInUser = getLoggedInUser();
+        const inWishlist = loggedInUser ? isInWishlist(product.id, loggedInUser) : false;
+        const wishlistButtonText = inWishlist ? "In Wishlist" : "Add to Wishlist";
+        const wishlistButtonClass = inWishlist ? "btn-wishlist-active" : "btn-wishlist";
 
         card.innerHTML = `
             <div class="product-image-container ${product.id === 1 ? 'aurora-oud-image' : ''}">
-                <img src="images/${product.id === 1 ? 'aurora-oud.png' : product.id === 2 ? 'citrus-dawn.png' : 'velvet-iris.png'}" alt="${product.name}" class="product-image">
+                <img src="${getProductImageSrc(product.image)}" alt="${product.name}" class="product-image">
             </div>
             <h3>${product.name}</h3>
             <p>${product.brand}</p>
             <p><strong>Notes:</strong> ${product.notes}</p>
             <p class="price">£${product.price.toFixed(2)}</p>
+            <p class="stock ${isOutOfStock ? 'out-of-stock' : ''}">${isOutOfStock ? 'Unavailable' : `<strong>Stock:</strong> ${stock}`}</p>
             <p>${product.description}</p>
-            <button class="btn-primary" data-product-id="${product.id}">
-                Add to basket
-            </button>
-                `;
+            <div class="product-actions">
+                <button class="btn-primary" data-product-id="${product.id}" data-action="basket" ${isOutOfStock ? 'disabled aria-disabled="true"' : ''}>
+                    ${isOutOfStock ? 'Unavailable' : 'Add to basket'}
+                </button>
+                <button class="${wishlistButtonClass}" data-product-id="${product.id}" data-action="wishlist">
+                    ${wishlistButtonText}
+                </button>
+                <button class="btn-view-reviews" data-product-id="${product.id}" data-action="reviews">
+                    View Reviews
+                </button>
+            </div>
+        `;
 
-        container.appendChild(card);
+        return card;
+    }
 
-        applyScrollReveal(card);
-        card.querySelectorAll('h3, p, .btn-primary').forEach(el => applyScrollReveal(el));
+    // Render products into their containers
+    function renderToContainer(container, productList) {
+        if (!container) return;
+        container.innerHTML = "";
+        productList.forEach(product => {
+            const card = createProductCard(product);
+            container.appendChild(card);
+            applyScrollReveal(card);
+        });
+    }
+
+    // Render all sections
+    renderToContainer(perfumeContainer, perfumeProducts);
+    renderToContainer(solarisContainer, solarisProducts);
+    renderToContainer(homeContainer, homeProducts);
+    renderToContainer(wellnessContainer, wellnessProducts);
+    renderToContainer(giftContainer, giftProducts);
+
+    // Add click handlers using event delegation
+    // Only attach listeners to product containers, not the entire document
+    if (!window.productClickHandlersAttached) {
+        const productContainers = document.querySelectorAll(".product-scroll-container, .cards-grid");
+        
+        productContainers.forEach(container => {
+            container.addEventListener('click', function(event) {
+                const button = event.target.closest("button[data-product-id]");
+                if (!button) return;
+                
+                // Stop propagation to prevent interference with other handlers
+                event.stopPropagation();
+                
+                const id = Number(button.getAttribute("data-product-id"));
+                const action = button.getAttribute("data-action");
+                const loggedInUser = getLoggedInUser();
+                
+                if (action === "basket") {
+                    addToBasket(id);
+                } else if (action === "wishlist") {
+                    if (loggedInUser) {
+                        const wasInWishlist = isInWishlist(id, loggedInUser);
+                        
+                        if (wasInWishlist) {
+                            removeFromWishlist(id, loggedInUser);
+                            customAlert("Removed from wishlist");
+                            button.textContent = "Add to Wishlist";
+                            button.className = "btn-wishlist";
+                        } else {
+                            const added = addToWishlist(id, loggedInUser);
+                            if (added) {
+                                customAlert("Added to wishlist");
+                                button.textContent = "In Wishlist";
+                                button.className = "btn-wishlist-active";
+                            }
+                        }
+                    } else {
+                        customAlert("Please log in to add items to your wishlist.");
+                    }
+                } else if (action === "reviews") {
+                    openProductReviewsModal(id);
+                }
+            });
+        });
+        
+        window.productClickHandlersAttached = true;
+    }
+
+    initProductReviewsModal();
+
+    // Initialize scroll functionality for scrollable sections
+    initScrollableSections();
+}
+
+// Scroll navigation for product sections
+function updateSectionUI(section) {
+    const container = section.querySelector(".product-scroll-container");
+    const leftBtn = section.querySelector(".scroll-btn-left");
+    const rightBtn = section.querySelector(".scroll-btn-right");
+
+    if (!container || !leftBtn || !rightBtn) return;
+
+    // Count visible cards
+    const visibleCards = Array.from(container.children).filter(
+        card => card.style.display !== 'none'
+    ).length;
+
+    // Logic for centering content
+    if (visibleCards <= 3) {
+        container.style.justifyContent = 'center';
+    } else {
+        container.style.justifyContent = 'flex-start';
+    }
+
+    // Logic for button visibility based on card count
+    const areButtonsNeeded = visibleCards > 3;
+    if (!areButtonsNeeded) {
+        // Hide both buttons if there aren't enough cards to scroll
+        leftBtn.classList.add("hidden");
+        rightBtn.classList.add("hidden");
+        return; // Exit early
+    }
+    
+    // If buttons ARE needed, determine their state based on scroll position
+    leftBtn.classList.toggle("hidden", container.scrollLeft <= 10);
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    rightBtn.classList.toggle("hidden", container.scrollLeft >= maxScroll - 10);
+}
+
+function initScrollableSections() {
+    const scrollSections = document.querySelectorAll(".product-section-scrollable");
+    
+    scrollSections.forEach(section => {
+        const container = section.querySelector(".product-scroll-container");
+        const leftBtn = section.querySelector(".scroll-btn-left");
+        const rightBtn = section.querySelector(".scroll-btn-right");
+        
+        if (!container) return;
+
+        const cardWidth = 320; // Card width (300px) + gap (20px)
+        const scrollAmount = cardWidth * 3; // Scroll 3 cards at a time
+
+        // Scroll button click handlers
+        if (leftBtn) {
+            leftBtn.addEventListener("click", () => {
+                container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+            });
+        }
+
+        if (rightBtn) {
+            rightBtn.addEventListener("click", () => {
+                container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            });
+        }
+
+        // Update UI on scroll
+        container.addEventListener("scroll", () => updateSectionUI(section));
+        
+        // The initial UI update is now handled by the window.onload event
     });
+}
 
-    container.addEventListener("click", event => {
-        const button = event.target.closest("button[data-product-id]");
-        if (button) {
-            const id = Number(button.getAttribute("data-product-id"));
-            addToBasket(id);
+// Track if a filter was previously active
+let wasFiltered = false;
+
+function filterProducts() {
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    const allSections = document.querySelectorAll(".product-section");
+    const allCards = document.querySelectorAll(".product-scroll-container .card, .cards-grid .card");
+    
+    const isFilterActive = searchTerm !== "";
+    const filterJustRemoved = wasFiltered && !isFilterActive;
+
+    // Track visible cards per section
+    const sectionVisibility = {};
+
+    // Filter all cards
+    allCards.forEach(card => {
+        const name = card.querySelector("h3").textContent.toLowerCase();
+        const notes = card.querySelector("p:nth-of-type(2)").textContent.toLowerCase();
+        const description = card.querySelector("p:nth-of-type(4)").textContent.toLowerCase();
+        const category = card.getAttribute("data-category") || "unknown";
+        
+        const matches = name.includes(searchTerm) || notes.includes(searchTerm) || description.includes(searchTerm);
+
+        if (matches) {
+            // Check if card was previously hidden
+            const wasHidden = card.style.display === "none";
+            // Remove inline display style to use CSS default (flex)
+            card.style.display = "";
+            // If card was previously hidden, reset revealed state to allow animation
+            if (wasHidden && card.classList.contains('scroll-reveal')) {
+                card.classList.remove('revealed');
+                // Use requestAnimationFrame to ensure DOM is updated before checking intersection
+                requestAnimationFrame(() => {
+                    // Check if card is already in viewport and trigger reveal manually
+                    const rect = card.getBoundingClientRect();
+                    const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+                    if (isInViewport) {
+                        // Small delay to allow animation to trigger properly
+                        setTimeout(() => {
+                            if (card.classList.contains('scroll-reveal') && !card.classList.contains('revealed')) {
+                                card.classList.add('revealed');
+                            }
+                        }, 100);
+                    }
+                });
+            }
+            sectionVisibility[category] = (sectionVisibility[category] || 0) + 1;
+        } else {
+            card.style.display = "none";
         }
     });
+
+    // Update UI for each scrollable section (centering and buttons)
+    document.querySelectorAll(".product-section-scrollable").forEach(section => {
+        updateSectionUI(section);
+    });
+
+    // Hide/show sections based on visible products
+    allSections.forEach(section => {
+        const sectionCategory = section.getAttribute("data-section-category");
+        if (sectionCategory) {
+            const visibleCount = sectionVisibility[sectionCategory] || 0;
+            if (searchTerm === "" || visibleCount > 0) {
+                section.style.display = "block";
+            } else {
+                section.style.display = "none";
+            }
+        }
+    });
+
+    // Only animate when filter is REMOVED (going back to show all)
+    if (filterJustRemoved) {
+        // Remove animation class from all cards first
+        allCards.forEach(card => {
+            card.classList.remove('filter-animate');
+        });
+        
+        // Force reflow to reset animation
+        void document.body.offsetHeight;
+        
+        // Add animation class to trigger fade-in on ALL cards
+        allCards.forEach(card => {
+            card.classList.add('filter-animate');
+        });
+        
+        // Remove filter-animate class after animation completes so scroll animations work again
+        setTimeout(() => {
+            allCards.forEach(card => {
+                card.classList.remove('filter-animate');
+                card.classList.add('revealed');
+            });
+        }, 550);
+    }
+
+    // Update filter state for next time
+    wasFiltered = isFilterActive;
+}
+
+function initEnhancedSearch() {
+    const searchInput = document.getElementById("searchInput");
+    const searchBox = document.querySelector(".search-box");
+    const clearBtn = document.querySelector(".search-clear");
+    const suggestionTags = document.querySelectorAll(".suggestion-tag");
+
+    if (!searchInput || !searchBox) return;
+
+    // Update has-value class on input
+    function updateHasValue() {
+        if (searchInput.value.length > 0) {
+            searchBox.classList.add("has-value");
+        } else {
+            searchBox.classList.remove("has-value");
+        }
+    }
+
+    // Filter products on input
+    searchInput.addEventListener("input", () => {
+        updateHasValue();
+        filterProducts();
+    });
+
+    // Clear button functionality
+    if (clearBtn) {
+        clearBtn.addEventListener("click", () => {
+            searchInput.value = "";
+            updateHasValue();
+            filterProducts();
+            searchInput.focus();
+        });
+    }
+
+    // Suggestion tag click - fills search and filters
+    suggestionTags.forEach(tag => {
+        tag.addEventListener("click", () => {
+            searchInput.value = tag.textContent;
+            updateHasValue();
+            filterProducts();
+            
+            // Add a nice pulse effect to the search box
+            searchBox.style.transform = "scale(1.03)";
+            setTimeout(() => {
+                searchBox.style.transform = "";
+            }, 150);
+        });
+    });
+
+    // Initial state
+    updateHasValue();
 }
 
 function renderBasketPage() {
@@ -236,15 +1731,17 @@ function renderBasketPage() {
     });
 
     summary.innerHTML = `
-        <p><strong>Total:</strong> £${total.toFixed(2)}</p>
-        <button id="clearBasketBtn" class="btn-secondary" style="margin-right: 1rem;">Clear basket</button>
-        <button id="mockCheckoutBtn" class="btn-primary">Proceed to checkout</button>
+        <p class="basket-total"><strong>Total:</strong> £${total.toFixed(2)}</p>
+        <div class="basket-actions">
+            <button id="clearBasketBtn" class="btn-secondary">Clear basket</button>
+            <button id="mockCheckoutBtn" class="btn-primary">Proceed to checkout</button>
+        </div>
     `;
 
     const checkoutBtn = document.getElementById("mockCheckoutBtn");
     if (checkoutBtn) {
         checkoutBtn.addEventListener("click", () => {
-            customAlert("Checkout flow will be implemented in the full version. For MVP this is a demo only.");
+            window.location.href = "checkout.html";
         });
     }
 
@@ -257,6 +1754,7 @@ function renderBasketPage() {
             });
         });
     }
+
 }
 
 // Scroll reveal helper function
@@ -273,55 +1771,1858 @@ function setupAuthForm() {
     const passwordInput = document.getElementById("authPassword");
     const message = document.getElementById("authMessage");
     const isNewUser = document.getElementById("isNewUser");
+    const emailError = document.getElementById("emailError");
+    const passwordError = document.getElementById("passwordError");
+    const passwordRequirements = document.getElementById("passwordRequirements");
+    const successToast = document.getElementById("successToast");
+    const toastMessage = document.getElementById("toastMessage");
 
-    if (!form || !emailInput || !passwordInput || !message) {
+    // Password requirement elements
+    const reqLength = document.getElementById("reqLength");
+    const reqUpper = document.getElementById("reqUpper");
+    const reqLower = document.getElementById("reqLower");
+    const reqNumber = document.getElementById("reqNumber");
+
+    if (!form || !emailInput || !passwordInput) {
         return;
     }
 
+    // Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Helper functions
+    function showError(input, errorElement, message) {
+        input.classList.add('input-error');
+        input.classList.remove('input-success');
+        errorElement.textContent = message;
+        errorElement.classList.add('show');
+    }
+
+    function clearError(input, errorElement) {
+        input.classList.remove('input-error');
+        errorElement.textContent = '';
+        errorElement.classList.remove('show');
+    }
+
+    function showSuccess(input) {
+        input.classList.remove('input-error');
+        input.classList.add('input-success');
+    }
+
+    function showToast(msg) {
+        toastMessage.textContent = msg;
+        successToast.classList.add('show');
+        setTimeout(() => {
+            successToast.classList.remove('show');
+        }, 4000);
+    }
+
+    // Validate password requirements
+    function validatePasswordRequirements(password) {
+        const hasLength = password.length >= 8;
+        const hasUpper = /[A-Z]/.test(password);
+        const hasLower = /[a-z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+
+        // Update requirement indicators
+        reqLength.textContent = (hasLength ? '✓' : '✗') + ' At least 8 characters';
+        reqLength.classList.toggle('valid', hasLength);
+        
+        reqUpper.textContent = (hasUpper ? '✓' : '✗') + ' One uppercase letter';
+        reqUpper.classList.toggle('valid', hasUpper);
+        
+        reqLower.textContent = (hasLower ? '✓' : '✗') + ' One lowercase letter';
+        reqLower.classList.toggle('valid', hasLower);
+        
+        reqNumber.textContent = (hasNumber ? '✓' : '✗') + ' One number';
+        reqNumber.classList.toggle('valid', hasNumber);
+
+        return hasLength && hasUpper && hasLower && hasNumber;
+    }
+
+    // Real-time email validation
+    emailInput.addEventListener('input', () => {
+        const email = emailInput.value.trim();
+        if (email === '') {
+            clearError(emailInput, emailError);
+        } else if (!emailRegex.test(email)) {
+            showError(emailInput, emailError, 'Please enter a valid email address');
+        } else {
+            clearError(emailInput, emailError);
+            showSuccess(emailInput);
+        }
+    });
+
+    emailInput.addEventListener('blur', () => {
+        const email = emailInput.value.trim();
+        if (email === '') {
+            showError(emailInput, emailError, 'Email address is required');
+        }
+    });
+
+    // Show password requirements when focused (only for new users)
+    passwordInput.addEventListener('focus', () => {
+        if (isNewUser.checked) {
+            passwordRequirements.classList.add('show');
+        }
+    });
+
+    // Real-time password validation
+    passwordInput.addEventListener('input', () => {
+        const password = passwordInput.value;
+        
+        if (isNewUser.checked) {
+            passwordRequirements.classList.add('show');
+            const isValid = validatePasswordRequirements(password);
+            
+            if (password === '') {
+                clearError(passwordInput, passwordError);
+            } else if (!isValid) {
+                passwordInput.classList.add('input-error');
+                passwordInput.classList.remove('input-success');
+            } else {
+                clearError(passwordInput, passwordError);
+                showSuccess(passwordInput);
+            }
+        } else {
+            passwordRequirements.classList.remove('show');
+            if (password === '') {
+                clearError(passwordInput, passwordError);
+            } else if (password.length < 6) {
+                showError(passwordInput, passwordError, 'Password must be at least 6 characters');
+            } else {
+                clearError(passwordInput, passwordError);
+                showSuccess(passwordInput);
+            }
+        }
+    });
+
+    // Toggle password requirements visibility based on checkbox
+    isNewUser.addEventListener('change', () => {
+        if (isNewUser.checked) {
+            passwordRequirements.classList.add('show');
+            if (passwordInput.value) {
+                validatePasswordRequirements(passwordInput.value);
+            }
+        } else {
+            passwordRequirements.classList.remove('show');
+        }
+        // Re-validate password on checkbox change
+        const password = passwordInput.value;
+        if (password !== '') {
+            passwordInput.dispatchEvent(new Event('input'));
+        }
+    });
+
+    // Form submission
     form.addEventListener("submit", event => {
         event.preventDefault();
 
         const email = emailInput.value.trim();
-        const password = passwordInput.value.trim();
+        const password = passwordInput.value;
+        let hasErrors = false;
 
-        // Custom validation with styled messages
+        // Validate email
         if (!email) {
-            customAlert("Please enter your email address.");
-            return;
+            showError(emailInput, emailError, 'Email address is required');
+            hasErrors = true;
+        } else if (!emailRegex.test(email)) {
+            showError(emailInput, emailError, 'Please enter a valid email address');
+            hasErrors = true;
         }
 
-        if (!email.includes('@')) {
-            customAlert("Please enter a valid email address with an '@' symbol.");
-            return;
-        }
-
+        // Validate password
         if (!password) {
-            customAlert("Please enter a password.");
+            showError(passwordInput, passwordError, 'Password is required');
+            hasErrors = true;
+        } else if (isNewUser.checked) {
+            const isValidPassword = validatePasswordRequirements(password);
+            if (!isValidPassword) {
+                showError(passwordInput, passwordError, 'Password does not meet all requirements');
+                hasErrors = true;
+            }
+        } else if (password.length < 6) {
+            showError(passwordInput, passwordError, 'Password must be at least 6 characters');
+            hasErrors = true;
+        }
+
+        if (hasErrors) {
             return;
         }
 
-        if (password.length < 6) {
-            customAlert("Password must be at least 6 characters long.");
-            return;
-        }
-
-        // Rest of the existing success logic...
+        // Success - show toast and clear form
         if (isNewUser.checked) {
-            message.textContent = "Account created locally for MVP. In the full system this will be stored securely.";
+            showToast('Account created successfully! Welcome to Luminous Scents.');
         } else {
-            message.textContent = "Login successful in this demo. Real authentication will be added later.";
+            showToast('Welcome back! You have been logged in.');
         }
-        message.style.color = "#ffffff";
-        message.style.textShadow = "0 0 10px rgba(240, 194, 75, 0.6), 0 0 20px rgba(240, 194, 75, 0.3)";
-        message.style.opacity = "0";
-        message.classList.remove('scroll-reveal', 'revealed', 'show');
-        setTimeout(() => {
-            message.style.opacity = "1";
-            message.classList.add('show');
-        }, 10);
 
-        localStorage.setItem("luminousScentsUserEmail", email);
+        // Clear form
+        form.reset();
+        clearError(emailInput, emailError);
+        clearError(passwordInput, passwordError);
+        emailInput.classList.remove('input-success');
+        passwordInput.classList.remove('input-success');
+        passwordRequirements.classList.remove('show');
+
+        // Save user session
+        localStorage.setItem(USER_SESSION_KEY, email);
+        localStorage.setItem(USER_SESSION_DATE_KEY, new Date().toISOString());
+
+        // Create initial profile entry on signup (or ensure one exists on login)
+        if (!getUserProfile(email)) {
+            saveUserProfile(email, {
+                username: '',
+                email: email,
+                password: password,
+                profilePicture: ''
+            });
+        }
+        
+        // Switch to profile view
+        showProfileView(email);
     });
+}
+
+// Setup small admin login form on Account page
+function setupAdminAuth() {
+    const adminForm = document.getElementById('adminAuthForm');
+    if (!adminForm) return;
+    const adminEmailInput = document.getElementById('adminEmail');
+    const adminPasswordInput = document.getElementById('adminPassword');
+
+    // Demo credentials (client-side only). Change as needed.
+    const DEMO_ADMIN_EMAIL = 'admin@luminous.com';
+    const DEMO_ADMIN_PASSWORD = 'fragrance123';
+
+    adminForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = (adminEmailInput.value || '').trim();
+        const pwd = adminPasswordInput.value || '';
+
+        if (!email || !pwd) {
+            customAlert('Please enter admin credentials.');
+            return;
+        }
+
+        if (email === DEMO_ADMIN_EMAIL && pwd === DEMO_ADMIN_PASSWORD) {
+            setAdminSession(email);
+            updateHeaderAdminLink();
+            customAlert('Admin logged in successfully.');
+            setTimeout(() => { window.location.href = 'admin.html'; }, 1500);
+        } else {
+            customAlert('Invalid admin credentials.');
+        }
+    });
+}
+
+// Admin session helpers
+function isAdminLoggedIn() {
+    return !!localStorage.getItem(ADMIN_SESSION_KEY);
+}
+
+function setAdminSession(email) {
+    localStorage.setItem(ADMIN_SESSION_KEY, email);
+    localStorage.setItem(ADMIN_SESSION_DATE_KEY, new Date().toISOString());
+}
+
+function clearAdminSession() {
+    localStorage.removeItem(ADMIN_SESSION_KEY);
+    localStorage.removeItem(ADMIN_SESSION_DATE_KEY);
+}
+
+function getAdminEmail() {
+    return localStorage.getItem(ADMIN_SESSION_KEY);
+}
+
+function updateHeaderAdminLink() {
+    const nav = document.querySelector('.navbar');
+    if (!nav) return;
+    const existing = nav.querySelector('a.admin-link');
+    // If admin logged in, ensure admin link and logout control exist
+    if (isAdminLoggedIn()) {
+        if (!existing) {
+            const a = document.createElement('a');
+            a.href = 'admin.html';
+            a.className = 'admin-link';
+            a.textContent = 'Admin';
+            const themeBtn = nav.querySelector('.theme-toggle');
+            if (themeBtn) nav.insertBefore(a, themeBtn);
+            else nav.appendChild(a);
+        }
+
+        // Remove any stale nav logout button (logout is handled on the account page)
+        const logoutBtn = nav.querySelector('button.admin-logout');
+        if (logoutBtn) logoutBtn.remove();
+    } else {
+        // Remove admin link and logout button when not logged in
+        if (existing) existing.remove();
+        const logoutBtn = nav.querySelector('button.admin-logout');
+        if (logoutBtn) logoutBtn.remove();
+    }
+
+    // Ensure active class is set when viewing admin page
+    const onAdminPage = document.body && document.body.getAttribute && document.body.getAttribute('data-page') === 'admin';
+    const adminAnchor = nav.querySelector('a.admin-link');
+    if (adminAnchor) {
+        if (onAdminPage) adminAnchor.classList.add('active');
+        else adminAnchor.classList.remove('active');
+    }
+}
+
+// Check if user is logged in
+function isUserLoggedIn() {
+    return !!localStorage.getItem(USER_SESSION_KEY);
+}
+
+function getLoggedInUser() {
+    return localStorage.getItem(USER_SESSION_KEY);
+}
+
+function logout() {
+    localStorage.removeItem(USER_SESSION_KEY);
+    localStorage.removeItem(USER_SESSION_DATE_KEY);
+    showLoginView();
+    customAlert("You have been logged out successfully.");
+}
+
+function showLoginView() {
+    const loginView = document.getElementById("loginView");
+    const profileView = document.getElementById("profileView");
+    if (loginView && profileView) {
+        loginView.style.display = "block";
+        profileView.style.display = "none";
+    }
+}
+
+function showProfileView(userEmail) {
+    const loginView = document.getElementById("loginView");
+    const profileView = document.getElementById("profileView");
+    if (loginView && profileView) {
+        loginView.style.display = "none";
+        profileView.style.display = "block";
+        renderProfilePage(userEmail);
+    }
+}
+
+// Show admin profile on the Account page
+function showAdminProfileView() {
+    const loginView = document.getElementById("loginView");
+    const profileView = document.getElementById("profileView");
+    if (loginView && profileView) {
+        loginView.style.display = "none";
+        profileView.style.display = "block";
+        // populate profile fields for admin
+        const profileEmail = document.getElementById("profileEmail");
+        const profileMemberSince = document.getElementById("profileMemberSince");
+        const adminEmail = getAdminEmail();
+        if (profileEmail) profileEmail.textContent = adminEmail || 'Admin';
+        if (profileMemberSince) {
+            const sessionDate = localStorage.getItem(ADMIN_SESSION_DATE_KEY);
+            if (sessionDate) {
+                const date = new Date(sessionDate);
+                profileMemberSince.textContent = date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+            } else {
+                profileMemberSince.textContent = 'Recently';
+            }
+        }
+
+        // adjust logout button to sign out admin
+        const logoutBtn = document.getElementById("logoutBtn");
+        if (logoutBtn) {
+            const newLogoutBtn = logoutBtn.cloneNode(true);
+            logoutBtn.parentNode.replaceChild(newLogoutBtn, logoutBtn);
+            newLogoutBtn.addEventListener('click', () => {
+                clearAdminSession();
+                updateHeaderAdminLink();
+                showLoginView();
+                customAlert('Admin signed out successfully.');
+            });
+        }
+
+        // Hide edit profile button and avatar for admin
+        const editProfileBtn = document.getElementById("editProfileBtn");
+        if (editProfileBtn) editProfileBtn.style.display = 'none';
+        const avatarWrapper = document.querySelector('.profile-avatar-wrapper');
+        if (avatarWrapper) avatarWrapper.style.display = 'none';
+        const usernameEl = document.getElementById("profileUsername");
+        if (usernameEl) usernameEl.style.display = 'none';
+
+        const ordersSection = document.querySelector('.orders-section');
+        const messagesSection = document.querySelector('.messages-section');
+        const wishlistSection = document.querySelector('.wishlist-section');
+        if (ordersSection) ordersSection.style.display = 'none';
+        if (messagesSection) messagesSection.style.display = 'none';
+        if (wishlistSection) wishlistSection.style.display = 'none';
+    }
+}
+
+function renderProfilePage(userEmail) {
+    const profile = getUserProfile(userEmail) || {};
+
+    // Update avatar
+    const avatarImg = document.getElementById("profileAvatar");
+    const avatarPlaceholder = document.getElementById("profileAvatarPlaceholder");
+    if (avatarImg && avatarPlaceholder) {
+        if (profile.profilePicture) {
+            avatarImg.src = profile.profilePicture;
+            avatarImg.style.display = 'block';
+            avatarPlaceholder.style.display = 'none';
+        } else {
+            avatarImg.src = '';
+            avatarImg.style.display = 'none';
+            avatarPlaceholder.style.display = 'block';
+        }
+    }
+
+    // Update username
+    const usernameEl = document.getElementById("profileUsername");
+    if (usernameEl) {
+        if (profile.username) {
+            usernameEl.textContent = profile.username;
+            usernameEl.style.display = 'block';
+        } else {
+            usernameEl.style.display = 'none';
+        }
+    }
+
+    // Update profile info
+    const profileEmail = document.getElementById("profileEmail");
+    const profileMemberSince = document.getElementById("profileMemberSince");
+    const ordersContainer = document.getElementById("ordersContainer");
+    
+    if (profileEmail) {
+        profileEmail.textContent = userEmail;
+    }
+    
+    if (profileMemberSince) {
+        const sessionDate = localStorage.getItem(USER_SESSION_DATE_KEY);
+        if (sessionDate) {
+            const date = new Date(sessionDate);
+            profileMemberSince.textContent = date.toLocaleDateString('en-GB', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        } else {
+            profileMemberSince.textContent = "Recently";
+        }
+    }
+    
+    // Render orders
+    if (ordersContainer) {
+        renderOrders(userEmail, ordersContainer);
+    }
+    
+    // Render messages
+    const messagesContainer = document.getElementById("messagesContainer");
+    if (messagesContainer) {
+        renderMessages(userEmail, messagesContainer);
+    }
+    
+    // Render wishlist
+    const wishlistContainer = document.getElementById("wishlistContainer");
+    if (wishlistContainer) {
+        renderWishlist(userEmail, wishlistContainer);
+    }
+    
+    // Setup logout button (remove old listener first to prevent duplicates)
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+        const newLogoutBtn = logoutBtn.cloneNode(true);
+        logoutBtn.parentNode.replaceChild(newLogoutBtn, logoutBtn);
+        newLogoutBtn.addEventListener("click", logout);
+    }
+
+    // Setup edit profile button (user accounts only, not admin)
+    const editProfileBtn = document.getElementById("editProfileBtn");
+    if (editProfileBtn && !isAdminLoggedIn()) {
+        const newBtn = editProfileBtn.cloneNode(true);
+        editProfileBtn.parentNode.replaceChild(newBtn, editProfileBtn);
+        newBtn.addEventListener("click", () => openEditProfileModal(userEmail));
+    } else if (editProfileBtn && isAdminLoggedIn()) {
+        editProfileBtn.style.display = 'none';
+    }
+}
+
+function openEditProfileModal(userEmail) {
+    const modal = document.getElementById("editProfileModal");
+    if (!modal) return;
+    modal.classList.remove("hidden");
+
+    const profile = getUserProfile(userEmail) || {};
+    const usernameInput = document.getElementById("editProfileUsername");
+    const emailInput = document.getElementById("editProfileEmail");
+    const passwordInput = document.getElementById("editProfilePassword");
+    const confirmInput = document.getElementById("editProfilePasswordConfirm");
+    const avatarPreview = document.getElementById("editProfileAvatarPreview");
+    const avatarPlaceholder = document.getElementById("editProfileAvatarPlaceholder");
+    const fileInput = document.getElementById("editProfilePicture");
+    const fileNameSpan = document.getElementById("editProfileFileName");
+
+    if (usernameInput) usernameInput.value = profile.username || '';
+    if (emailInput) emailInput.value = userEmail;
+    if (passwordInput) passwordInput.value = '';
+    if (confirmInput) confirmInput.value = '';
+    if (fileInput) fileInput.value = '';
+    if (fileNameSpan) fileNameSpan.textContent = 'No file chosen';
+
+    // Clear errors
+    ['editEmailError', 'editPasswordError', 'editPasswordConfirmError'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) { el.textContent = ''; el.classList.remove('show'); }
+    });
+    const editPwReqs = document.getElementById('editPasswordRequirements');
+    if (editPwReqs) editPwReqs.classList.remove('show');
+    [emailInput, passwordInput, confirmInput].forEach(inp => {
+        if (inp) { inp.classList.remove('input-error', 'input-success'); }
+    });
+
+    if (profile.profilePicture) {
+        avatarPreview.src = profile.profilePicture;
+        avatarPreview.style.display = 'block';
+        if (avatarPlaceholder) avatarPlaceholder.style.display = 'none';
+    } else {
+        avatarPreview.src = '';
+        avatarPreview.style.display = 'none';
+        if (avatarPlaceholder) avatarPlaceholder.style.display = 'block';
+    }
+
+    modal.dataset.currentEmail = userEmail;
+}
+
+function setupEditProfileModal() {
+    const modal = document.getElementById("editProfileModal");
+    if (!modal) return;
+
+    const closeBtn = document.getElementById("closeEditProfileModal");
+    const cancelBtn = document.getElementById("cancelEditProfile");
+    const form = document.getElementById("editProfileForm");
+    const fileInput = document.getElementById("editProfilePicture");
+    const fileNameSpan = document.getElementById("editProfileFileName");
+    const avatarPreview = document.getElementById("editProfileAvatarPreview");
+    const avatarPlaceholder = document.getElementById("editProfileAvatarPlaceholder");
+    const removeBtn = document.getElementById("removeProfilePicture");
+    const passwordInput = document.getElementById("editProfilePassword");
+    const confirmInput = document.getElementById("editProfilePasswordConfirm");
+    const emailInput = document.getElementById("editProfileEmail");
+    const emailError = document.getElementById("editEmailError");
+    const passwordError = document.getElementById("editPasswordError");
+    const confirmError = document.getElementById("editPasswordConfirmError");
+    const pwReqs = document.getElementById("editPasswordRequirements");
+    const reqLength = document.getElementById("editReqLength");
+    const reqUpper = document.getElementById("editReqUpper");
+    const reqLower = document.getElementById("editReqLower");
+    const reqNumber = document.getElementById("editReqNumber");
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let pendingPictureData = null;
+    let removePicture = false;
+
+    function closeModal() {
+        modal.classList.add("hidden");
+        pendingPictureData = null;
+        removePicture = false;
+    }
+
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (cancelBtn) cancelBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+
+    // File input handling
+    if (fileInput) {
+        fileInput.addEventListener("change", () => {
+            const file = fileInput.files[0];
+            if (!file) return;
+            if (file.size > 2 * 1024 * 1024) {
+                customAlert("Image must be under 2MB.");
+                fileInput.value = '';
+                return;
+            }
+            fileNameSpan.textContent = file.name;
+            removePicture = false;
+            const reader = new FileReader();
+            reader.onload = e => {
+                pendingPictureData = e.target.result;
+                avatarPreview.src = pendingPictureData;
+                avatarPreview.style.display = 'block';
+                if (avatarPlaceholder) avatarPlaceholder.style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    if (removeBtn) {
+        removeBtn.addEventListener("click", () => {
+            pendingPictureData = null;
+            removePicture = true;
+            avatarPreview.src = '';
+            avatarPreview.style.display = 'none';
+            if (avatarPlaceholder) avatarPlaceholder.style.display = 'block';
+            if (fileInput) fileInput.value = '';
+            if (fileNameSpan) fileNameSpan.textContent = 'No file chosen';
+        });
+    }
+
+    // Real-time password validation
+    function validatePwReqs(password) {
+        const hasLen = password.length >= 8;
+        const hasUp = /[A-Z]/.test(password);
+        const hasLo = /[a-z]/.test(password);
+        const hasNum = /[0-9]/.test(password);
+        if (reqLength) { reqLength.textContent = (hasLen ? '\u2713' : '\u2717') + ' At least 8 characters'; reqLength.classList.toggle('valid', hasLen); }
+        if (reqUpper) { reqUpper.textContent = (hasUp ? '\u2713' : '\u2717') + ' One uppercase letter'; reqUpper.classList.toggle('valid', hasUp); }
+        if (reqLower) { reqLower.textContent = (hasLo ? '\u2713' : '\u2717') + ' One lowercase letter'; reqLower.classList.toggle('valid', hasLo); }
+        if (reqNumber) { reqNumber.textContent = (hasNum ? '\u2713' : '\u2717') + ' One number'; reqNumber.classList.toggle('valid', hasNum); }
+        return hasLen && hasUp && hasLo && hasNum;
+    }
+
+    if (passwordInput) {
+        passwordInput.addEventListener("focus", () => { if (pwReqs) pwReqs.classList.add('show'); });
+        passwordInput.addEventListener("input", () => {
+            const pw = passwordInput.value;
+            if (pw === '') {
+                if (pwReqs) pwReqs.classList.remove('show');
+                passwordInput.classList.remove('input-error', 'input-success');
+                if (passwordError) { passwordError.textContent = ''; passwordError.classList.remove('show'); }
+                return;
+            }
+            if (pwReqs) pwReqs.classList.add('show');
+            const valid = validatePwReqs(pw);
+            passwordInput.classList.toggle('input-error', !valid);
+            passwordInput.classList.toggle('input-success', valid);
+        });
+    }
+
+    if (emailInput) {
+        emailInput.addEventListener("input", () => {
+            const val = emailInput.value.trim();
+            if (val === '') {
+                emailInput.classList.remove('input-error', 'input-success');
+                if (emailError) { emailError.textContent = ''; emailError.classList.remove('show'); }
+            } else if (!emailRegex.test(val)) {
+                emailInput.classList.add('input-error');
+                emailInput.classList.remove('input-success');
+                if (emailError) { emailError.textContent = 'Please enter a valid email address'; emailError.classList.add('show'); }
+            } else {
+                emailInput.classList.remove('input-error');
+                emailInput.classList.add('input-success');
+                if (emailError) { emailError.textContent = ''; emailError.classList.remove('show'); }
+            }
+        });
+    }
+
+    // Form submission
+    if (form) {
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            const currentEmail = modal.dataset.currentEmail;
+            const newEmail = emailInput ? emailInput.value.trim() : currentEmail;
+            const newUsername = document.getElementById("editProfileUsername") ? document.getElementById("editProfileUsername").value.trim() : '';
+            const newPassword = passwordInput ? passwordInput.value : '';
+            const confirmPassword = confirmInput ? confirmInput.value : '';
+            let hasErrors = false;
+
+            // Validate email
+            if (!newEmail) {
+                if (emailError) { emailError.textContent = 'Email is required'; emailError.classList.add('show'); }
+                if (emailInput) emailInput.classList.add('input-error');
+                hasErrors = true;
+            } else if (!emailRegex.test(newEmail)) {
+                if (emailError) { emailError.textContent = 'Please enter a valid email address'; emailError.classList.add('show'); }
+                if (emailInput) emailInput.classList.add('input-error');
+                hasErrors = true;
+            }
+
+            // Validate password if provided
+            if (newPassword) {
+                const validPw = validatePwReqs(newPassword);
+                if (!validPw) {
+                    if (passwordError) { passwordError.textContent = 'Password does not meet all requirements'; passwordError.classList.add('show'); }
+                    if (passwordInput) passwordInput.classList.add('input-error');
+                    hasErrors = true;
+                }
+                if (newPassword !== confirmPassword) {
+                    if (confirmError) { confirmError.textContent = 'Passwords do not match'; confirmError.classList.add('show'); }
+                    if (confirmInput) confirmInput.classList.add('input-error');
+                    hasErrors = true;
+                }
+            }
+
+            if (hasErrors) return;
+
+            // Build updated profile
+            const existingProfile = getUserProfile(currentEmail) || {};
+            const updatedProfile = {
+                username: newUsername,
+                email: newEmail,
+                password: newPassword || existingProfile.password || '',
+                profilePicture: removePicture ? '' : (pendingPictureData || existingProfile.profilePicture || '')
+            };
+
+            // Handle email change
+            if (newEmail !== currentEmail) {
+                // Check if new email is already taken by another user
+                const existingOther = getUserProfile(newEmail);
+                if (existingOther) {
+                    if (emailError) { emailError.textContent = 'This email is already associated with another account'; emailError.classList.add('show'); }
+                    if (emailInput) emailInput.classList.add('input-error');
+                    return;
+                }
+                migrateUserData(currentEmail, newEmail);
+                saveUserProfile(newEmail, updatedProfile);
+            } else {
+                saveUserProfile(currentEmail, updatedProfile);
+            }
+
+            closeModal();
+            showProfileView(newEmail);
+            customAlert('Profile updated successfully!');
+        });
+    }
+}
+
+function renderOrders(userEmail, container) {
+    if (!container) return;
+    
+    const orders = loadUserOrders(userEmail);
+    container.innerHTML = "";
+    
+    if (orders.length === 0) {
+        container.innerHTML = `
+            <div class="empty-orders">
+                <p>You haven't placed any orders yet.</p>
+                <a href="products.html" class="btn-primary">Browse Fragrances</a>
+            </div>
+        `;
+        return;
+    }
+    
+    orders.forEach(order => {
+        const orderCard = document.createElement("div");
+        orderCard.className = "order-card";
+        
+        const orderDate = new Date(order.date);
+        const formattedDate = orderDate.toLocaleDateString('en-GB', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        
+        const statusClass = order.status === 'delivered' ? 'status-delivered' : 
+                           order.status === 'shipped' ? 'status-shipped' : 'status-processing';
+        
+        let itemsHtml = '';
+        order.items.forEach(item => {
+            itemsHtml += `
+                <div class="order-item-row">
+                    <span class="order-item-name">${item.name}</span>
+                    <span class="order-item-qty">Qty: ${item.quantity}</span>
+                    <span class="order-item-price">£${(item.price * item.quantity).toFixed(2)}</span>
+                </div>
+            `;
+        });
+        
+        orderCard.innerHTML = `
+            <div class="order-header">
+                <div class="order-id-date">
+                    <span class="order-id">${order.id}</span>
+                    <span class="order-date">${formattedDate}</span>
+                </div>
+                <span class="order-status ${statusClass}">${order.status.charAt(0).toUpperCase() + order.status.slice(1)}</span>
+            </div>
+            <div class="order-items">
+                ${itemsHtml}
+            </div>
+            <div class="order-footer">
+                <span class="order-total-label">Total:</span>
+                <span class="order-total-amount">£${order.total.toFixed(2)}</span>
+            </div>
+        `;
+        
+        container.appendChild(orderCard);
+        applyScrollReveal(orderCard);
+    });
+}
+
+function renderMessages(userEmail, container) {
+    if (!container) return;
+    
+    const messages = loadUserMessages(userEmail);
+    container.innerHTML = "";
+    
+    if (messages.length === 0) {
+        container.innerHTML = `
+            <div class="empty-orders">
+                <p>You haven't sent any messages yet.</p>
+                <a href="contact.html" class="btn-primary">Contact Us</a>
+            </div>
+        `;
+        return;
+    }
+    
+    messages.forEach(msg => {
+        const messageCard = document.createElement("div");
+        messageCard.className = "order-card";
+        
+        const messageDate = new Date(msg.date);
+        const formattedDate = messageDate.toLocaleDateString('en-GB', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        
+        messageCard.innerHTML = `
+            <div class="order-header">
+                <div class="order-id-date">
+                    <span class="order-id">${msg.id}</span>
+                    <span class="order-date">${formattedDate}</span>
+                </div>
+            </div>
+            <div class="message-content">
+                <div class="message-field">
+                    <span class="message-label">Name:</span>
+                    <span class="message-value">${escapeHtml(msg.name)}</span>
+                </div>
+                <div class="message-field">
+                    <span class="message-label">Email:</span>
+                    <span class="message-value">${escapeHtml(msg.email)}</span>
+                </div>
+                <div class="message-field message-text-field">
+                    <span class="message-label">Message:</span>
+                    <p class="message-text">${escapeHtml(msg.message)}</p>
+                </div>
+            </div>
+        `;
+        
+        container.appendChild(messageCard);
+        applyScrollReveal(messageCard);
+    });
+}
+
+function renderWishlist(userEmail, container) {
+    if (!container) return;
+    
+    const wishlist = loadWishlist(userEmail);
+    container.innerHTML = "";
+    
+    if (wishlist.length === 0) {
+        container.innerHTML = `
+            <div class="empty-orders">
+                <p>Your wishlist is empty.</p>
+                <a href="products.html" class="btn-primary">Browse Fragrances</a>
+            </div>
+        `;
+        return;
+    }
+    
+    wishlist.forEach(productId => {
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
+        
+        const wishlistCard = document.createElement("div");
+        wishlistCard.className = "wishlist-card";
+        
+        wishlistCard.innerHTML = `
+            <div class="wishlist-item-image">
+                <img src="${getProductImageSrc(product.image)}" alt="${product.name}" class="wishlist-image">
+            </div>
+            <div class="wishlist-item-details">
+                <h4 class="wishlist-item-name">${product.name}</h4>
+                <p class="wishlist-item-brand">${product.brand}</p>
+                <p class="wishlist-item-notes"><strong>Notes:</strong> ${product.notes}</p>
+                <p class="wishlist-item-description">${product.description}</p>
+                <div class="wishlist-item-footer">
+                    <span class="wishlist-item-price">£${product.price.toFixed(2)}</span>
+                    <div class="wishlist-item-actions">
+                        <button class="btn-primary wishlist-add-basket" data-product-id="${product.id}">
+                            Add to Basket
+                        </button>
+                        <button class="btn-secondary wishlist-remove" data-product-id="${product.id}">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        container.appendChild(wishlistCard);
+        applyScrollReveal(wishlistCard);
+    });
+    
+    // Add event listeners for wishlist actions
+    container.querySelectorAll('.wishlist-add-basket').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const productId = Number(e.target.getAttribute('data-product-id'));
+            addToBasket(productId);
+        });
+    });
+    
+    container.querySelectorAll('.wishlist-remove').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const productId = Number(e.target.getAttribute('data-product-id'));
+            removeFromWishlist(productId, userEmail);
+            renderWishlist(userEmail, container);
+            customAlert("Removed from wishlist");
+        });
+    });
+}
+
+// Contact form validation
+
+function setupContactForm() {
+    const form = document.getElementById("contactForm");
+    const nameInput = document.getElementById("contactName");
+    const emailInput = document.getElementById("contactEmail");
+    const messageInput = document.getElementById("contactMessage");
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("contactEmailError");
+    const messageError = document.getElementById("messageError");
+    const charCounter = document.getElementById("charCounter");
+
+    if (!form || !nameInput || !emailInput || !messageInput) {
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const nameRegex = /^[a-zA-Z\s'-]+$/;
+    const MAX_MESSAGE_LENGTH = 500;
+    const MIN_MESSAGE_LENGTH = 10;
+    const MIN_NAME_LENGTH = 2;
+
+    // Helper functions
+    function showError(input, errorElement, message) {
+        input.classList.add('input-error');
+        input.classList.remove('input-success');
+        errorElement.textContent = message;
+        errorElement.classList.add('show');
+    }
+
+    function clearError(input, errorElement) {
+        input.classList.remove('input-error');
+        errorElement.textContent = '';
+        errorElement.classList.remove('show');
+    }
+
+    function showSuccess(input) {
+        input.classList.remove('input-error');
+        input.classList.add('input-success');
+    }
+
+    // Update character counter
+    function updateCharCounter() {
+        const length = messageInput.value.length;
+        charCounter.textContent = `${length} / ${MAX_MESSAGE_LENGTH}`;
+        
+        if (length > MAX_MESSAGE_LENGTH * 0.9) {
+            charCounter.classList.add('warning');
+        } else {
+            charCounter.classList.remove('warning');
+        }
+        
+        if (length >= MAX_MESSAGE_LENGTH) {
+            charCounter.classList.add('limit');
+        } else {
+            charCounter.classList.remove('limit');
+        }
+    }
+
+    // Real-time name validation
+    nameInput.addEventListener('input', () => {
+        const name = nameInput.value.trim();
+        if (name === '') {
+            clearError(nameInput, nameError);
+        } else if (name.length < MIN_NAME_LENGTH) {
+            showError(nameInput, nameError, `Name must be at least ${MIN_NAME_LENGTH} characters`);
+        } else if (!nameRegex.test(name)) {
+            showError(nameInput, nameError, 'Name can only contain letters, spaces, hyphens and apostrophes');
+        } else {
+            clearError(nameInput, nameError);
+            showSuccess(nameInput);
+        }
+    });
+
+    nameInput.addEventListener('blur', () => {
+        const name = nameInput.value.trim();
+        if (name === '') {
+            showError(nameInput, nameError, 'Name is required');
+        }
+    });
+
+    // Real-time email validation
+    emailInput.addEventListener('input', () => {
+        const email = emailInput.value.trim();
+        if (email === '') {
+            clearError(emailInput, emailError);
+        } else if (!emailRegex.test(email)) {
+            showError(emailInput, emailError, 'Please enter a valid email address');
+        } else {
+            clearError(emailInput, emailError);
+            showSuccess(emailInput);
+        }
+    });
+
+    emailInput.addEventListener('blur', () => {
+        const email = emailInput.value.trim();
+        if (email === '') {
+            showError(emailInput, emailError, 'Email address is required');
+        }
+    });
+
+    // Real-time message validation with character counter
+    messageInput.addEventListener('input', () => {
+        updateCharCounter();
+        const message = messageInput.value.trim();
+        
+        if (message === '') {
+            clearError(messageInput, messageError);
+        } else if (message.length < MIN_MESSAGE_LENGTH) {
+            showError(messageInput, messageError, `Message must be at least ${MIN_MESSAGE_LENGTH} characters`);
+        } else if (messageInput.value.length > MAX_MESSAGE_LENGTH) {
+            showError(messageInput, messageError, `Message cannot exceed ${MAX_MESSAGE_LENGTH} characters`);
+        } else {
+            clearError(messageInput, messageError);
+            showSuccess(messageInput);
+        }
+    });
+
+    messageInput.addEventListener('blur', () => {
+        const message = messageInput.value.trim();
+        if (message === '') {
+            showError(messageInput, messageError, 'Message is required');
+        }
+    });
+
+    // Initialize character counter
+    updateCharCounter();
+
+    // Form submission
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+        let hasErrors = false;
+
+        // Validate name
+        if (!name) {
+            showError(nameInput, nameError, 'Name is required');
+            hasErrors = true;
+        } else if (name.length < MIN_NAME_LENGTH) {
+            showError(nameInput, nameError, `Name must be at least ${MIN_NAME_LENGTH} characters`);
+            hasErrors = true;
+        } else if (!nameRegex.test(name)) {
+            showError(nameInput, nameError, 'Name can only contain letters, spaces, hyphens and apostrophes');
+            hasErrors = true;
+        }
+
+        // Validate email
+        if (!email) {
+            showError(emailInput, emailError, 'Email address is required');
+            hasErrors = true;
+        } else if (!emailRegex.test(email)) {
+            showError(emailInput, emailError, 'Please enter a valid email address');
+            hasErrors = true;
+        }
+
+        // Validate message
+        if (!message) {
+            showError(messageInput, messageError, 'Message is required');
+            hasErrors = true;
+        } else if (message.length < MIN_MESSAGE_LENGTH) {
+            showError(messageInput, messageError, `Message must be at least ${MIN_MESSAGE_LENGTH} characters`);
+            hasErrors = true;
+        } else if (messageInput.value.length > MAX_MESSAGE_LENGTH) {
+            showError(messageInput, messageError, `Message cannot exceed ${MAX_MESSAGE_LENGTH} characters`);
+            hasErrors = true;
+        }
+
+        if (hasErrors) {
+            return;
+        }
+
+        // Save message if user is logged in
+        const loggedInUser = getLoggedInUser();
+        if (loggedInUser) {
+            const messageObj = createMessage(name, email, message);
+            saveMessage(messageObj, loggedInUser);
+        }
+
+        // Success - show confirmation and clear form
+        customAlert("Message sent! We will get back to you soon.");
+        
+        // Clear form
+        form.reset();
+        clearError(nameInput, nameError);
+        clearError(emailInput, emailError);
+        clearError(messageInput, messageError);
+        nameInput.classList.remove('input-success');
+        emailInput.classList.remove('input-success');
+        messageInput.classList.remove('input-success');
+        updateCharCounter();
+    });
+}
+
+// Checkout page functions
+
+function renderCheckoutSummary() {
+    // Render to both step 1 and step 2 order summary containers
+    const containers = [
+        document.getElementById("orderSummary"),
+        document.getElementById("orderSummary2")
+    ].filter(c => c !== null);
+    
+    if (containers.length === 0) return;
+
+    const basket = loadBasket();
+
+    containers.forEach(container => {
+        container.innerHTML = "";
+
+        if (basket.length === 0) {
+            container.innerHTML = `
+                <div class="empty-order">
+                    <p>Your basket is empty.</p>
+                    <a href="products.html" class="btn-primary">Browse Fragrances</a>
+                </div>
+            `;
+            return;
+        }
+
+        let total = 0;
+
+        basket.forEach(item => {
+            const product = products.find(p => p.id === item.productId);
+            if (!product) return;
+            
+            const lineTotal = product.price * item.quantity;
+            total += lineTotal;
+
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "order-item";
+            itemDiv.innerHTML = `
+                <div class="order-item-details">
+                    <span class="order-item-name">${product.name}</span>
+                    <span class="order-item-qty">Qty: ${item.quantity} × £${product.price.toFixed(2)}</span>
+                </div>
+                <span class="order-item-price">£${lineTotal.toFixed(2)}</span>
+            `;
+            container.appendChild(itemDiv);
+        });
+
+        // Add divider and total
+        const divider = document.createElement("div");
+        divider.className = "order-divider";
+        container.appendChild(divider);
+
+        const totalDiv = document.createElement("div");
+        totalDiv.className = "order-total";
+        totalDiv.innerHTML = `
+            <span class="order-total-label">Total:</span>
+            <span class="order-total-price">£${total.toFixed(2)}</span>
+        `;
+        container.appendChild(totalDiv);
+    });
+}
+
+function setupCheckoutForm() {
+    const form = document.getElementById("checkoutForm");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const addressInput = document.getElementById("address");
+    const cardNameInput = document.getElementById("cardName");
+    const cardNumberInput = document.getElementById("cardNumber");
+    const expiryInput = document.getElementById("expiry");
+    const cvvInput = document.getElementById("cvv");
+
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const phoneError = document.getElementById("phoneError");
+    const addressError = document.getElementById("addressError");
+    const cardNameError = document.getElementById("cardNameError");
+    const cardNumberError = document.getElementById("cardNumberError");
+    const expiryError = document.getElementById("expiryError");
+    const cvvError = document.getElementById("cvvError");
+
+    const toast = document.getElementById("checkoutToast");
+    const toastMessage = document.getElementById("checkoutToastMessage");
+
+    // Step navigation elements
+    const step1 = document.getElementById("step1");
+    const step2 = document.getElementById("step2");
+    const toStep2Btn = document.getElementById("toStep2");
+    const toStep1Btn = document.getElementById("toStep1");
+    const stepIndicators = document.querySelectorAll(".step");
+    const stepLine = document.querySelector(".step-line");
+
+    if (!form) return;
+
+    // Validation patterns
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const nameRegex = /^[a-zA-Z\s'-]+$/;
+    const phoneRegex = /^[\d\s\+\-\(\)]{10,}$/;
+    const cardNumberRegex = /^[\d\s]{13,19}$/;
+    const expiryRegex = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
+    const cvvRegex = /^[0-9]{3}$/;
+
+    // Helper functions
+    function showError(input, errorElement, message) {
+        input.classList.add('input-error');
+        input.classList.remove('input-success');
+        errorElement.textContent = message;
+        errorElement.classList.add('show');
+    }
+
+    function clearError(input, errorElement) {
+        input.classList.remove('input-error');
+        errorElement.textContent = '';
+        errorElement.classList.remove('show');
+    }
+
+    function showSuccess(input) {
+        input.classList.remove('input-error');
+        input.classList.add('input-success');
+    }
+
+    function showToast(msg) {
+        toastMessage.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 5000);
+    }
+
+    // Format card number with spaces - ONLY allows digits
+    function formatCardNumber(value) {
+        // Strip ALL non-digit characters first
+        const digitsOnly = value.replace(/\D/g, '');
+        // Limit to 16 digits
+        const limited = digitsOnly.substring(0, 16);
+        // Add spaces every 4 digits
+        const parts = [];
+        for (let i = 0; i < limited.length; i += 4) {
+            parts.push(limited.substring(i, i + 4));
+        }
+        return parts.join(' ');
+    }
+
+    // Format expiry date - ONLY allows digits
+    function formatExpiry(value) {
+        const digitsOnly = value.replace(/\D/g, '');
+        if (digitsOnly.length >= 2) {
+            return digitsOnly.substring(0, 2) + '/' + digitsOnly.substring(2, 4);
+        }
+        return digitsOnly;
+    }
+
+    // Step navigation functions
+    function goToStep(stepNum) {
+        if (stepNum === 1) {
+            step1.classList.remove("hidden");
+            step2.classList.add("hidden");
+            stepIndicators[0].classList.add("active");
+            stepIndicators[0].classList.remove("completed");
+            stepIndicators[1].classList.remove("active");
+            if (stepLine) stepLine.classList.remove("active");
+        } else if (stepNum === 2) {
+            step1.classList.add("hidden");
+            step2.classList.remove("hidden");
+            stepIndicators[0].classList.remove("active");
+            stepIndicators[0].classList.add("completed");
+            stepIndicators[1].classList.add("active");
+            if (stepLine) stepLine.classList.add("active");
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    // Step 1 to Step 2 button
+    if (toStep2Btn) {
+        toStep2Btn.addEventListener("click", () => {
+            // Validate step 1 fields first
+            let hasErrors = false;
+
+            const name = nameInput.value.trim();
+            if (!name) {
+                showError(nameInput, nameError, 'Full name is required');
+                hasErrors = true;
+            } else if (name.length < 2 || !nameRegex.test(name)) {
+                showError(nameInput, nameError, 'Please enter a valid name');
+                hasErrors = true;
+            }
+
+            const email = emailInput.value.trim();
+            if (!email) {
+                showError(emailInput, emailError, 'Email address is required');
+                hasErrors = true;
+            } else if (!emailRegex.test(email)) {
+                showError(emailInput, emailError, 'Please enter a valid email address');
+                hasErrors = true;
+            }
+
+            const phone = phoneInput.value.trim();
+            if (!phone) {
+                showError(phoneInput, phoneError, 'Phone number is required');
+                hasErrors = true;
+            } else if (!phoneRegex.test(phone)) {
+                showError(phoneInput, phoneError, 'Please enter a valid phone number');
+                hasErrors = true;
+            }
+
+            const address = addressInput.value.trim();
+            if (!address) {
+                showError(addressInput, addressError, 'Shipping address is required');
+                hasErrors = true;
+            } else if (address.length < 10) {
+                showError(addressInput, addressError, 'Please enter a complete address');
+                hasErrors = true;
+            }
+
+            if (!hasErrors) {
+                goToStep(2);
+            }
+        });
+    }
+
+    // Step 2 back to Step 1 button
+    if (toStep1Btn) {
+        toStep1Btn.addEventListener("click", () => {
+            goToStep(1);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // Helper to check for at least two names
+    function hasTwoNames(name) {
+        const parts = name.trim().split(/\s+/).filter(part => part.length >= 2);
+        return parts.length >= 2;
+    }
+
+    // Real-time name validation
+    nameInput.addEventListener('input', () => {
+        const name = nameInput.value.trim();
+        if (name === '') {
+            clearError(nameInput, nameError);
+        } else if (!nameRegex.test(name)) {
+            showError(nameInput, nameError, 'Please enter a valid name');
+        } else if (!hasTwoNames(name)) {
+            showError(nameInput, nameError, 'Please enter first and last name');
+        } else {
+            clearError(nameInput, nameError);
+            showSuccess(nameInput);
+        }
+    });
+
+    nameInput.addEventListener('blur', () => {
+        const name = nameInput.value.trim();
+        if (name === '') {
+            showError(nameInput, nameError, 'Full name is required');
+        } else if (!hasTwoNames(name)) {
+            showError(nameInput, nameError, 'Please enter first and last name');
+        }
+    });
+
+    // Real-time email validation
+    emailInput.addEventListener('input', () => {
+        const email = emailInput.value.trim();
+        if (email === '') {
+            clearError(emailInput, emailError);
+        } else if (!emailRegex.test(email)) {
+            showError(emailInput, emailError, 'Please enter a valid email address');
+        } else {
+            clearError(emailInput, emailError);
+            showSuccess(emailInput);
+        }
+    });
+
+    emailInput.addEventListener('blur', () => {
+        if (emailInput.value.trim() === '') {
+            showError(emailInput, emailError, 'Email address is required');
+        }
+    });
+
+    // Real-time phone validation
+    phoneInput.addEventListener('input', () => {
+        const phone = phoneInput.value.trim();
+        if (phone === '') {
+            clearError(phoneInput, phoneError);
+        } else if (!phoneRegex.test(phone)) {
+            showError(phoneInput, phoneError, 'Please enter a valid phone number');
+        } else {
+            clearError(phoneInput, phoneError);
+            showSuccess(phoneInput);
+        }
+    });
+
+    phoneInput.addEventListener('blur', () => {
+        if (phoneInput.value.trim() === '') {
+            showError(phoneInput, phoneError, 'Phone number is required');
+        }
+    });
+
+    // Real-time address validation
+    addressInput.addEventListener('input', () => {
+        const address = addressInput.value.trim();
+        if (address === '') {
+            clearError(addressInput, addressError);
+        } else if (address.length < 10) {
+            showError(addressInput, addressError, 'Please enter a complete address');
+        } else {
+            clearError(addressInput, addressError);
+            showSuccess(addressInput);
+        }
+    });
+
+    addressInput.addEventListener('blur', () => {
+        if (addressInput.value.trim() === '') {
+            showError(addressInput, addressError, 'Shipping address is required');
+        }
+    });
+
+    // Real-time card name validation
+    cardNameInput.addEventListener('input', () => {
+        cardNameInput.value = cardNameInput.value.toUpperCase();
+        const cardName = cardNameInput.value.trim();
+        if (cardName === '') {
+            clearError(cardNameInput, cardNameError);
+        } else if (!nameRegex.test(cardName)) {
+            showError(cardNameInput, cardNameError, 'Please enter a valid name');
+        } else if (!hasTwoNames(cardName)) {
+            showError(cardNameInput, cardNameError, 'Please enter first and last name');
+        } else {
+            clearError(cardNameInput, cardNameError);
+            showSuccess(cardNameInput);
+        }
+    });
+
+    cardNameInput.addEventListener('blur', () => {
+        const cardName = cardNameInput.value.trim();
+        if (cardName === '') {
+            showError(cardNameInput, cardNameError, 'Name on card is required');
+        } else if (!hasTwoNames(cardName)) {
+            showError(cardNameInput, cardNameError, 'Please enter first and last name');
+        }
+    });
+
+    // Real-time card number validation with formatting
+    cardNumberInput.addEventListener('input', (e) => {
+        const formatted = formatCardNumber(e.target.value);
+        e.target.value = formatted;
+        
+        const cardNum = formatted.replace(/\s/g, '');
+        if (cardNum === '') {
+            clearError(cardNumberInput, cardNumberError);
+        } else if (cardNum.length < 13) {
+            showError(cardNumberInput, cardNumberError, `Card number must be at least 13 digits (${cardNum.length}/13)`);
+        } else {
+            clearError(cardNumberInput, cardNumberError);
+            showSuccess(cardNumberInput);
+        }
+    });
+
+    // Block non-digit paste in card number
+    cardNumberInput.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+        const digitsOnly = pastedText.replace(/\D/g, '');
+        const formatted = formatCardNumber(digitsOnly);
+        cardNumberInput.value = formatted;
+        cardNumberInput.dispatchEvent(new Event('input'));
+    });
+
+    // Block non-digit keypress in card number
+    cardNumberInput.addEventListener('keypress', (e) => {
+        if (!/\d/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'Tab') {
+            e.preventDefault();
+        }
+    });
+
+    cardNumberInput.addEventListener('blur', () => {
+        const cardNum = cardNumberInput.value.replace(/\s/g, '');
+        if (cardNum === '') {
+            showError(cardNumberInput, cardNumberError, 'Card number is required');
+        } else if (cardNum.length < 13) {
+            showError(cardNumberInput, cardNumberError, `Card number must be at least 13 digits (${cardNum.length}/13)`);
+        }
+    });
+
+    // Real-time expiry validation with formatting
+    expiryInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        // Validate month part (01-12)
+        if (value.length >= 1) {
+            const firstDigit = parseInt(value[0], 10);
+            if (firstDigit > 1) {
+                value = '0' + value; // Auto-prefix with 0 for months 2-9
+            }
+        }
+        if (value.length >= 2) {
+            const month = parseInt(value.substring(0, 2), 10);
+            if (month > 12) {
+                value = '12' + value.substring(2);
+            } else if (month === 0) {
+                value = '01' + value.substring(2);
+            }
+            value = value.substring(0, 2) + '/' + value.substring(2, 4);
+        }
+        e.target.value = value;
+        
+        if (value === '') {
+            clearError(expiryInput, expiryError);
+        } else if (!expiryRegex.test(value)) {
+            showError(expiryInput, expiryError, 'Use format MM/YY');
+        } else {
+            // Check if card is expired
+            const [month, year] = value.split('/');
+            const expDate = new Date(2000 + parseInt(year), parseInt(month));
+            const now = new Date();
+            now.setDate(1); // First of current month for comparison
+            if (expDate < now) {
+                showError(expiryInput, expiryError, 'Card has expired');
+            } else {
+                clearError(expiryInput, expiryError);
+                showSuccess(expiryInput);
+            }
+        }
+    });
+
+    // Block non-digit paste in expiry
+    expiryInput.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+        const digitsOnly = pastedText.replace(/\D/g, '');
+        expiryInput.value = formatExpiry(digitsOnly);
+        expiryInput.dispatchEvent(new Event('input'));
+    });
+
+    // Block non-digit keypress in expiry
+    expiryInput.addEventListener('keypress', (e) => {
+        if (!/\d/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'Tab') {
+            e.preventDefault();
+        }
+    });
+
+    expiryInput.addEventListener('blur', () => {
+        if (expiryInput.value.trim() === '') {
+            showError(expiryInput, expiryError, 'Expiry date is required');
+        }
+    });
+
+    // Real-time CVV validation
+    cvvInput.addEventListener('input', (e) => {
+        // Only allow digits, max 3 characters
+        e.target.value = e.target.value.replace(/\D/g, '').substring(0, 3);
+        const cvv = e.target.value;
+        if (cvv === '') {
+            clearError(cvvInput, cvvError);
+        } else if (cvv.length < 3) {
+            showError(cvvInput, cvvError, 'CVV must be 3 digits');
+        } else {
+            clearError(cvvInput, cvvError);
+            showSuccess(cvvInput);
+        }
+    });
+
+    // Block non-digit paste in CVV
+    cvvInput.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+        const digitsOnly = pastedText.replace(/\D/g, '').substring(0, 3);
+        cvvInput.value = digitsOnly;
+        cvvInput.dispatchEvent(new Event('input'));
+    });
+
+    // Block non-digit keypress in CVV
+    cvvInput.addEventListener('keypress', (e) => {
+        if (!/\d/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'Tab') {
+            e.preventDefault();
+        }
+    });
+
+    cvvInput.addEventListener('blur', () => {
+        if (cvvInput.value.trim() === '') {
+            showError(cvvInput, cvvError, 'CVV is required');
+        }
+    });
+
+    // Form submission
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const basket = loadBasket();
+        if (basket.length === 0) {
+            customAlert("Your basket is empty. Please add items before checking out.");
+            return;
+        }
+
+        let hasErrors = false;
+
+        // Validate all fields
+        const name = nameInput.value.trim();
+        if (!name) {
+            showError(nameInput, nameError, 'Full name is required');
+            hasErrors = true;
+        } else if (!nameRegex.test(name)) {
+            showError(nameInput, nameError, 'Please enter a valid name');
+            hasErrors = true;
+        } else if (!hasTwoNames(name)) {
+            showError(nameInput, nameError, 'Please enter first and last name');
+            hasErrors = true;
+        }
+
+        const email = emailInput.value.trim();
+        if (!email) {
+            showError(emailInput, emailError, 'Email address is required');
+            hasErrors = true;
+        } else if (!emailRegex.test(email)) {
+            showError(emailInput, emailError, 'Please enter a valid email address');
+            hasErrors = true;
+        }
+
+        const phone = phoneInput.value.trim();
+        if (!phone) {
+            showError(phoneInput, phoneError, 'Phone number is required');
+            hasErrors = true;
+        } else if (!phoneRegex.test(phone)) {
+            showError(phoneInput, phoneError, 'Please enter a valid phone number');
+            hasErrors = true;
+        }
+
+        const address = addressInput.value.trim();
+        if (!address) {
+            showError(addressInput, addressError, 'Shipping address is required');
+            hasErrors = true;
+        } else if (address.length < 10) {
+            showError(addressInput, addressError, 'Please enter a complete address');
+            hasErrors = true;
+        }
+
+        const cardName = cardNameInput.value.trim();
+        if (!cardName) {
+            showError(cardNameInput, cardNameError, 'Name on card is required');
+            hasErrors = true;
+        } else if (!nameRegex.test(cardName)) {
+            showError(cardNameInput, cardNameError, 'Please enter a valid name');
+            hasErrors = true;
+        } else if (!hasTwoNames(cardName)) {
+            showError(cardNameInput, cardNameError, 'Please enter first and last name');
+            hasErrors = true;
+        }
+
+        const cardNum = cardNumberInput.value.replace(/\s/g, '');
+        if (!cardNum) {
+            showError(cardNumberInput, cardNumberError, 'Card number is required');
+            hasErrors = true;
+        } else if (cardNum.length < 13) {
+            showError(cardNumberInput, cardNumberError, `Card number must be at least 13 digits (${cardNum.length}/13)`);
+            hasErrors = true;
+        }
+
+        const expiry = expiryInput.value;
+        if (!expiry) {
+            showError(expiryInput, expiryError, 'Expiry date is required');
+            hasErrors = true;
+        } else if (!expiryRegex.test(expiry)) {
+            showError(expiryInput, expiryError, 'Use format MM/YY');
+            hasErrors = true;
+        } else {
+            const [month, year] = expiry.split('/');
+            const expDate = new Date(2000 + parseInt(year), parseInt(month) - 1);
+            if (expDate < new Date()) {
+                showError(expiryInput, expiryError, 'Card has expired');
+                hasErrors = true;
+            }
+        }
+
+        const cvv = cvvInput.value;
+        if (!cvv) {
+            showError(cvvInput, cvvError, 'CVV is required');
+            hasErrors = true;
+        } else if (!cvvRegex.test(cvv)) {
+            showError(cvvInput, cvvError, 'CVV must be 3 digits');
+            hasErrors = true;
+        }
+
+        if (hasErrors) {
+            return;
+        }
+
+        // Calculate total
+        let total = 0;
+        basket.forEach(item => {
+            const product = products.find(p => p.id === item.productId);
+            if (!product) return;
+            const lineTotal = product.price * item.quantity;
+            total += lineTotal;
+        });
+
+        // Create and save order
+        const order = createOrder(basket, total, email);
+        saveOrder(order, email);
+        
+        // Success - clear basket and show confirmation
+        localStorage.setItem(BASKET_STORAGE_KEY, JSON.stringify([]));
+        
+        showToast("Order placed successfully! Thank you for shopping with Luminous Scents.");
+        
+        // Clear form
+        form.reset();
+        [nameInput, emailInput, phoneInput, addressInput, cardNameInput, cardNumberInput, expiryInput, cvvInput].forEach(input => {
+            input.classList.remove('input-success', 'input-error');
+        });
+        [nameError, emailError, phoneError, addressError, cardNameError, cardNumberError, expiryError, cvvError].forEach(err => {
+            err.classList.remove('show');
+            err.textContent = '';
+        });
+
+        // Refresh order summary
+        renderCheckoutSummary();
+    });
+}
+
+// Order management functions
+function createOrder(basket, total, userEmail) {
+    const orderId = 'ORD-' + Date.now().toString(36).toUpperCase();
+    const statuses = ['processing', 'shipped', 'delivered'];
+    const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+    
+    const items = basket.map(item => {
+        const product = products.find(p => p.id === item.productId);
+        return {
+            id: product ? product.id : 0,
+            name: product ? product.name : 'Unknown Product',
+            price: product ? product.price : 0,
+            quantity: item.quantity
+        };
+    });
+    
+    return {
+        id: orderId,
+        date: new Date().toISOString(),
+        items: items,
+        total: total,
+        status: randomStatus
+    };
+}
+
+function saveOrder(order, userEmail) {
+    if (!userEmail) return;
+    const userOrdersKey = `luminousScentsOrders_${userEmail}`;
+    const orders = loadUserOrders(userEmail);
+    orders.unshift(order); // Add new order at the beginning
+    localStorage.setItem(userOrdersKey, JSON.stringify(orders));
+}
+
+function loadUserOrders(userEmail) {
+    if (!userEmail) return [];
+    const userOrdersKey = `luminousScentsOrders_${userEmail}`;
+    const stored = localStorage.getItem(userOrdersKey);
+    if (!stored) {
+        return [];
+    }
+    try {
+        return JSON.parse(stored);
+    } catch (e) {
+        console.error("Could not parse stored orders", e);
+        return [];
+    }
+}
+
+// Message management functions
+function createMessage(name, email, message) {
+    const messageId = 'MSG-' + Date.now().toString(36).toUpperCase();
+    
+    return {
+        id: messageId,
+        date: new Date().toISOString(),
+        name: name,
+        email: email,
+        message: message
+    };
+}
+
+function saveMessage(message, userEmail) {
+    if (!userEmail) return;
+    const userMessagesKey = `luminousScentsMessages_${userEmail}`;
+    const messages = loadUserMessages(userEmail);
+    messages.unshift(message); // Add new message at the beginning
+    localStorage.setItem(userMessagesKey, JSON.stringify(messages));
+}
+
+function loadUserMessages(userEmail) {
+    if (!userEmail) return [];
+    const userMessagesKey = `luminousScentsMessages_${userEmail}`;
+    const stored = localStorage.getItem(userMessagesKey);
+    if (!stored) {
+        return [];
+    }
+    try {
+        return JSON.parse(stored);
+    } catch (e) {
+        console.error("Could not parse stored messages", e);
+        return [];
+    }
+}
+
+// Wishlist management functions
+function loadWishlist(userEmail) {
+    if (!userEmail) return [];
+    const wishlistKey = `luminousScentsWishlist_${userEmail}`;
+    const stored = localStorage.getItem(wishlistKey);
+    if (!stored) {
+        return [];
+    }
+    try {
+        return JSON.parse(stored);
+    } catch (e) {
+        console.error("Could not parse stored wishlist", e);
+        return [];
+    }
+}
+
+function saveWishlist(wishlist, userEmail) {
+    if (!userEmail) return;
+    const wishlistKey = `luminousScentsWishlist_${userEmail}`;
+    localStorage.setItem(wishlistKey, JSON.stringify(wishlist));
+}
+
+function addToWishlist(productId, userEmail) {
+    if (!userEmail) {
+        customAlert("Please log in to add items to your wishlist.");
+        return;
+    }
+    const wishlist = loadWishlist(userEmail);
+    if (!wishlist.includes(productId)) {
+        wishlist.push(productId);
+        saveWishlist(wishlist, userEmail);
+        // Alert is shown by the calling function
+        return true;
+    } else {
+        customAlert("This item is already in your wishlist.");
+        return false;
+    }
+}
+
+function removeFromWishlist(productId, userEmail) {
+    if (!userEmail) return;
+    const wishlist = loadWishlist(userEmail);
+    const index = wishlist.indexOf(productId);
+    if (index > -1) {
+        wishlist.splice(index, 1);
+        saveWishlist(wishlist, userEmail);
+    }
+}
+
+function isInWishlist(productId, userEmail) {
+    if (!userEmail) return false;
+    const wishlist = loadWishlist(userEmail);
+    return wishlist.includes(productId);
 }
 
 // Starfield canvas effect
@@ -355,6 +3656,9 @@ function initStarfield() {
     function drawStars() {
         ctx.clearRect(0, 0, w, h);
 
+        // Check if we're in light mode
+        const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
+
         for (let s of stars) {
             const parallaxX = mouseX * (s.size / 2);
             const parallaxY = mouseY * (s.size / 2);
@@ -367,22 +3671,34 @@ function initStarfield() {
                 s.x + parallaxX, s.y + parallaxY, s.size * 4
             );
 
-            gradient.addColorStop(0, `rgba(255, 220, 130, ${s.alpha})`);
-            gradient.addColorStop(0.4, `rgba(245, 210, 120, ${s.alpha * 0.6})`);
-            gradient.addColorStop(1, `rgba(240, 194, 75, 0)`);
+            // Use darker gold/brown colors in light mode for better visibility
+            if (isLightMode) {
+                gradient.addColorStop(0, `rgba(180, 140, 80, ${s.alpha * 0.9})`);
+                gradient.addColorStop(0.4, `rgba(160, 120, 70, ${s.alpha * 0.7})`);
+                gradient.addColorStop(1, `rgba(140, 100, 60, 0)`);
+            } else {
+                gradient.addColorStop(0, `rgba(255, 220, 130, ${s.alpha})`);
+                gradient.addColorStop(0.4, `rgba(245, 210, 120, ${s.alpha * 0.6})`);
+                gradient.addColorStop(1, `rgba(240, 194, 75, 0)`);
+            }
 
             ctx.fillStyle = gradient;
             ctx.fill();
 
-            s.x += s.speed * 0.2;
+            s.x += s.speed * 0.8;
             if (s.x > w) s.x = 0;
         }
     }
 
     function twinkle() {
+        const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
+        // In light mode, use higher alpha range for better visibility
+        const minAlpha = isLightMode ? 0.4 : 0.15;
+        const maxAlpha = isLightMode ? 0.95 : 0.7;
+        
         for (let s of stars) {
             s.alpha += (Math.random() - 0.5) * 0.02;
-            s.alpha = Math.min(Math.max(s.alpha, 0.15), 0.7);
+            s.alpha = Math.min(Math.max(s.alpha, minAlpha), maxAlpha);
         }
     }
 
@@ -412,49 +3728,142 @@ function initStarfield() {
 // Page initialiser
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Restore persisted products + stock before page-specific rendering
+    loadProducts();
+    loadStock();
+    seedDummyReviews();
+
+    // Auto-resize textarea (vertical)
+    const textareas = document.querySelectorAll('textarea');
+    textareas.forEach(textarea => {
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        });
+    });
+
     const page = document.body.getAttribute("data-page");
 
     initStarfield();
     initMouseTrail();
+    initializeChatbot();
 
     // rest of the code...
-    if (page === "home") {
-        setupAuthForm();
+    if (page === "home" || page === "account") {
+        if (page === "account") {
+            setupEditProfileModal();
+            // Check if user is logged in
+            if (isUserLoggedIn()) {
+                const userEmail = getLoggedInUser();
+                showProfileView(userEmail);
+            } else if (isAdminLoggedIn()) {
+                // show admin profile when admin session present
+                showAdminProfileView();
+                updateHeaderAdminLink();
+            } else {
+                setupAuthForm();
+                // Also setup admin login panel on the account page
+                setupAdminAuth();
+            }
+        } else {
+            setupAuthForm();
+        }
     } else if (page === "products") {
+        const toastMessage = consumeNextPageToast();
+        if (toastMessage) showToast(toastMessage, 'success');
         renderProductsPage();
+        initEnhancedSearch();
     } else if (page === "basket") {
         renderBasketPage();
+    } else if (page === "contact") {
+        setupContactForm();
+    } else if (page === "checkout") {
+        renderCheckoutSummary();
+        setupCheckoutForm();
     }
 });
-// Scroll reveal animations
-const observerOptions = {
-    threshold: 0,
-    rootMargin: '0px'
+
+// Wait for all content (including images) to load before running initial UI updates.
+// This prevents layout flashes and incorrect calculations.
+window.addEventListener("load", () => {
+    if (document.body.getAttribute("data-page") === "products") {
+        document.querySelectorAll(".product-section-scrollable").forEach(section => {
+            const container = section.querySelector(".product-scroll-container");
+            
+            if (container) {
+                container.scrollLeft = 0;
+            }
+            
+            // Run calculations to determine layout
+            updateSectionUI(section);
+
+            // Force the browser to paint the layout before we make it visible
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    if (container) {
+                        container.scrollLeft = 0;
+                    }
+                    section.classList.add('loaded');
+                });
+            });
+        });
+    }
+});
+
+// Scroll reveal animations with hysteresis to prevent jitter at boundaries
+// Reveal observer: triggers when element enters viewport
+// Using requestAnimationFrame to batch DOM updates for better performance
+const revealObserver = new IntersectionObserver((entries) => {
+    requestAnimationFrame(() => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('revealed')) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    });
+}, { threshold: 0.05, rootMargin: '0px' });
+
+// Hide observer: triggers when element is fully outside viewport (with small buffer)
+const hideObserver = new IntersectionObserver((entries) => {
+    requestAnimationFrame(() => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting && entry.target.classList.contains('revealed')) {
+                entry.target.classList.remove('revealed');
+            }
+        });
+    });
+}, { threshold: 0, rootMargin: '20px 0px 20px 0px' });
+
+// Combined observer wrapper
+const observer = {
+    observe: function(element) {
+        revealObserver.observe(element);
+        hideObserver.observe(element);
+    }
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-        } else {
-            entry.target.classList.remove('revealed');
-        }
-    });
-}, observerOptions);
-
-// Prevent observer from catching dynamically added elements
-const originalObserve = observer.observe;
+// Prevent observer from catching alert elements
+const originalObserve = observer.observe.bind(observer);
 observer.observe = function(element) {
     if (element.classList.contains('custom-alert') || 
         element.classList.contains('custom-alert-overlay') ||
         element.closest('.custom-alert')) {
         return;
     }
-    originalObserve.call(this, element);
+    originalObserve(element);
 };
-document.querySelectorAll('.main-header, .site-footer, .hero-text, .hero-text h2, .hero-text p, .page-header, .page-header h2, .page-header p, .card, .card h3, .card p, .card .btn-primary, .feature-card, .feature-card h4, .feature-card p, .basket-section, .basket-item, .basket-summary, .basket-summary p, .basket-summary .btn-primary, .info-column, .info-column h3, .info-column p, .steps-list li, .step-number, .feature-section h3, .auth-section, .auth-form').forEach(el => {
+// Add scroll-reveal class to content elements (excluding header to keep it stable)
+document.querySelectorAll('.site-footer, .hero-text, .page-header, .card, .feature-section h3, .feature-card, .feature-card h4, .basket-section, .basket-item, .basket-summary, .basket-summary p, .basket-summary .btn-primary, .info-column, .steps-list li, .step-number, .auth-section, .auth-form').forEach(el => {
     el.classList.add('scroll-reveal');
-    observer.observe(el);
+});
+
+// Wait for browser to paint the initial state before observing
+requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+    });
 });
 
 
@@ -490,29 +3899,2007 @@ function initMouseTrail() {
     
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+    
         const now = Date.now();
-        
+    
         for (let i = points.length - 1; i >= 0; i--) {
             if (now - points[i].time > maxAge) {
                 points.splice(i, 1);
             }
         }
-        
-        points.forEach((point) => {
-            const age = now - point.time;
-            const life = 1 - (age / maxAge);
-            const alpha = life * 0.6;
-            const size = life * 3;
-            
-            ctx.beginPath();
-            ctx.arc(point.x, point.y, size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(240, 194, 75, ${alpha})`;
-            ctx.fill();
-        });
-        
+    
+        if (points.length > 1) {
+            for (let i = 1; i < points.length; i++) {
+                const point = points[i];
+                const prevPoint = points[i - 1];
+                const age = now - point.time;
+                const life = 1 - (age / maxAge);
+                const alpha = life * 0.6;
+                const size = life * 2;
+    
+                ctx.beginPath();
+                ctx.moveTo(prevPoint.x, prevPoint.y);
+                ctx.lineTo(point.x, point.y);
+                ctx.strokeStyle = `rgba(240, 194, 75, ${alpha})`;
+                ctx.lineWidth = size;
+                ctx.lineCap = 'round';
+                ctx.stroke();
+            }
+        }
+    
         requestAnimationFrame(animate);
     }
     
     animate();
 }
+
+// Chatbot Functionality (using FK's simpler approach)
+let chatbotOpen = false;
+let isTyping = false;
+
+// AI Chat responses (similar to FK implementation)
+const chatbotResponses = {
+    greetings: [
+        "Hello! I'm here to help you find your perfect fragrance. What kind of scent are you in the mood for today?",
+        "Welcome to Luminous Scents! I can help guide you through our collection. Are you looking for something fresh and citrusy or warm and mysterious?",
+        "Hi there! Ready to discover your signature scent? Tell me about your style and I'll recommend the perfect fragrance."
+    ],
+    citrus: [
+        "Citrus fragrances are perfect for a fresh, energizing start to your day! Our Citrus Dawn features bergamot, lemon, and neroli. It's bright, uplifting, and perfect for daytime wear. Would you like to add it to your basket?",
+        "Citrus scents are wonderfully refreshing! Citrus Dawn is one of our most popular daytime fragrances with its vibrant blend of bergamot, lemon, and neroli. It's perfect for spring and summer. Are you interested in trying it?",
+        "Citrus fragrances are like liquid sunshine! Citrus Dawn combines bergamot, lemon, and neroli for a bright, zesty experience that lasts all day. It's excellent for work or casual outings. Would you like to explore it further?"
+    ],
+    evening: [
+        "For evening wear, I'd recommend our Aurora Oud. It features rich oud, amber, and vanilla - perfect for creating an aura of mystery and elegance. It's our most sophisticated scent for special occasions.",
+        "Evening fragrances should be captivating! Aurora Oud offers warm, deep notes of oud, amber, and vanilla that unfold beautifully as the evening progresses. It's designed for those who want to make a lasting impression.",
+        "For nighttime elegance, Aurora Oud is unmatched. With its complex oud base, warm amber, and creamy vanilla, it's a fragrance that tells a story. Perfect for dinner dates, events, or when you want to feel extraordinary."
+    ],
+    popular: [
+        "Our most popular fragrances are Aurora Oud for evening wear, Citrus Dawn for everyday freshness, and Velvet Iris for soft, romantic occasions. Each has its own distinct personality!",
+        "The favorites among our customers are definitely Aurora Oud (sophisticated evenings), Citrus Dawn (bright days), and Velvet Iris (gentle elegance). They're all unique in their own way.",
+        "Our top three are Aurora Oud for luxury evenings, Citrus Dawn for energizing days, and Velvet Iris for intimate moments. Each is crafted to enhance different aspects of your personality."
+    ],
+    general: [
+        "I'd be happy to help you choose a fragrance! Are you looking for something fresh, warm, floral, or perhaps woody? Each of our scents has its own character and is perfect for different occasions.",
+        "Finding the right fragrance is like finding the perfect piece of art - it should speak to your soul. Our collection includes Aurora Oud for mysterious evenings, Citrus Dawn for bright days, and Velvet Iris for romantic moments.",
+        "Every fragrance tells a story, and I want to help you find yours! Whether you prefer the bold complexity of Aurora Oud, the bright freshness of Citrus Dawn, or the soft elegance of Velvet Iris, there's a perfect match for you.",
+        "I can help you discover a fragrance that matches your personality and lifestyle. What mood are you in today? Fresh and energetic, warm and mysterious, or soft and romantic?"
+    ],
+    product_info: {
+        "aurora oud": "Aurora Oud is our signature evening fragrance featuring rich oud, amber, and vanilla. It costs £89.99 and is perfect for sophisticated occasions. The scent unfolds in layers, revealing its complexity throughout the evening.",
+        "citrus dawn": "Citrus Dawn is our fresh daytime fragrance with bergamot, lemon, and neroli. It's priced at £59.99 and perfect for energizing your day. The bright, citrusy notes are uplifting and long-lasting.",
+        "velvet iris": "Velvet Iris offers soft floral elegance with iris, violet, and sandalwood. At £74.50, it's perfect for romantic occasions or when you want to feel gentle and sophisticated. The creamy sandalwood base provides wonderful longevity."
+    }
+};
+
+function initializeChatbot() {
+    const chatBubble = document.getElementById('chatBubble');
+    const chatWindow = document.getElementById('chatWindow');
+    const minimizeBtn = document.getElementById('minimizeChat');
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendMessage');
+
+    if (!chatBubble || !chatWindow || !chatInput || !sendBtn) {
+        return;
+    }
+
+    // Toggle chatbot
+    chatBubble.addEventListener('click', () => {
+        chatbotOpen = !chatbotOpen;
+        chatWindow.classList.toggle('active', chatbotOpen);
+        
+        if (chatbotOpen) {
+            chatInput.focus();
+            setTimeout(() => scrollToBottom(), 100);
+            // Hide indicator when chat opens
+            const indicator = chatBubble.querySelector('.chat-indicator');
+            if (indicator) indicator.style.display = 'none';
+        }
+    });
+
+    // Minimize chatbot
+    if (minimizeBtn) {
+        minimizeBtn.addEventListener('click', () => {
+            chatbotOpen = false;
+            chatWindow.classList.remove('active');
+        });
+    }
+
+    // Send message
+    sendBtn.addEventListener('click', () => sendChatbotMessage());
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendChatbotMessage();
+        }
+    });
+
+    // Quick replies
+    document.querySelectorAll('.quick-reply').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const message = e.target.getAttribute('data-message');
+            sendChatbotMessage(message);
+        });
+    });
+
+    // Add to basket buttons
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('add-to-basket-btn')) {
+            const productId = parseInt(e.target.getAttribute('data-product-id'));
+            addToBasket(productId);
+            addBotMessage("Great choice! I've added that fragrance to your basket. You can continue exploring or close the chat when you're ready!");
+        }
+    });
+}
+
+function sendChatbotMessage(userInput = null) {
+    const chatInput = document.getElementById('chatInput');
+    const input = userInput || chatInput.value.trim();
+
+    if (!input || isTyping) return;
+
+    // Add user message
+    addUserMessage(input);
+    chatInput.value = '';
+
+    // Generate AI response
+    simulateAIResponse(input);
+}
+
+function addUserMessage(message) {
+    const messagesContainer = document.getElementById('chatMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message user-message';
+    messageDiv.innerHTML = `
+        <div class="message-avatar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+        </div>
+        <div class="message-content">
+            <div class="message-text">${escapeHtml(message)}</div>
+            <div class="message-time">${getCurrentTime()}</div>
+        </div>
+    `;
+
+    messagesContainer.appendChild(messageDiv);
+    scrollToBottom();
+}
+
+function addBotMessage(content, delay = 1000) {
+    setTimeout(() => {
+        removeTypingIndicator();
+        
+        const messagesContainer = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message ai-message';
+        messageDiv.innerHTML = `
+            <div class="message-avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                </svg>
+            </div>
+            <div class="message-content">
+                <div class="message-text">${content}</div>
+                <div class="message-time">${getCurrentTime()}</div>
+            </div>
+        `;
+
+        messagesContainer.appendChild(messageDiv);
+        scrollToBottom();
+        isTyping = false;
+    }, delay);
+}
+
+function showTypingIndicator() {
+    const messagesContainer = document.getElementById('chatMessages');
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'message ai-message';
+    typingDiv.id = 'typingIndicator';
+    typingDiv.innerHTML = `
+        <div class="message-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+        </div>
+        <div class="message-content">
+            <div class="typing-indicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+    `;
+
+    messagesContainer.appendChild(typingDiv);
+    scrollToBottom();
+}
+
+function removeTypingIndicator() {
+    const typingEl = document.getElementById('typingIndicator');
+    if (typingEl) {
+        typingEl.remove();
+    }
+}
+
+function getCurrentTime() {
+    const now = new Date();
+    return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+function simulateAIResponse(userMessage) {
+    if (isTyping) return;
+    
+    isTyping = true;
+    showTypingIndicator();
+
+    const lowerMessage = userMessage.toLowerCase();
+    let response = '';
+
+    // Handle special actions first
+    if (lowerMessage.includes('surprise')) {
+        giveRandomRecommendation();
+        return;
+    }
+
+    if (lowerMessage.includes('clear') || lowerMessage.includes('reset')) {
+        resetChatbot();
+        return;
+    }
+
+    // Check for product-specific queries
+    if (lowerMessage.includes('aurora') && lowerMessage.includes('oud')) {
+        response = chatbotResponses.product_info["aurora oud"];
+    } else if (lowerMessage.includes('citrus') && (lowerMessage.includes('dawn') || lowerMessage.includes('citrus'))) {
+        response = chatbotResponses.product_info["citrus dawn"];
+    } else if (lowerMessage.includes('velvet') && lowerMessage.includes('iris')) {
+        response = chatbotResponses.product_info["velvet iris"];
+    } else if (lowerMessage.includes('citrus') || lowerMessage.includes('fresh') || lowerMessage.includes('bright') || lowerMessage.includes('daytime')) {
+        response = getRandomResponse(chatbotResponses.citrus);
+    } else if (lowerMessage.includes('evening') || lowerMessage.includes('night') || lowerMessage.includes('warm') || lowerMessage.includes('oud')) {
+        response = getRandomResponse(chatbotResponses.evening);
+    } else if (lowerMessage.includes('popular') || lowerMessage.includes('recommend') || lowerMessage.includes('best')) {
+        response = getRandomResponse(chatbotResponses.popular);
+    } else if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+        response = getRandomResponse(chatbotResponses.greetings);
+    } else {
+        response = getRandomResponse(chatbotResponses.general);
+    }
+
+    addBotMessage(response, Math.random() * 1000 + 500);
+}
+
+function getRandomResponse(responses) {
+    return responses[Math.floor(Math.random() * responses.length)];
+}
+
+function giveRandomRecommendation() {
+    const randomProduct = products[Math.floor(Math.random() * products.length)];
+    const response = `
+        <p>Since you want to be surprised, let me suggest something special!</p>
+        <div class="product-recommendation">
+            <h5>${randomProduct.name}</h5>
+            <p><strong>Notes:</strong> ${randomProduct.notes}</p>
+            <p>${randomProduct.description}</p>
+            <p><em>This is one of our most beloved fragrances - perfect for those who appreciate unique, sophisticated scents.</em></p>
+            <button class="add-to-basket-btn" data-product-id="${randomProduct.id}">
+                Add to Basket (£${randomProduct.price.toFixed(2)})
+            </button>
+        </div>
+        <p>What did you think of that suggestion?</p>
+    `;
+
+    addBotMessage(response, Math.random() * 1000 + 500);
+}
+
+function handleQuickAction(action) {
+    if (action === 'surprise') {
+        giveRandomRecommendation();
+    } else if (action === 'reset') {
+        resetChatbot();
+    }
+}
+
+function resetChatbot() {
+    isTyping = false;
+    removeTypingIndicator();
+    
+    const messagesContainer = document.getElementById('chatMessages');
+    messagesContainer.innerHTML = `
+        <div class="message ai-message">
+            <div class="message-avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                </svg>
+            </div>
+            <div class="message-content">
+                <div class="message-text">Welcome to Luminous Scents! 🌟 I'm Lumi, your AI fragrance expert. I can help you discover the perfect scent based on your preferences. What type of fragrance are you looking for today?</div>
+                <div class="message-time">Just now</div>
+            </div>
+        </div>
+    `;
+    scrollToBottom();
+}
+
+function scrollToBottom() {
+    const messagesContainer = document.getElementById('chatMessages');
+    if (messagesContainer) {
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+const bulletObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const bullets = entry.target.querySelectorAll("li");
+            bullets.forEach((li, i) => {
+                setTimeout(() => {
+                    li.classList.add("bullet-visible");
+                }, i * 150);
+            });
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll(".values-section").forEach(section => {
+    bulletObserver.observe(section);
+});
+
+// ===========================
+// THEME TOGGLE FUNCTIONALITY
+// ===========================
+
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    if (!themeToggle) return;
+
+    const html = document.documentElement;
+    const THEME_STORAGE_KEY = 'luminousScentsTheme';
+    
+    // Get saved theme or default to dark
+    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+        updateThemeIcon(newTheme);
+    });
+}
+
+function updateThemeIcon(theme) {
+    const themeToggle = document.getElementById('themeToggle');
+    if (!themeToggle) return;
+
+    const svg = themeToggle.querySelector('svg');
+    if (!svg) return;
+
+    if (theme === 'light') {
+        // Moon icon for light mode (to switch to dark)
+        svg.innerHTML = `
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none"/>
+        `;
+        themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+    } else {
+        // Sun icon for dark mode (to switch to light)
+        svg.innerHTML = `
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+        `;
+        themeToggle.setAttribute('aria-label', 'Switch to light mode');
+    }
+}
+
+// ===========================
+// Admin Page Functions
+// ===========================
+
+function initAdminPage() {
+    const page = document.body.getAttribute("data-page");
+    if (page !== "admin") return;
+
+    // Guard: only allow access if admin is logged in
+    if (!isAdminLoggedIn()) {
+        customAlert('Admin access required. Please log in via the Account page.');
+        // Redirect to account page
+        window.location.href = 'account.html';
+        return;
+    }
+
+    // Modal elements
+    const addProductModal = document.getElementById('addProductModal');
+    const alertsModal = document.getElementById('alertsModal');
+    const inquiriesModal = document.getElementById('inquiriesModal');
+    const bulkUpdateModal = document.getElementById('bulkUpdateModal');
+    const editOrderModal = document.getElementById('editOrderModal');
+    
+    const openAddProductBtn = document.getElementById('openAddProductBtn');
+    const addProductBtn2 = document.getElementById('addProductBtn2');
+    const processPendingBtn = document.getElementById('processPendingBtn');
+    const viewInquiriesBtn = document.getElementById('viewInquiriesBtn');
+    const viewAlertsBtn = document.getElementById('viewAlertsBtn');
+    const bulkUpdateBtn = document.getElementById('bulkUpdateBtn');
+    const createPromotionBtn = document.getElementById('createPromotionBtn');
+    
+    const closeProductModal = document.getElementById('closeProductModal');
+    const closeAlertsModal = document.getElementById('closeAlertsModal');
+    const closeInquiriesModal = document.getElementById('closeInquiriesModal');
+    const closeBulkModal = document.getElementById('closeBulkModal');
+    const closeEditOrderModal = document.getElementById('closeEditOrderModal');
+    const promotionModal = document.getElementById('promotionModal');
+    const closePromotionModal = document.getElementById('closePromotionModal');
+    
+    const cancelProductForm = document.getElementById('cancelProductForm');
+    const cancelEditOrderForm = document.getElementById('cancelEditOrderForm');
+    const addProductForm = document.getElementById('addProductForm');
+    const editOrderForm = document.getElementById('editOrderForm');
+    const editOrderIdInput = document.getElementById('editOrderId');
+    const editOrderCustomerInput = document.getElementById('editOrderCustomer');
+    const editOrderDateInput = document.getElementById('editOrderDate');
+    const editOrderItemsInput = document.getElementById('editOrderItems');
+    const editOrderTotalInput = document.getElementById('editOrderTotal');
+    const productImageInput = document.getElementById('productImage');
+    const fileNameSpan = document.getElementById('fileName');
+    const imagePreview = document.getElementById('imagePreview');
+    const previewImg = document.getElementById('previewImg');
+    const productMinStockInput = document.getElementById('productMinStock');
+    const productReorderQtyInput = document.getElementById('productReorderQty');
+    const productSupplierInput = document.getElementById('productSupplier');
+
+    const bulkUpdateForm = document.getElementById('bulkUpdateForm');
+    const bulkUpdateBody = document.getElementById('bulkUpdateBody');
+    const cancelBulkForm = document.getElementById('cancelBulkForm');
+
+    const promotionForm = document.getElementById('promotionForm');
+    const promotionModalTitle = document.getElementById('promotionModalTitle');
+    const cancelPromoForm = document.getElementById('cancelPromoForm');
+    const submitPromoBtn = document.getElementById('submitPromoBtn');
+
+    const reviewsModal = document.getElementById('reviewsModal');
+    const closeReviewsModal = document.getElementById('closeReviewsModal');
+    const reviewsContent = document.getElementById('reviewsContent');
+
+    const openInquiriesList = document.getElementById('openInquiriesList');
+    const archivedInquiriesListModal = document.getElementById('archivedInquiriesListModal');
+    const pendingOrdersList = document.getElementById('pendingOrdersList');
+    const pendingOrdersCount = document.getElementById('pendingOrdersCount');
+
+    let inquiries = [
+        {
+            id: 1,
+            from: 'sarah.j@example.com',
+            date: 'Feb 16, 2025 - 2:34 PM',
+            subject: 'Do you have fragrance recommendations for sensitive skin?',
+            message: 'I have very sensitive skin and am looking for hypoallergenic fragrances. Could you recommend something from your collection that would be gentle on my skin?',
+            status: 'unread',
+            assignedTo: null,
+            replies: [],
+            archived: false
+        },
+        {
+            id: 2,
+            from: 'michael.p@example.com',
+            date: 'Feb 15, 2025 - 10:15 AM',
+            subject: 'Bulk Order for Corporate Gifts',
+            message: "Hello, I'm interested in purchasing 50 units of your Midnight Elegance fragrance for our company's corporate gifts. Can you provide a bulk discount quote and information about customization options?",
+            status: 'unread',
+            assignedTo: null,
+            replies: [],
+            archived: false
+        }
+    ];
+
+    loadInquiries(inquiries);
+
+    let pendingOrders = [
+        {
+            id: 1082,
+            customer: 'sarah.j@example.com',
+            date: 'Feb 16, 2025',
+            items: [
+                { name: 'Midnight Elegance', qty: 1 },
+                { name: 'Golden Hour', qty: 2 }
+            ],
+            total: 149.00,
+            status: 'pending'
+        },
+        {
+            id: 1083,
+            customer: 'james.m@example.com',
+            date: 'Feb 16, 2025',
+            items: [
+                { name: 'Velvet Nights', qty: 1 }
+            ],
+            total: 65.00,
+            status: 'pending'
+        },
+        {
+            id: 1084,
+            customer: 'lisa.c@example.com',
+            date: 'Feb 17, 2025',
+            items: [
+                { name: 'Golden Hour', qty: 3 }
+            ],
+            total: 156.00,
+            status: 'pending'
+        }
+    ];
+
+    loadOrders(pendingOrders);
+
+    let refundRequests = [
+        {
+            id: 'REF-2001',
+            orderId: 1080,
+            date: 'Mar 10, 2025',
+            reason: 'Item arrived damaged',
+            items: [{ name: 'Midnight Elegance', qty: 1 }],
+            total: 65.00,
+            status: 'pending',
+            customer: {
+                name: 'Amira Khan',
+                email: 'amira.k@example.com',
+                phone: '+44 7700 900123',
+                address: '12 Elm Street, Manchester, M1 2AB'
+            }
+        },
+        {
+            id: 'REF-2002',
+            orderId: 1076,
+            date: 'Mar 8, 2025',
+            reason: 'Wrong item received',
+            items: [{ name: 'Golden Hour', qty: 2 }],
+            total: 104.00,
+            status: 'pending',
+            customer: {
+                name: 'Daniel Brooks',
+                email: 'daniel.b@example.com',
+                phone: '+44 7700 900456',
+                address: '45 Oakwood Ave, Birmingham, B15 3DH'
+            }
+        },
+        {
+            id: 'REF-2003',
+            orderId: 1071,
+            date: 'Mar 5, 2025',
+            reason: 'Changed mind',
+            items: [{ name: 'Velvet Nights', qty: 1 }, { name: 'Twilight Bloom', qty: 1 }],
+            total: 130.00,
+            status: 'pending',
+            customer: {
+                name: 'Sophie Turner',
+                email: 'sophie.t@example.com',
+                phone: '+44 7700 900789',
+                address: '8 Rose Lane, Leeds, LS1 4AP'
+            }
+        }
+    ];
+
+    loadRefunds(refundRequests);
+
+    let editingProductId = null;
+    let editingOrderId = null;
+    let selectedProductImageValue = null;
+
+    const updateInquiryCounts = () => {
+        const openCount = inquiries.filter(i => !i.archived).length;
+        const archivedCount = inquiries.filter(i => i.archived).length;
+
+        if (viewInquiriesBtn) {
+            viewInquiriesBtn.textContent = `📧 View Customer Inquiries (${openCount})`;
+        }
+        if (viewArchivedInquiriesBtn) {
+            viewArchivedInquiriesBtn.textContent = `🗄️ View Archived Inquiries (${archivedCount})`;
+        }
+    };
+
+    const updatePendingOrderCount = () => {
+        const pendingCount = pendingOrders.filter(o => o.status === 'pending').length;
+        const countEl = document.getElementById('pendingOrdersCount');
+        if (countEl) countEl.textContent = pendingCount;
+        const countButton = document.getElementById('processPendingBtn');
+        if (countButton) countButton.textContent = `⚠ Process Pending Orders (${pendingCount})`;
+    };
+
+    const renderInquiries = () => {
+        if (!openInquiriesList) return;
+
+        const renderList = (list, includeArchived) => {
+            return list
+                .filter(i => i.archived === includeArchived)
+                .map(i => {
+                    const isRead = i.status === 'read' || i.status === 'replied' || i.status === 'assigned';
+                    const statusLabel = i.status === 'unread' ? 'Unread' : i.status === 'read' ? 'Read' : i.status === 'assigned' ? `Assigned${i.assignedTo ? ` to ${i.assignedTo}` : ''}` : 'Replied';
+                    const statusClass = i.status === 'unread' ? 'unread' : 'active';
+
+                    return `
+                        <div class="inquiry-detail${isRead ? ' read' : ''}" data-inquiry-id="${i.id}">
+                            <div class="inquiry-header">
+                                <h4>Inquiry #${i.id}</h4>
+                                <span class="inquiry-status ${statusClass}">${statusLabel}</span>
+                            </div>
+                            <div class="inquiry-content">
+                                <p><strong>From:</strong> ${i.from}</p>
+                                <p><strong>Date:</strong> ${i.date}</p>
+                                <p><strong>Subject:</strong> ${i.subject}</p>
+                                <p><strong>Message:</strong> ${i.message}</p>
+                                <div class="inquiry-actions">
+                                    <label class="mark-read"> 
+                                        <input type="checkbox" class="mark-read-checkbox" data-id="${i.id}" ${isRead ? 'checked' : ''}> Read
+                                    </label>
+                                    <button class="btn-small reply-inquiry-btn" data-id="${i.id}">Reply</button>
+                                    <button class="btn-small neutral assign-inquiry-btn" data-id="${i.id}">Assign</button>
+                                    ${includeArchived ? '' : `<button class="btn-small dangerous archive-inquiry-btn" data-id="${i.id}">Archive</button>`}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                })
+                .join('');
+        };
+
+        openInquiriesList.innerHTML = renderList(inquiries, false) || '<p>No open inquiries.</p>';
+        updateInquiryCounts();
+    };
+
+    const renderPendingOrders = () => {
+        if (!pendingOrdersList) return;
+
+        const pending = pendingOrders.filter(o => o.status === 'pending');
+
+        pendingOrdersList.innerHTML = pending.map(o => {
+            const itemsText = o.items.map(i => `${i.name} x${i.qty}`).join(', ');
+            return `
+                <div class="order-item" data-order-id="${o.id}">
+                    <div class="order-header">
+                        <h4>Order #${o.id}</h4>
+                        <span class="order-status pending">Pending</span>
+                    </div>
+                    <div class="order-details">
+                        <p><strong>Customer:</strong> ${o.customer}</p>
+                        <p><strong>Date:</strong> ${o.date}</p>
+                        <p><strong>Items:</strong> ${itemsText}</p>
+                        <p><strong>Total:</strong> £${o.total.toFixed(2)}</p>
+                    </div>
+                    <div class="order-actions">
+                        <button class="btn-small approve-order-btn" data-id="${o.id}">Approve & Ship</button>
+                        <button class="btn-small neutral edit-order-btn" data-id="${o.id}">Edit Order</button>
+                        <button class="btn-small dangerous reject-order-btn" data-id="${o.id}">Reject</button>
+                    </div>
+                </div>
+            `;
+        }).join('') || '<p>No pending orders.</p>';
+
+        updatePendingOrderCount();
+    };
+
+    const renderRefundRequests = () => {
+        const refundList = document.getElementById('refundRequestsList');
+        const refundCount = document.getElementById('refundRequestsCount');
+        if (!refundList) return;
+
+        const pending = refundRequests.filter(r => r.status === 'pending');
+        if (refundCount) refundCount.textContent = pending.length;
+
+        refundList.innerHTML = refundRequests.map(r => {
+            const itemsText = r.items.map(i => `${i.name} x${i.qty}`).join(', ');
+            const statusLabel = r.status === 'pending' ? 'Pending Refund'
+                : r.status === 'approved' ? 'Refund Approved'
+                : 'Refund Denied';
+            const statusClass = `refund-${r.status}`;
+            const showActions = r.status === 'pending';
+
+            return `
+                <div class="order-item" data-refund-id="${r.id}">
+                    <div class="order-header">
+                        <h4>${r.id}</h4>
+                        <span class="order-status ${statusClass}">${statusLabel}</span>
+                    </div>
+                    <div class="order-details">
+                        <p><strong>Name:</strong> ${r.customer.name}</p>
+                        <p><strong>Email:</strong> ${r.customer.email}</p>
+                        <p><strong>Phone:</strong> ${r.customer.phone}</p>
+                        <p><strong>Address:</strong> ${r.customer.address}</p>
+                        <p><strong>Order:</strong> #${r.orderId}</p>
+                        <p><strong>Date:</strong> ${r.date}</p>
+                        <p><strong>Items:</strong> ${itemsText}</p>
+                        <p><strong>Total:</strong> £${r.total.toFixed(2)}</p>
+                        <p><strong>Reason:</strong> ${r.reason}</p>
+                    </div>
+                    ${showActions ? `
+                    <div class="order-actions">
+                        <button class="btn-small approve-refund-btn" data-id="${r.id}">Approve Refund</button>
+                        <button class="btn-small dangerous deny-refund-btn" data-id="${r.id}">Deny Refund</button>
+                    </div>` : ''}
+                </div>
+            `;
+        }).join('') || '<p>No refund requests.</p>';
+    };
+
+    const renderArchivedInquiries = () => {
+        if (!archivedInquiriesListModal) return;
+
+        const archivedHTML = inquiries
+            .filter(i => i.archived)
+            .map(i => {
+                const isRead = i.status === 'read' || i.status === 'replied' || i.status === 'assigned';
+                const statusLabel = i.status === 'unread' ? 'Unread' : i.status === 'read' ? 'Read' : i.status === 'assigned' ? `Assigned${i.assignedTo ? ` to ${i.assignedTo}` : ''}` : 'Replied';
+                const statusClass = i.status === 'unread' ? 'unread' : 'active';
+
+                return `
+                    <div class="inquiry-detail${isRead ? ' read' : ''}" data-inquiry-id="${i.id}">
+                        <div class="inquiry-header">
+                            <h4>Inquiry #${i.id}</h4>
+                            <span class="inquiry-status ${statusClass}">${statusLabel}</span>
+                        </div>
+                        <div class="inquiry-content">
+                            <p><strong>From:</strong> ${i.from}</p>
+                            <p><strong>Date:</strong> ${i.date}</p>
+                            <p><strong>Subject:</strong> ${i.subject}</p>
+                            <p><strong>Message:</strong> ${i.message}</p>
+                            <div class="inquiry-actions">
+                                <label class="mark-read"> 
+                                    <input type="checkbox" class="mark-read-checkbox" data-id="${i.id}" ${isRead ? 'checked' : ''}> Read
+                                </label>
+                                <button class="btn-small unarchive-inquiry-btn" data-id="${i.id}">Unarchive</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            })
+            .join('');
+
+        archivedInquiriesListModal.innerHTML = archivedHTML || '<p>No archived inquiries.</p>';
+        updateInquiryCounts();
+    };
+
+    // Open modals function
+    const openModal = (modal) => {
+        if (modal) {
+            modal.classList.remove('hidden');
+        }
+    };
+
+    // Close modal function
+    const closeModal = (modal) => {
+        if (modal) {
+            modal.classList.add('hidden');
+        }
+    };
+
+    // Product modal handlers
+    const openProductModal = () => {
+        openModal(addProductModal);
+        addProductForm.reset();
+        fileNameSpan.textContent = 'No file chosen';
+        selectedProductImageValue = null;
+        previewImg.src = '';
+        imagePreview.classList.add('hidden');
+        if (productMinStockInput) productMinStockInput.value = '';
+        if (productReorderQtyInput) productReorderQtyInput.value = '';
+        if (productSupplierInput) productSupplierInput.value = '';
+    };
+
+    const closeProductModalFn = () => {
+        closeModal(addProductModal);
+        addProductForm.reset();
+        fileNameSpan.textContent = 'No file chosen';
+        selectedProductImageValue = null;
+        previewImg.src = '';
+        imagePreview.classList.add('hidden');
+    };
+
+    // Order edit modal handlers
+    const openEditOrderModal = (order) => {
+        if (!editOrderModal || !editOrderForm) return;
+        editingOrderId = order?.id ?? null;
+        if (editOrderIdInput) editOrderIdInput.value = order?.id ?? '';
+        if (editOrderCustomerInput) editOrderCustomerInput.value = order?.customer ?? '';
+        if (editOrderDateInput) editOrderDateInput.value = order?.date ?? '';
+        if (editOrderItemsInput) editOrderItemsInput.value = order?.items?.map(i => `${i.name} x${i.qty}`).join(', ') || '';
+        if (editOrderTotalInput) editOrderTotalInput.value = order?.total != null ? order.total : '';
+        openModal(editOrderModal);
+    };
+
+    const closeEditOrderModalFn = () => {
+        closeModal(editOrderModal);
+        if (editOrderForm) editOrderForm.reset();
+        editingOrderId = null;
+    };
+
+    // Quick action button handlers
+    if (openAddProductBtn) {
+        openAddProductBtn.addEventListener('click', openProductModal);
+    }
+
+    if (addProductBtn2) {
+        addProductBtn2.addEventListener('click', openProductModal);
+    }
+
+    if (processPendingBtn) {
+        processPendingBtn.addEventListener('click', () => {
+            renderPendingOrders();
+            const pendingSection = document.getElementById('pendingOrdersList');
+            if (pendingSection) {
+                pendingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
+
+    if (viewInquiriesBtn) {
+        viewInquiriesBtn.addEventListener('click', () => {
+            renderInquiries();
+            openModal(inquiriesModal);
+        });
+    }
+
+    if (viewAlertsBtn) {
+        viewAlertsBtn.addEventListener('click', () => {
+            openModal(alertsModal);
+        });
+    }
+
+    if (bulkUpdateBtn) {
+        bulkUpdateBtn.addEventListener('click', () => {
+            // populate rows
+            if (bulkUpdateBody) {
+                bulkUpdateBody.innerHTML = '';
+                products.forEach(p => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${p.name}</td>
+                        <td><input type="number" min="0" data-id="${p.id}" value="${p.stock||0}" /></td>
+                    `;
+                    bulkUpdateBody.appendChild(tr);
+                });
+            }
+            openModal(bulkUpdateModal);
+        });
+    }
+
+    if (createPromotionBtn) {
+        createPromotionBtn.addEventListener('click', () => {
+            editingPromoId = null;
+            promotionModalTitle.textContent = 'Create New Promotion';
+            submitPromoBtn.textContent = 'Create Promotion';
+            promotionForm.reset();
+            openModal(promotionModal);
+        });
+    }
+
+    // Close product modal
+    if (closeProductModal) {
+        closeProductModal.addEventListener('click', closeProductModalFn);
+    }
+
+    if (cancelProductForm) {
+        cancelProductForm.addEventListener('click', closeProductModalFn);
+    }
+
+    // Close edit order modal
+    if (closeEditOrderModal) {
+        closeEditOrderModal.addEventListener('click', closeEditOrderModalFn);
+    }
+
+    if (cancelEditOrderForm) {
+        cancelEditOrderForm.addEventListener('click', closeEditOrderModalFn);
+    }
+
+    if (editOrderForm) {
+        editOrderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!editingOrderId) return;
+            const order = pendingOrders.find(o => o.id === editingOrderId);
+            if (!order) return;
+
+            const totalValue = parseFloat(editOrderTotalInput?.value);
+            if (!isNaN(totalValue)) {
+                order.total = totalValue;
+            }
+
+            const itemsText = editOrderItemsInput?.value || '';
+            const parsedItems = itemsText.split(',').map(i => i.trim()).filter(Boolean).map(itemStr => {
+                const match = itemStr.match(/(.+) x(\d+)$/);
+                if (!match) return null;
+                return { name: match[1].trim(), qty: parseInt(match[2], 10) };
+            }).filter(Boolean);
+            if (parsedItems.length) {
+                order.items = parsedItems;
+            }
+
+            saveOrders(pendingOrders);
+            renderPendingOrders();
+            showToast(`Order #${order.id} updated.`, 'success');
+            closeEditOrderModalFn();
+        });
+    }
+
+    // Close alerts modal
+    if (closeAlertsModal) {
+        closeAlertsModal.addEventListener('click', () => {
+            closeModal(alertsModal);
+        });
+    }
+
+    // Reorder from alerts
+    if (alertsModal) {
+        alertsModal.addEventListener('click', (e) => {
+            const reorderButton = e.target.closest('.reorder-now-btn');
+            if (reorderButton) {
+                const id = Number(reorderButton.dataset.id);
+                const prod = products.find(p => p.id === id);
+                if (!prod) return;
+
+                customPrompt(`Reorder quantity for ${prod.name}:`, prod.minStock || 10, (qtyStr) => {
+                    const qty = parseInt(qtyStr, 10);
+                    if (isNaN(qty) || qty <= 0) return;
+
+                    prod.stock = (prod.stock || 0) + qty;
+                    saveStock();
+                    updateStockAlerts();
+                    renderAdminTables();
+                    showToast(`Reordered ${qty} units of ${prod.name}.`, 'success');
+                });
+                return;
+            }
+
+            const reorderAllButton = e.target.closest('#reorderAllToMinBtn');
+            if (reorderAllButton) {
+                const needsReorder = products.filter(p => p.minStock && (p.stock || 0) < p.minStock);
+                if (!needsReorder.length) {
+                    showToast('All products are already at or above min stock.', 'success');
+                    return;
+                }
+
+                needsReorder.forEach(p => {
+                    p.stock = p.minStock;
+                });
+
+                saveStock();
+                updateStockAlerts();
+                renderAdminTables();
+                showToast('Reordered all low-stock items to their minimum levels.', 'success');
+            }
+        });
+    }
+
+    // Close inquiries modal
+    if (closeInquiriesModal) {
+        closeInquiriesModal.addEventListener('click', () => {
+            closeModal(inquiriesModal);
+        });
+    }
+
+    // Open archived inquiries modal
+    const viewArchivedInquiriesBtn = document.getElementById('viewArchivedInquiriesBtn');
+    const archivedInquiriesModal = document.getElementById('archivedInquiriesModal');
+    const closeArchivedInquiriesModal = document.getElementById('closeArchivedInquiriesModal');
+
+    if (viewArchivedInquiriesBtn) {
+        viewArchivedInquiriesBtn.addEventListener('click', () => {
+            renderArchivedInquiries();
+            openModal(archivedInquiriesModal);
+        });
+    }
+
+    if (closeArchivedInquiriesModal) {
+        closeArchivedInquiriesModal.addEventListener('click', () => {
+            closeModal(archivedInquiriesModal);
+        });
+    }
+
+    if (inquiriesModal) {
+        inquiriesModal.addEventListener('click', (e) => {
+            if (e.target === inquiriesModal) {
+                closeModal(inquiriesModal);
+                return;
+            }
+
+            const card = e.target.closest('.inquiry-detail');
+            if (!card) return;
+
+            const id = Number(card.dataset.inquiryId);
+            const inquiry = inquiries.find(i => i.id === id);
+            if (!inquiry) return;
+
+            if (e.target.matches('.mark-read-checkbox')) {
+                const checked = e.target.checked;
+                inquiry.status = checked ? 'read' : 'unread';
+                saveInquiries(inquiries);
+                renderInquiries();
+                return;
+            }
+
+            if (e.target.matches('.reply-inquiry-btn')) {
+                customPrompt('Type your reply message:', '', (reply) => {
+                    if (reply) {
+                        inquiry.replies.push({ date: new Date().toLocaleString(), message: reply });
+                        inquiry.status = 'replied';
+                        saveInquiries(inquiries);
+                        showToast('Reply sent.', 'success');
+                        renderInquiries();
+                    }
+                });
+                return;
+            }
+
+            if (e.target.matches('.assign-inquiry-btn')) {
+                customPrompt('Assign to (name or email):', '', (assignee) => {
+                    if (assignee) {
+                        inquiry.assignedTo = assignee;
+                        inquiry.status = 'assigned';
+                        saveInquiries(inquiries);
+                        showToast(`Inquiry assigned to ${assignee}.`, 'success');
+                        renderInquiries();
+                    }
+                });
+                return;
+            }
+
+            if (e.target.matches('.archive-inquiry-btn')) {
+                const archiveBtn = e.target;
+                if (archiveBtn.dataset.archiving === '1') return;
+                archiveBtn.dataset.archiving = '1';
+
+                customConfirm('Archive this inquiry?', () => {
+                    archiveBtn.dataset.archiving = '0';
+                    inquiry.archived = true;
+                    saveInquiries(inquiries);
+                    showToast('Inquiry archived.', 'success');
+                    renderInquiries();
+                    renderArchivedInquiries();
+                });
+                return;
+            }
+        });
+    }
+
+    if (archivedInquiriesModal) {
+        archivedInquiriesModal.addEventListener('click', (e) => {
+            if (e.target === archivedInquiriesModal) {
+                closeModal(archivedInquiriesModal);
+                return;
+            }
+
+            const card = e.target.closest('.inquiry-detail');
+            if (!card) return;
+
+            const id = Number(card.dataset.inquiryId);
+            const inquiry = inquiries.find(i => i.id === id);
+            if (!inquiry) return;
+
+            if (e.target.matches('.unarchive-inquiry-btn')) {
+                inquiry.archived = false;
+                saveInquiries(inquiries);
+                showToast('Inquiry restored.', 'success');
+                renderInquiries();
+                renderArchivedInquiries();
+            }
+
+            if (e.target.matches('.mark-read-checkbox')) {
+                const checked = e.target.checked;
+                inquiry.status = checked ? 'read' : 'unread';
+                saveInquiries(inquiries);
+                renderArchivedInquiries();
+            }
+        });
+    }
+
+    // Close bulk update modal
+    if (closeBulkModal) {
+        closeBulkModal.addEventListener('click', () => {
+            closeModal(bulkUpdateModal);
+            if (bulkUpdateForm) bulkUpdateForm.reset();
+        });
+    }
+
+    if (cancelBulkForm) {
+        cancelBulkForm.addEventListener('click', () => {
+            closeModal(bulkUpdateModal);
+            if (bulkUpdateForm) bulkUpdateForm.reset();
+        });
+    }
+
+    // Close promotion modal
+    const resetPromotionModalForm = () => {
+        closeModal(promotionModal);
+        promotionForm.reset();
+        editingPromoId = null;
+        if (promotionModalTitle) promotionModalTitle.textContent = 'Create New Promotion';
+        if (submitPromoBtn) submitPromoBtn.textContent = 'Create Promotion';
+    };
+
+    if (closePromotionModal) {
+        closePromotionModal.addEventListener('click', resetPromotionModalForm);
+    }
+
+    if (cancelPromoForm) {
+        cancelPromoForm.addEventListener('click', resetPromotionModalForm);
+    }
+
+    // Close reviews modal
+    if (closeReviewsModal) {
+        closeReviewsModal.addEventListener('click', () => {
+            closeModal(reviewsModal);
+        });
+    }
+
+    // Close modals when clicking outside
+    if (addProductModal) {
+        addProductModal.addEventListener('click', (e) => {
+            if (e.target === addProductModal) {
+                closeProductModalFn();
+            }
+        });
+    }
+
+    if (alertsModal) {
+        alertsModal.addEventListener('click', (e) => {
+            if (e.target === alertsModal) {
+                closeModal(alertsModal);
+            }
+        });
+    }
+
+
+    if (promotionModal) {
+        promotionModal.addEventListener('click', (e) => {
+            if (e.target === promotionModal) {
+                resetPromotionModalForm();
+            }
+        });
+    }
+
+    if (reviewsModal) {
+        reviewsModal.addEventListener('click', (e) => {
+            if (e.target === reviewsModal) {
+                closeModal(reviewsModal);
+            }
+        });
+    }
+
+    if (bulkUpdateModal) {
+        bulkUpdateModal.addEventListener('click', (e) => {
+            if (e.target === bulkUpdateModal) {
+                closeModal(bulkUpdateModal);
+                if (bulkUpdateForm) bulkUpdateForm.reset();
+            }
+        });
+    }
+
+    // Image preview / store uploaded image data
+    if (productImageInput) {
+        productImageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                fileNameSpan.textContent = file.name;
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const dataUrl = event.target.result;
+                    selectedProductImageValue = dataUrl;
+                    previewImg.src = dataUrl;
+                    imagePreview.classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    // Form submission
+    if (addProductForm) {
+        addProductForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form data
+            const name = document.getElementById('productName').value.trim();
+            const category = document.getElementById('productCategory').value;
+            const price = parseFloat(document.getElementById('productPrice').value);
+            const stock = parseInt(document.getElementById('productStock').value, 10);
+            const minStock = parseInt(document.getElementById('productMinStock').value, 10);
+            const reorderQty = parseInt(document.getElementById('productReorderQty').value, 10);
+            const supplier = document.getElementById('productSupplier').value.trim();
+            const notes = document.getElementById('productNotes').value.trim();
+            const description = document.getElementById('productDescription').value.trim();
+            const imageValue = selectedProductImageValue;
+
+            // Validation
+            const isEdit = editingProductId !== null;
+            if (!name || !category || !price || isNaN(stock) || !notes || !description || (!imageValue && !isEdit)) {
+                customAlert('Please fill in all required fields (name, category, price, stock, notes, description).');
+                return;
+            }
+
+            let product;
+
+            if (isEdit) {
+                product = products.find(p => p.id === editingProductId);
+                if (product) {
+                    product.name = name;
+                    product.category = category;
+                    product.price = price;
+                    product.stock = stock;
+                    product.minStock = isNaN(minStock) ? product.minStock || 0 : minStock;
+                    product.reorderQty = isNaN(reorderQty) ? product.reorderQty || 0 : reorderQty;
+                    product.supplier = supplier || product.supplier || '';
+                    product.notes = notes;
+                    product.description = description;
+                    if (imageValue) {
+                        product.image = imageValue;
+                    }
+                }
+            } else {
+                // Create new product object
+                const newProductId = Math.max(...products.map(p => p.id), 0) + 1;
+                product = {
+                    id: newProductId,
+                    name: name,
+                    brand: "Luminous Scents",
+                    price: price,
+                    notes: notes,
+                    description: description,
+                    image: imageValue,
+                    category: category,
+                    stock: stock,
+                    minStock: isNaN(minStock) ? 0 : minStock,
+                    reorderQty: isNaN(reorderQty) ? 0 : reorderQty,
+                    supplier: supplier || ''
+                };
+                // Add to products array
+                products.push(product);
+            }
+
+            // Show success toast (also show on next page load)
+            const successText = `Product "${name}" has been ${isEdit ? 'updated' : 'added'} successfully!`;
+            showToast(successText, 'success');
+            setNextPageToast(successText);
+
+            // Close modal and reset form
+            closeProductModalFn();
+
+            // Persist stock and refresh UI
+            saveStock();
+            updateStockAlerts();
+            renderAdminTables();
+            if (document.body.getAttribute("data-page") === "products") {
+                renderProductsPage();
+            }
+
+            // Reset edit mode
+            editingProductId = null;
+            if (document.querySelector('#addProductModal h2')) document.querySelector('#addProductModal h2').textContent = 'Add New Product';
+            if (document.querySelector('#addProductForm button[type="submit"]')) document.querySelector('#addProductForm button[type="submit"]').textContent = 'Add Product';
+
+            // Log the update
+            console.log('Product saved:', product);
+            console.log('Total products:', products.length);
+        });
+    }
+
+    // Form submission - Promotion
+    // Store current editing promo ID
+    let editingPromoId = null;
+
+    if (promotionForm) {
+        promotionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form data
+            const promoName = document.getElementById('promoName').value.trim();
+            const promoType = document.getElementById('promoType').value;
+            const promoCode = document.getElementById('promoCode').value.trim();
+            const promoDiscount = document.getElementById('promoDiscount').value.trim();
+            const promoMinSpend = document.getElementById('promoMinSpend').value;
+            const promoMaxUses = document.getElementById('promoMaxUses').value;
+            const promoStartDate = document.getElementById('promoStartDate').value;
+            const promoEndDate = document.getElementById('promoEndDate').value;
+            const promoProducts = document.getElementById('promoProducts').value.trim();
+            const promoDescription = document.getElementById('promoDescription').value.trim();
+
+            // Validation
+            if (!promoName || !promoType || !promoDiscount || !promoStartDate || !promoProducts) {
+                customAlert('Please fill in all required fields.');
+                return;
+            }
+
+            // Determine if we're editing an existing promotion
+            const isEdit = Boolean(editingPromoId);
+            if (isEdit) {
+                const existingPromo = promotions.find((p) => p.id === editingPromoId);
+                if (existingPromo) {
+                    existingPromo.name = promoName;
+                    existingPromo.type = promoType;
+                    existingPromo.code = promoCode;
+                    existingPromo.discount = promoDiscount;
+                    existingPromo.minSpend = promoMinSpend;
+                    existingPromo.maxUses = promoMaxUses;
+                    existingPromo.startDate = promoStartDate;
+                    existingPromo.endDate = promoEndDate;
+                    existingPromo.products = promoProducts;
+                    existingPromo.description = promoDescription;
+
+                    showToast(`Promotion "${promoName}" has been updated.`, 'success');
+                }
+            } else {
+                const newPromo = {
+                    id: `promo-${Date.now()}`,
+                    name: promoName,
+                    type: promoType,
+                    code: promoCode,
+                    discount: promoDiscount,
+                    minSpend: promoMinSpend,
+                    maxUses: promoMaxUses,
+                    startDate: promoStartDate,
+                    endDate: promoEndDate,
+                    products: promoProducts,
+                    description: promoDescription
+                };
+                promotions.push(newPromo);
+                showToast(`Promotion "${promoName}" has been added.`, 'success');
+            }
+
+            savePromotions();
+            renderPromotions();
+
+            // Close modal and reset form
+            closeModal(promotionModal);
+            promotionModalTitle.textContent = 'Create New Promotion';
+            submitPromoBtn.textContent = 'Create Promotion';
+            promotionForm.reset();
+            editingPromoId = null;
+        });
+    }
+
+    // Bulk update submission
+    if (bulkUpdateForm) {
+        bulkUpdateForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // gather new stock values
+            const inputs = bulkUpdateBody.querySelectorAll('input[type=number]');
+            inputs.forEach(inp => {
+                const id = Number(inp.dataset.id);
+                const value = parseInt(inp.value, 10);
+                if (!isNaN(id) && !isNaN(value)) {
+                    const prod = products.find(p => p.id === id);
+                    if (prod) prod.stock = value;
+                }
+            });
+            saveStock();
+            updateStockAlerts();
+            renderAdminTables();
+            closeModal(bulkUpdateModal);
+            if (bulkUpdateForm) bulkUpdateForm.reset();
+            customAlert('Stock levels updated.');
+        });
+    }
+
+    // render tables, pending orders, refund requests and promotions when admin page loads
+    renderAdminTables();
+    renderPendingOrders();
+    renderRefundRequests();
+
+    loadPromotions();
+    renderPromotions();
+
+    // apply state (deactivation + ordering) after promotions render
+    applyPromotionState();
+
+    // Render the sales trend chart (demo data)
+    const renderSalesTrendChart = () => {
+        const canvas = document.getElementById('salesTrendChart');
+        if (!canvas || typeof Chart === 'undefined') return;
+
+        const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        const data = [420, 510, 480, 560, 600, 540, 620];
+
+        const ctx = canvas.getContext('2d');
+
+        // Destroy previous instance if re-rendering
+        if (canvas._chartInstance) {
+            canvas._chartInstance.destroy();
+        }
+
+        canvas._chartInstance = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels,
+                datasets: [{
+                    label: 'Sales (£)',
+                    data,
+                    backgroundColor: 'rgba(99, 102, 241, 0.65)',
+                    borderColor: 'rgba(99, 102, 241, 1)',
+                    borderWidth: 1,
+                    borderRadius: 6,
+                    maxBarThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: (value) => `£${value}`
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => `£${context.parsed.y.toFixed(2)}`
+                        }
+                    }
+                }
+            }
+        });
+    };
+
+    renderSalesTrendChart();
+
+    // delegate click events for inventory updates and product actions
+    document.addEventListener('click', function(e) {
+        if (e.target.matches('.update-stock-btn')) {
+            const id = Number(e.target.dataset.id);
+            const product = products.find(p => p.id === id);
+            if (product) {
+                customPrompt(`Update stock for ${product.name}:`, product.stock || 0, (newQtyStr) => {
+                    const newQty = parseInt(newQtyStr, 10);
+                    if (!isNaN(newQty) && newQty >= 0) {
+                        product.stock = newQty;
+                        saveStock();
+                        updateStockAlerts();
+                        renderAdminTables();
+                    }
+                });
+            }
+        } else if (e.target.matches('.reorder-btn')) {
+            const id = Number(e.target.dataset.id);
+            const product = products.find(p => p.id === id);
+            if (product) {
+                const defaultQty = product.reorderQty || product.minStock || 10;
+                customPrompt(`Reorder quantity for ${product.name}:`, defaultQty, (qtyStr) => {
+                    const qty = parseInt(qtyStr, 10);
+                    if (!isNaN(qty) && qty > 0) {
+                        product.stock = (product.stock || 0) + qty;
+                        if (qty !== defaultQty) {
+                            product.reorderQty = qty;
+                        }
+                        saveStock();
+                        saveProducts();
+                        updateStockAlerts();
+                        renderAdminTables();
+                        showToast(`Reordered ${qty} units of ${product.name}.`, 'success');
+                    }
+                });
+            }
+        } else if (e.target.matches('.approve-order-btn')) {
+            const id = Number(e.target.dataset.id);
+            const order = pendingOrders.find(o => o.id === id);
+            if (!order) return;
+
+            customConfirm(`Approve & ship order #${order.id}?`, () => {
+                order.status = 'shipped';
+                saveOrders(pendingOrders);
+                renderPendingOrders();
+                showToast(`Order #${order.id} marked as shipped.`, 'success');
+            });
+        } else if (e.target.matches('.reject-order-btn')) {
+            const id = Number(e.target.dataset.id);
+            const order = pendingOrders.find(o => o.id === id);
+            if (!order) return;
+
+            customConfirm(`Reject order #${order.id}?`, () => {
+                order.status = 'rejected';
+                saveOrders(pendingOrders);
+                renderPendingOrders();
+                showToast(`Order #${order.id} has been rejected.`, 'error');
+            });
+        } else if (e.target.matches('.approve-refund-btn')) {
+            const id = e.target.dataset.id;
+            const refund = refundRequests.find(r => r.id === id);
+            if (!refund) return;
+
+            customConfirm(`Approve refund ${refund.id} (£${refund.total.toFixed(2)}) for ${refund.customer.name}?`, () => {
+                refund.status = 'approved';
+                saveRefunds(refundRequests);
+                renderRefundRequests();
+                showToast(`Refund ${refund.id} has been approved.`, 'success');
+            });
+        } else if (e.target.matches('.deny-refund-btn')) {
+            const id = e.target.dataset.id;
+            const refund = refundRequests.find(r => r.id === id);
+            if (!refund) return;
+
+            customConfirm(`Deny refund ${refund.id} for ${refund.customer.name}?`, () => {
+                refund.status = 'denied';
+                saveRefunds(refundRequests);
+                renderRefundRequests();
+                showToast(`Refund ${refund.id} has been denied.`, 'error');
+            });
+        } else if (e.target.matches('.edit-order-btn')) {
+            const id = Number(e.target.dataset.id);
+            const order = pendingOrders.find(o => o.id === id);
+            if (!order) return;
+            openEditOrderModal(order);
+        } else if (e.target.matches('.deactivate-promo-btn')) {
+            const promoItem = e.target.closest('.promotion-item');
+            if (!promoItem) return;
+            const promoName = promoItem.querySelector('.promotion-header h4')?.textContent || 'this promotion';
+            const promoId = promoItem.dataset.promoId;
+            const isDeactivated = promoItem.classList.contains('deactivated');
+            const action = isDeactivated ? 'Activate' : 'Deactivate';
+
+            customConfirm(`${action} ${promoName}?`, () => {
+                const deactivatedIds = new Set(getSavedDeactivatedPromoIds().map(String));
+
+                if (isDeactivated) {
+                    deactivatedIds.delete(String(promoId));
+                } else {
+                    deactivatedIds.add(String(promoId));
+                }
+
+                saveDeactivatedPromoIds(Array.from(deactivatedIds));
+                applyPromotionState();
+                showToast(`${promoName} has been ${isDeactivated ? 're' : ''}activated.`, 'success');
+            });
+        } else if (e.target.matches('.delete-promo-btn')) {
+            const promoItem = e.target.closest('.promotion-item');
+            if (!promoItem) return;
+            const promoName = promoItem.querySelector('.promotion-header h4')?.textContent || 'this promotion';
+            const promoId = promoItem.dataset.promoId;
+
+            customConfirm(`Delete ${promoName}? This cannot be undone.`, () => {
+                const index = promotions.findIndex(p => p.id === promoId);
+                if (index !== -1) {
+                    promotions.splice(index, 1);
+                    savePromotions();
+                }
+
+                const deactivatedIds = new Set(getSavedDeactivatedPromoIds().map(String));
+                deactivatedIds.delete(String(promoId));
+                saveDeactivatedPromoIds(Array.from(deactivatedIds));
+
+                renderPromotions();
+                showToast(`${promoName} has been deleted.`, 'error');
+            });
+        } else if (e.target.matches('.editPromoBtn')) {
+            const promoId = e.target.dataset.promoId;
+            const promo = promotions.find((p) => p.id === promoId);
+            if (!promo) return;
+
+            editingPromoId = promoId;
+            if (promotionModal) openModal(promotionModal);
+            if (promotionModalTitle) promotionModalTitle.textContent = 'Edit Promotion';
+            if (submitPromoBtn) submitPromoBtn.textContent = 'Update Promotion';
+
+            if (document.getElementById('promoName')) document.getElementById('promoName').value = promo.name || '';
+            if (document.getElementById('promoType')) document.getElementById('promoType').value = promo.type || '';
+            if (document.getElementById('promoCode')) document.getElementById('promoCode').value = promo.code || '';
+            if (document.getElementById('promoDiscount')) document.getElementById('promoDiscount').value = promo.discount || '';
+            if (document.getElementById('promoMinSpend')) document.getElementById('promoMinSpend').value = promo.minSpend || '';
+            if (document.getElementById('promoMaxUses')) document.getElementById('promoMaxUses').value = promo.maxUses || '';
+            if (document.getElementById('promoStartDate')) document.getElementById('promoStartDate').value = promo.startDate || '';
+            if (document.getElementById('promoEndDate')) document.getElementById('promoEndDate').value = promo.endDate || '';
+            if (document.getElementById('promoProducts')) document.getElementById('promoProducts').value = promo.products || '';
+            if (document.getElementById('promoDescription')) document.getElementById('promoDescription').value = promo.description || '';
+        } else if (e.target.matches('.edit-product-btn')) {
+            const id = Number(e.target.dataset.id);
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+            editingProductId = id;
+            if (addProductModal) openModal(addProductModal);
+            if (document.getElementById('productName')) document.getElementById('productName').value = product.name;
+            if (document.getElementById('productCategory')) document.getElementById('productCategory').value = product.category;
+            if (document.getElementById('productPrice')) document.getElementById('productPrice').value = product.price;
+            if (document.getElementById('productStock')) document.getElementById('productStock').value = product.stock;
+            if (document.getElementById('productMinStock')) document.getElementById('productMinStock').value = product.minStock ?? '';
+            if (document.getElementById('productReorderQty')) document.getElementById('productReorderQty').value = product.reorderQty ?? '';
+            if (document.getElementById('productSupplier')) document.getElementById('productSupplier').value = product.supplier || '';
+            if (document.getElementById('productNotes')) document.getElementById('productNotes').value = product.notes;
+            if (document.getElementById('productDescription')) document.getElementById('productDescription').value = product.description;
+
+            // Show existing image preview for editing (uploaded images stored as data URLs or file names)
+            selectedProductImageValue = product.image || null;
+            if (document.getElementById('productImage')) document.getElementById('productImage').value = '';
+            if (fileNameSpan) fileNameSpan.textContent = selectedProductImageValue ? (typeof product.image === 'string' && !product.image.startsWith('data:') ? product.image : 'Current image') : 'No file chosen';
+            const previewSrc = getProductImageSrc(selectedProductImageValue);
+            if (previewSrc) {
+                previewImg.src = previewSrc;
+                imagePreview.classList.remove('hidden');
+            } else {
+                previewImg.src = '';
+                imagePreview.classList.add('hidden');
+            }
+            if (document.querySelector('#addProductModal h2')) document.querySelector('#addProductModal h2').textContent = 'Edit Product';
+            if (document.querySelector('#addProductForm button[type="submit"]')) document.querySelector('#addProductForm button[type="submit"]').textContent = 'Update Product';
+        } else if (e.target.matches('.delete-product-btn')) {
+            const id = Number(e.target.dataset.id);
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+            customConfirm(`Delete ${product.name}? This cannot be undone.`, () => {
+                const index = products.indexOf(product);
+                if (index !== -1) {
+                    products.splice(index, 1);
+                    saveStock();
+                    updateStockAlerts();
+                    renderAdminTables();
+                }
+            });
+        } else if (e.target.matches('.reviews-btn')) {
+            const id = Number(e.target.dataset.id);
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+            // ensure reviews exist
+            if (!Array.isArray(product.reviews)) product.reviews = [];
+            if (!product.reviews.length) {
+                // generate dummy reviews
+                const sample = [
+                    { user: 'alex.t@example.com', displayName: 'Alex T', date: '2026-02-10', rating: 5, text: 'Excellent fragrance!' },
+                    { user: 'jess.k@example.com', displayName: 'Jess K', date: '2026-02-07', rating: 4, text: 'Nice scent, lasts a long time.' },
+                    { user: 'sam.w@example.com', displayName: 'Sam W', date: '2026-02-05', rating: 4, text: 'Very good, will buy again.' }
+                ];
+                product.reviews = sample.map(r => ({ ...r }));
+                product.rating = Math.round(product.reviews.reduce((sum, r) => sum + r.rating, 0) / product.reviews.length);
+            }
+            if (reviewsContent) {
+                reviewsContent.innerHTML = `<h3>${product.name} (${product.rating} ★)</h3>` +
+                    product.reviews.map(r => `
+                        <div class="review-item">
+                            <div class="review-header">
+                                <h4>${getReviewDisplayName(r)}</h4>
+                                <span class="review-rating">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</span>
+                            </div>
+                            <div class="review-content">
+                                <p><strong>${r.date}</strong></p>
+                                <p>${r.text}</p>
+                            </div>
+                        </div>
+                    `).join('');
+            }
+            if (reviewsModal) openModal(reviewsModal);
+        } else if (e.target.matches('.publish-review-btn')) {
+            const reviewItem = e.target.closest('.review-item');
+            if (!reviewItem) return;
+            customConfirm('Mark this review as published?', () => {
+                const productName = reviewItem.querySelector('.review-header h4')?.textContent.trim();
+                const ratingEl = reviewItem.querySelector('.review-rating');
+                const rating = ratingEl ? (ratingEl.textContent.match(/★/g) || []).length : 4;
+                const contentPs = reviewItem.querySelectorAll('.review-content p');
+                let user = 'anonymous', date = new Date().toISOString().split('T')[0], text = '';
+                if (contentPs[0]) {
+                    const strong = contentPs[0].querySelector('strong');
+                    if (strong) user = strong.textContent.trim();
+                    const dateMatch = contentPs[0].textContent.match(/-\s*(.+)$/);
+                    if (dateMatch) date = dateMatch[1].trim();
+                }
+                if (contentPs[1]) {
+                    text = contentPs[1].textContent.replace(/^"|"$/g, '').trim();
+                }
+
+                const product = products.find(p => p.name === productName);
+                if (product) {
+                    if (!Array.isArray(product.reviews)) product.reviews = [];
+                    const alreadyExists = product.reviews.some(r => r.user === user && r.text === text);
+                    if (!alreadyExists) {
+                        product.reviews.push({ user, date, rating, text, published: true });
+                        product.rating = Math.round(product.reviews.reduce((s, r) => s + r.rating, 0) / product.reviews.length);
+                    } else {
+                        const existing = product.reviews.find(r => r.user === user && r.text === text);
+                        if (existing) existing.published = true;
+                    }
+                    saveProducts();
+                }
+
+                e.target.textContent = 'Published';
+                e.target.disabled = true;
+                reviewItem.classList.add('published');
+                showToast('Review published and saved.', 'success');
+            });
+        } else if (e.target.matches('.remove-review-btn')) {
+            const reviewItem = e.target.closest('.review-item');
+            if (!reviewItem) return;
+            customConfirm('Remove this review?', () => {
+                const productName = reviewItem.querySelector('.review-header h4')?.textContent.trim();
+                const contentPs = reviewItem.querySelectorAll('.review-content p');
+                let user = '', text = '';
+                if (contentPs[0]) {
+                    const strong = contentPs[0].querySelector('strong');
+                    if (strong) user = strong.textContent.trim();
+                }
+                if (contentPs[1]) {
+                    text = contentPs[1].textContent.replace(/^"|"$/g, '').trim();
+                }
+
+                const product = products.find(p => p.name === productName);
+                if (product && Array.isArray(product.reviews)) {
+                    const idx = product.reviews.findIndex(r => r.user === user && r.text === text);
+                    if (idx !== -1) {
+                        product.reviews.splice(idx, 1);
+                        if (product.reviews.length) {
+                            product.rating = Math.round(product.reviews.reduce((s, r) => s + r.rating, 0) / product.reviews.length);
+                        }
+                        saveProducts();
+                    }
+                }
+
+                reviewItem.remove();
+                showToast('Review removed.', 'error');
+            });
+        }
+    });
+
+    // --- Report generation handlers ---
+    const reportModal = document.getElementById('reportModal');
+    const reportContent = document.getElementById('reportContent');
+    const downloadReportBtn = document.getElementById('downloadReportBtn');
+    const closeReportModal = document.getElementById('closeReportModal');
+    const closeReportFooter = document.getElementById('closeReportFooter');
+
+    const btnDailyReport = document.getElementById('btnDailyReport');
+    const btnMonthlyReport = document.getElementById('btnMonthlyReport');
+    const btnInventoryReport = document.getElementById('btnInventoryReport');
+    const btnCustomerReport = document.getElementById('btnCustomerReport');
+    const generateReportBtn = document.getElementById('generateReportBtn');
+
+    const downloadCSV = (filename, csv) => {
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.setAttribute('download', filename);
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    };
+
+    const downloadExcelReport = () => {
+        if (typeof XLSX === 'undefined') {
+            customAlert('Unable to generate Excel report: SheetJS library not loaded.');
+            return;
+        }
+
+        // Build workbook and sheets
+        const workbook = XLSX.utils.book_new();
+
+        // 1) Sales data (using recent pending orders as demo data)
+        const salesSheet = XLSX.utils.json_to_sheet(
+            pendingOrders.map(order => ({
+                'Order ID': order.id,
+                Date: order.date,
+                Customer: order.customer,
+                'Total (£)': order.total.toFixed(2)
+            }))
+        );
+        XLSX.utils.book_append_sheet(workbook, salesSheet, 'Sales');
+
+        // 2) Top products (computed from pending orders)
+        const productTotals = {};
+        pendingOrders.forEach(o => {
+            (o.items || []).forEach(item => {
+                productTotals[item.name] = (productTotals[item.name] || 0) + (item.qty || 0);
+            });
+        });
+        const topProducts = Object.entries(productTotals)
+            .map(([name, qty]) => ({ Product: name, 'Units Sold': qty }))
+            .sort((a, b) => b['Units Sold'] - a['Units Sold']);
+        const topProductsSheet = XLSX.utils.json_to_sheet(topProducts);
+        XLSX.utils.book_append_sheet(workbook, topProductsSheet, 'Top Products');
+
+        // 3) Customer metrics (from pending orders)
+        const uniqueCustomers = new Set(pendingOrders.map(o => o.customer));
+        const totalOrders = pendingOrders.length;
+        const totalRevenue = pendingOrders.reduce((sum, o) => sum + (o.total || 0), 0);
+        const averageOrder = totalOrders ? totalRevenue / totalOrders : 0;
+        const customerMetricsSheet = XLSX.utils.json_to_sheet([
+            { Metric: 'Total Orders', Value: totalOrders },
+            { Metric: 'Unique Customers', Value: uniqueCustomers.size },
+            { Metric: 'Total Revenue (£)', Value: totalRevenue.toFixed(2) },
+            { Metric: 'Average Order (£)', Value: averageOrder.toFixed(2) }
+        ]);
+        XLSX.utils.book_append_sheet(workbook, customerMetricsSheet, 'Customer Metrics');
+
+        // 4) Inventory
+        const inventorySheet = XLSX.utils.json_to_sheet(
+            products.map(p => ({
+                Product: p.name,
+                Category: p.category || '',
+                Stock: p.stock || 0,
+                'Min Stock': p.minStock || '',
+                'Reorder Qty': p.reorderQty || ''
+            }))
+        );
+        XLSX.utils.book_append_sheet(workbook, inventorySheet, 'Inventory');
+
+        const fileName = `luminous-report-${new Date().toISOString().slice(0, 10)}.xlsx`;
+        const wbout = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+        const blob = new Blob([wbout], { type: 'application/octet-stream' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    };
+
+    const generateReport = (type) => {
+        let html = '';
+        let csv = '';
+        let filename = `report-${type}-${new Date().toISOString().slice(0,10)}.csv`;
+
+        if (type === 'inventory') {
+            // Use products array to create inventory report
+            html += '<h4>Inventory Report</h4>';
+            html += '<table class="admin-table"><thead><tr><th>Product</th><th>Category</th><th>Stock</th></tr></thead><tbody>';
+            csv += 'Product,Category,Stock\n';
+            products.forEach(p => {
+                html += `<tr><td>${p.name}</td><td>${p.category || ''}</td><td>${p.stock || 0}</td></tr>`;
+                csv += `"${p.name}","${p.category || ''}",${p.stock || 0}\n`;
+            });
+            html += '</tbody></table>';
+        } else if (type === 'daily' || type === 'monthly') {
+            // Placeholder sales report
+            const period = type === 'daily' ? 'Daily' : 'Monthly';
+            html += `<h4>${period} Sales Report</h4>`;
+            html += '<table class="admin-table"><thead><tr><th>Order ID</th><th>Date</th><th>Customer</th><th>Total (£)</th></tr></thead><tbody>';
+            csv += 'Order ID,Date,Customer,Total\n';
+            // sample rows
+            const sample = [
+                { id: 1082, date: '2026-02-16', customer: 'sarah.j@example.com', total: 149.00 },
+                { id: 1083, date: '2026-02-16', customer: 'james.m@example.com', total: 65.00 },
+                { id: 1084, date: '2026-02-17', customer: 'lisa.c@example.com', total: 156.00 }
+            ];
+            sample.forEach(r => {
+                html += `<tr><td>${r.id}</td><td>${r.date}</td><td>${r.customer}</td><td>£${r.total.toFixed(2)}</td></tr>`;
+                csv += `${r.id},${r.date},${r.customer},${r.total}\n`;
+            });
+            html += '</tbody></table>';
+        } else if (type === 'customers') {
+            // Placeholder customer analytics
+            html += '<h4>Customer Analytics</h4>';
+            html += '<table class="admin-table"><thead><tr><th>Customer</th><th>Orders</th><th>Total Spent (£)</th></tr></thead><tbody>';
+            csv += 'Customer,Orders,Total Spent\n';
+            const sampleCust = [
+                { customer: 'sarah.j@example.com', orders: 5, total: 320.50 },
+                { customer: 'james.m@example.com', orders: 2, total: 140.00 },
+                { customer: 'lisa.c@example.com', orders: 3, total: 200.00 }
+            ];
+            sampleCust.forEach(c => {
+                html += `<tr><td>${c.customer}</td><td>${c.orders}</td><td>£${c.total.toFixed(2)}</td></tr>`;
+                csv += `"${c.customer}",${c.orders},${c.total}\n`;
+            });
+            html += '</tbody></table>';
+        }
+
+        return { html, csv, filename };
+    };
+
+    const openReport = (type) => {
+        if (!reportModal || !reportContent) return;
+        const { html, csv, filename } = generateReport(type);
+        reportContent.innerHTML = html;
+        if (downloadReportBtn) {
+            downloadReportBtn.onclick = () => downloadCSV(filename, csv);
+        }
+        openModal(reportModal);
+    };
+
+    if (btnDailyReport) btnDailyReport.addEventListener('click', () => openReport('daily'));
+    if (btnMonthlyReport) btnMonthlyReport.addEventListener('click', () => openReport('monthly'));
+    if (btnInventoryReport) btnInventoryReport.addEventListener('click', () => openReport('inventory'));
+    if (btnCustomerReport) btnCustomerReport.addEventListener('click', () => openReport('customers'));
+    if (generateReportBtn) generateReportBtn.addEventListener('click', downloadExcelReport);
+
+    if (closeReportModal) {
+        closeReportModal.addEventListener('click', () => closeModal(reportModal));
+    }
+    if (closeReportFooter) {
+        closeReportFooter.addEventListener('click', () => closeModal(reportModal));
+    }
+    if (reportModal) {
+        reportModal.addEventListener('click', (e) => { if (e.target === reportModal) closeModal(reportModal); });
+    }
+
+    // Update inquiry buttons count once everything is set up
+    updateInquiryCounts();
+}
+
+// ensures each product has rating/review metadata
+function ensureProductFeedback(p) {
+    if (!Array.isArray(p.reviews)) {
+        p.reviews = [];
+    }
+    if (typeof p.rating !== 'number' || p.rating < 1 || p.rating > 5) {
+        if (p.reviews.length) {
+            const avg = p.reviews.reduce((sum, r) => sum + (r.rating || 0), 0) / p.reviews.length;
+            p.rating = Math.round(avg) || 4;
+        } else {
+            p.rating = Math.floor(Math.random() * 3) + 3; // 3-5 stars
+        }
+    }
+}
+
+// render dynamic rows for admin product and inventory tables
+function renderAdminTables() {
+    // Ensure all products have basic inventory metadata (min stock, reorder qty, supplier)
+    products.forEach(ensureInventoryFields);
+
+    // Product management table
+    const pmBody = document.getElementById('productManagementBody');
+    if (pmBody) {
+        pmBody.innerHTML = '';
+        products.forEach(p => {
+            ensureProductFeedback(p);
+            const status = p.stock > 0 ? 'Active' : 'Inactive';
+            const statusClass = p.stock > 0 ? 'active' : 'inactive';
+            const rating = `${'★'.repeat(p.rating)}${'☆'.repeat(5 - p.rating)}`;
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${p.name}</td>
+                <td>${p.category}</td>
+                <td>£${p.price.toFixed(2)}</td>
+                <td>${p.stock || 0}</td>
+                <td><span class="status-badge ${statusClass}">${status}</span></td>
+                <td>${rating} (${p.reviews.length})</td>
+                <td>
+                    <button class="btn-small edit-product-btn" data-id="${p.id}">Edit</button>
+                    <button class="btn-small neutral reviews-btn" data-id="${p.id}">Reviews</button>
+                    <button class="btn-small dangerous delete-product-btn" data-id="${p.id}">Delete</button>
+                </td>
+            `;
+            pmBody.appendChild(tr);
+        });
+    }
+
+    // Inventory table
+    const invBody = document.getElementById('inventoryBody');
+    if (invBody) {
+        invBody.innerHTML = '';
+        products.forEach(p => {
+            const minStock = p.minStock || '';
+            const reorderQty = p.reorderQty || '';
+            const supplier = p.supplier || '—';
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${p.name}</td>
+                <td class="stock-cell" data-id="${p.id}">${p.stock || 0}</td>
+                <td>${minStock}</td>
+                <td>${reorderQty}</td>
+                <td>${supplier}</td>
+                <td>
+                    <button class="btn-small update-stock-btn" data-id="${p.id}">Update</button>
+                    <button class="btn-small neutral reorder-btn" data-id="${p.id}">Reorder</button>
+                </td>
+            `;
+            invBody.appendChild(tr);
+        });
+    }
+}
+
+// Initialize theme toggle on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // restore persisted product list and stock before anything else
+    loadProducts();
+    loadStock();
+    seedDummyReviews();
+    initThemeToggle();
+    initAdminPage();
+    updateStockAlerts(); // refresh alert panel
+    initCollapsibles();
+    // Ensure header reflects admin login state across pages
+    updateHeaderAdminLink();
+});
+
