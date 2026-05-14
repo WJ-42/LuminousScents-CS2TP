@@ -470,6 +470,32 @@ function saveProducts() {
     }
 }
 
+const STOCK_SEED_VERSION_KEY = "luminousScentsStockSeedVersion";
+const STOCK_SEED_VERSION = "v1";
+
+function seedInitialStock() {
+    if (localStorage.getItem(STOCK_SEED_VERSION_KEY) === STOCK_SEED_VERSION) return;
+
+    const seedStock = {
+        11: 15, 12: 8,  13: 20, 104: 32,
+        1:  0,  2:  0,  3:  14, 6:  7,  7:  18, 8: 22, 9: 6, 10: 11,
+        101: 18, 102: 5, 103: 0, 14: 13, 15: 0,
+        4:  16, 5:  19,
+        20: 25, 21: 20, 22: 30, 23: 35, 24: 22,
+        30: 28, 31: 24, 32: 17, 33: 14, 34: 21,
+        40: 12, 41: 9,  42: 15, 43: 10, 44: 18
+    };
+
+    products.forEach(p => {
+        if (Object.prototype.hasOwnProperty.call(seedStock, p.id)) {
+            p.stock = seedStock[p.id];
+        }
+    });
+
+    saveStock();
+    localStorage.setItem(STOCK_SEED_VERSION_KEY, STOCK_SEED_VERSION);
+}
+
 const REVIEWS_SEEDED_KEY = "luminousScentsReviewsSeeded_v2";
 
 function seedDummyReviews() {
@@ -3759,6 +3785,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Restore persisted products + stock before page-specific rendering
     loadProducts();
     loadStock();
+    seedInitialStock();
     seedDummyReviews();
 
     // Auto-resize textarea (vertical)
@@ -5922,6 +5949,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // restore persisted product list and stock before anything else
     loadProducts();
     loadStock();
+    seedInitialStock();
     seedDummyReviews();
     initThemeToggle();
     initAdminPage();
