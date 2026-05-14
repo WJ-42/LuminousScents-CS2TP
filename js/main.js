@@ -9,7 +9,8 @@ const products = [
         notes: "Lavender, vanilla, honey",
         description: "Soothing lavender with a sweet, dreamy finish.",
         image: "lavender-dream.png",
-        category: "perfume"
+        category: "perfume",
+        stock: 15
     },
     {
         id: 12,
@@ -19,7 +20,8 @@ const products = [
         notes: "Rose, patchouli, blackcurrant",
         description: "Dark and romantic rose for evening allure.",
         image: "midnight-rose.png",
-        category: "perfume"
+        category: "perfume",
+        stock: 8
     },
     {
         id: 13,
@@ -29,7 +31,8 @@ const products = [
         notes: "Marine accord, driftwood, white tea",
         description: "Captures the serenity of waves on shore.",
         image: "ocean-whisper.png",
-        category: "perfume"
+        category: "perfume",
+        stock: 20
     },
     {
         id: 104,
@@ -73,7 +76,8 @@ const products = [
         notes: "Iris, violet, sandalwood",
         description: "Soft floral scent with a creamy sandalwood base.",
         image: "velvet-iris.png",
-        category: "perfume"
+        category: "perfume",
+        stock: 14
     },
     {
         id: 6,
@@ -83,7 +87,8 @@ const products = [
         notes: "Amber, benzoin, tonka bean",
         description: "A mysterious blend of warm amber and sweet tonka.",
         image: "amber-eclipse.png",
-        category: "perfume"
+        category: "perfume",
+        stock: 7
     },
     {
         id: 7,
@@ -93,7 +98,8 @@ const products = [
         notes: "Orange blossom, grapefruit, jasmine",
         description: "Sparkling citrus meets delicate florals.",
         image: "citrus-bloom.png",
-        category: "perfume"
+        category: "perfume",
+        stock: 18
     },
     {
         id: 8,
@@ -103,7 +109,8 @@ const products = [
         notes: "Sea salt, cucumber, mint",
         description: "Crisp and clean like an ocean breeze at dawn.",
         image: "fresh-horizon.png",
-        category: "perfume"
+        category: "perfume",
+        stock: 22
     },
     {
         id: 9,
@@ -113,7 +120,8 @@ const products = [
         notes: "Sandalwood, saffron, cardamom",
         description: "Luxurious sandalwood with warm spice notes.",
         image: "golden-sandalwood.png",
-        category: "perfume"
+        category: "perfume",
+        stock: 6
     },
     {
         id: 10,
@@ -123,7 +131,8 @@ const products = [
         notes: "Jasmine, ylang-ylang, musk",
         description: "Intoxicating jasmine wrapped in soft musk.",
         image: "jasmine-veil.png",
-        category: "perfume"
+        category: "perfume",
+        stock: 11
     },
     {
         id: 101,
@@ -166,7 +175,8 @@ const products = [
         notes: "Cedarwood, black pepper, nutmeg",
         description: "Bold and woody with a spicy kick.",
         image: "spiced-cedar.png",
-        category: "perfume"
+        category: "perfume",
+        stock: 13
     },
     {
         id: 15,
@@ -176,7 +186,8 @@ const products = [
         notes: "Oud, velvet rose, smoky incense",
         description: "Our most luxurious oud, rich and velvety.",
         image: "velvet-oud.png",
-        category: "perfume"
+        category: "perfume",
+        stock: 0
     },
     
     // === SOLARIS DUO ===
@@ -188,7 +199,8 @@ const products = [
         notes: "Jasmine, rose, musk",
         description: "Elegant floral scent for her.",
         image: "solaris-femme.png",
-        category: "solaris"
+        category: "solaris",
+        stock: 16
     },
     {
         id: 5,
@@ -198,7 +210,8 @@ const products = [
         notes: "Cedar, vetiver, citrus",
         description: "Sophisticated woody scent for him.",
         image: "solaris-homme.png",
-        category: "solaris"
+        category: "solaris",
+        stock: 19
     },
     
     // === HOME FRAGRANCES ===
@@ -210,7 +223,8 @@ const products = [
         notes: "Rosewood, geranium, warm amber",
         description: "Elegant ambiance for any room. Burns for 50+ hours.",
         image: "rosewood-candle.png",
-        category: "home"
+        category: "home",
+        stock: 25
     },
     {
         id: 21,
@@ -220,7 +234,8 @@ const products = [
         notes: "Verbena, lemon zest, green tea",
         description: "Continuous fragrance for up to 3 months.",
         image: "citrus-verbena-diffuser.png",
-        category: "home"
+        category: "home",
+        stock: 20
     },
     {
         id: 22,
@@ -230,7 +245,8 @@ const products = [
         notes: "Night-blooming jasmine, sandalwood, musk",
         description: "Set of 30 hand-rolled incense sticks.",
         image: "midnight-garden-incense.png",
-        category: "home"
+        category: "home",
+        stock: 30
     },
     {
         id: 23,
@@ -240,7 +256,8 @@ const products = [
         notes: "Vanilla bean, white musk, caramel",
         description: "Pack of 12 wax melts for electric warmers.",
         image: "vanilla-musk-wax-melts.png",
-        category: "home"
+        category: "home",
+        stock: 35
     },
     {
         id: 24,
@@ -250,7 +267,8 @@ const products = [
         notes: "White tea, cotton flower, soft woods",
         description: "Refresh linens, curtains, and upholstery.",
         image: "white-tea-linen-spray.png",
-        category: "home"
+        category: "home",
+        stock: 22
     },
     
     // === WELLNESS ===
@@ -262,7 +280,8 @@ const products = [
         notes: "French lavender, chamomile, bergamot",
         description: "Spritz on pillows or in the air for relaxation.",
         image: "calming-lavender-mist.png",
-        category: "wellness"
+        category: "wellness",
+        stock: 28
     },
     {
         id: 31,
@@ -272,7 +291,8 @@ const products = [
         notes: "Sweet orange, lemon, grapefruit, peppermint",
         description: "Essential oil blend for diffusers. 30ml bottle.",
         image: "energizing-citrus-oil-blend.png",
-        category: "wellness"
+        category: "wellness",
+        stock: 24
     },
     {
         id: 32,
@@ -282,7 +302,8 @@ const products = [
         notes: "Eucalyptus, rosemary, spearmint",
         description: "Roll-on pulse point oil for mental clarity.",
         image: "focus-eucalyptus-roller.png",
-        category: "wellness"
+        category: "wellness",
+        stock: 17
     },
     {
         id: 33,
@@ -292,7 +313,8 @@ const products = [
         notes: "Roman chamomile, neroli, sweet almond",
         description: "Solid balm for temples and wrists. 15g tin.",
         image: "relaxing-chamomile-balm.png",
-        category: "wellness"
+        category: "wellness",
+        stock: 14
     },
     {
         id: 34,
@@ -302,7 +324,8 @@ const products = [
         notes: "Lavender, vetiver, cedarwood",
         description: "Promotes restful sleep. 100ml spray bottle.",
         image: "sleep-serenity-pillow-spray.png",
-        category: "wellness"
+        category: "wellness",
+        stock: 21
     },
     
     // === TRAVEL & GIFT SETS ===
@@ -314,7 +337,8 @@ const products = [
         notes: "8 × 2ml samples of our bestsellers",
         description: "Perfect introduction to our fragrance collection.",
         image: "discovery-sample-set.png",
-        category: "gift"
+        category: "gift",
+        stock: 12
     },
     {
         id: 41,
@@ -324,7 +348,8 @@ const products = [
         notes: "2 × 30ml travel sprays in leather case",
         description: "Choose any two fragrances. TSA-approved size.",
         image: "duo-travel-set.png",
-        category: "gift"
+        category: "gift",
+        stock: 9
     },
     {
         id: 42,
@@ -334,7 +359,8 @@ const products = [
         notes: "3 × 70g candles in gift box",
         description: "Rosewood, Vanilla Musk, and White Tea scents.",
         image: "mini-candle-trio.png",
-        category: "gift"
+        category: "gift",
+        stock: 15
     },
     {
         id: 43,
@@ -344,7 +370,8 @@ const products = [
         notes: "4 × 5ml roll-on bottles",
         description: "Portable favorites: Citrus Dawn, Velvet Iris, Ocean Whisper, Lavender Dream.",
         image: "pocket-perfume-roll-ons.png",
-        category: "gift"
+        category: "gift",
+        stock: 10
     },
     {
         id: 44,
@@ -354,7 +381,8 @@ const products = [
         notes: "2 × 10ml refillable atomizers",
         description: "Sleek metal design. Refill from any full-size bottle.",
         image: "refillable-atomizer-kit.png",
-        category: "gift"
+        category: "gift",
+        stock: 18
     }
 ];
 
